@@ -1,5 +1,6 @@
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import baselogo from "../../../public/Image/baselogo.svg" 
 
 import React, { Component } from "react";
 
@@ -10,7 +11,7 @@ class Home extends Component {
           <div className="home">
             <section className="hero-section">
 
-                <img className="img shadow" src="/Image/baselogo.svg" alt=""/>
+                <img className="img shadow" src="src/Image/baselogo.svg" alt="" />
 
                 <div className="text">
                     <div className="heading">
