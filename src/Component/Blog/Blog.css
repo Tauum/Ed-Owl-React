@@ -1,0 +1,139 @@
+body {
+  background-color: gray;
+}
+
+h1 {
+  padding-top: 3em;
+}
+
+.list {
+  margin: auto;
+  display: inline-block;
+  padding-bottom: 8em;
+}
+
+.list .card {
+  margin-top: 3em;
+  width: 400px;
+  text-align: center;
+}
+
+.list .card .tags {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0;
+}
+
+.list .card .tags .tag {
+  text-align: center;
+}
+
+.list .card Button {
+  margin-bottom: 1em;
+}
+
+.search {
+  padding-top: 2em;
+}
+
+.search h2 {
+  font-size: 1.5em;
+}
+
+.search label {
+  padding-right: 1em;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.search input, .search textarea {
+  background-color: white;
+  color: black;
+  padding: .8em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  border: 5px outset #afafaf;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search .dropdown {
+  background-color: white;
+  padding: .8em;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  border: 5px outset #afafaf;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search input[type="submit"] {
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: .8em 2em;
+  margin-left: 1em;
+  cursor: pointer;
+  border-radius: 1em;
+  border: 5px outset #afafaf;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.search input[type="submit"]:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.article-modal img {
+  border-radius: 1em;
+  width: 5em;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.article-modal .video {
+  width: 300px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.article-modal .cite {
+  padding: 2em;
+}
+
+.article-modal .source {
+  padding: 2em;
+}
+
+@media only screen and (min-width: 810px) {
+  .video {
+    height: 205px;
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .video {
+    height: 225px;
+    width: 400px;
+  }
+}
+/*# sourceMappingURL=Blog.css.map */

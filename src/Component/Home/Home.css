@@ -1,0 +1,318 @@
+:root {
+  min-width: 410;
+  --PrimaryColour: #47b883;
+  /* this is how properties are declared */
+  --SecondaryColour: #378f66;
+  --GrayPrimary: rgb(129, 125, 125);
+  --GraySecondary: rgb(77, 75, 75);
+}
+
+.home {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home section {
+  padding: 15em 0em 15em 0em;
+  border-bottom-right-radius: 4em;
+  border-bottom-left-radius: 4em;
+}
+
+.home .heading {
+  text-transform: capitalize;
+  padding: 0em 4em 1em 4em;
+}
+
+.home .description {
+  display: inline-block;
+  width: 70%;
+  font-size: 1.4em;
+}
+
+.home .hero-transition {
+  display: block;
+}
+
+.home .hero-section {
+  padding-top: 8em;
+  background-color: var(--GrayPrimary);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .hero-section .img {
+  height: 270px;
+  width: 270px;
+  border-radius: 4em;
+  background-color: var(--GraySecondary);
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .hero-section .img:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  border: 5px DOUBLE white;
+}
+
+.home .hero-section .heading h1 {
+  padding-top: 1.5em;
+}
+
+.home .hero-section .btn {
+  margin: 1em;
+  border-color: white;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.home .hero-section .btn:hover {
+  font-weight: bold;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  border-color: white;
+}
+
+.home .hero-section .btn-dark {
+  margin-top: 1em;
+  width: 5em;
+  margin-right: 3em;
+}
+
+.home .hero-section .btn-primary {
+  margin-top: 1em;
+  background-color: #e65050;
+  width: 5em;
+}
+
+.home .features-section {
+  background-color: var(--GraySecondary);
+}
+
+.home .features-section .description {
+  padding-top: 0;
+}
+
+.home .features-section .list {
+  margin: auto;
+  display: inline-block;
+  padding-top: 1em;
+  padding-left: 8%;
+}
+
+.home .features-section .list li {
+  width: 85%;
+  border-radius: 2em;
+  padding: 1em;
+  background-color: #8b8888;
+  list-style-type: none;
+  margin-bottom: 0.7em;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .features-section .list li h2 {
+  font-size: 1.3em;
+}
+
+.home .features-section .list li p {
+  font-size: .8em;
+}
+
+.home .features-section .list li:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.19);
+          transform: scale(1.19);
+}
+
+.home .testimonials-section {
+  background: wheat;
+  color: white;
+}
+
+.home .testimonials-section ul {
+  padding-left: 0;
+}
+
+.home .testimonials-section ul li {
+  list-style-type: none;
+  background: gray;
+  text-align: center;
+  padding: 1.7em 0.7em;
+  width: 80%;
+  margin: 0 auto 4em auto;
+  border-radius: 1em;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .testimonials-section ul li img {
+  width: 4.5em;
+  height: 4.5em;
+  border: 5px solid gray;
+  border-radius: 50%;
+  margin-top: -4.9em;
+}
+
+.home .testimonials-section ul li:hover {
+  border: white;
+  font-weight: bold;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.19);
+          transform: scale(1.19);
+}
+
+.home .posts-section {
+  background-color: var(--GrayPrimary);
+}
+
+.home .posts-section .description {
+  padding-top: 0;
+}
+
+.home .posts-section .list {
+  margin: auto;
+  display: inline-block;
+  padding-top: 1em;
+  padding-left: 8%;
+}
+
+.home .posts-section .list li {
+  width: 85%;
+  border-radius: 2em;
+  padding: 1em;
+  background-color: #8b8888;
+  list-style-type: none;
+  margin-bottom: 0.7em;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .posts-section .list li h2 {
+  font-size: 1.3em;
+}
+
+.home .posts-section .list li p {
+  font-size: .8em;
+}
+
+.home .posts-section .list li:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.19);
+          transform: scale(1.19);
+}
+
+.home .contact-Section {
+  width: 100%;
+  padding-top: 15em;
+  padding-bottom: 8em;
+  background: #1f1e1e;
+  color: #ccc4c4;
+  margin: auto;
+  text-align: start;
+}
+
+.home .contact-Section h2 {
+  font-size: 2em;
+}
+
+.home .contact-Section label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.home .contact-Section input, .home .contact-Section textarea {
+  background-color: white;
+  color: whitesmoke;
+  width: 100%;
+  padding: .8em;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  border: 5px solid gray;
+  border-style: outset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.home .contact-Section input[type="submit"] {
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 5em;
+  display: block;
+  padding: .8em 2em;
+  width: unset;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 1em;
+  border: 5px outset gray;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .contact-Section input[type="submit"]:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=Home.css.map */

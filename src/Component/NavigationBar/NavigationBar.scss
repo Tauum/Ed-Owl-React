@@ -1,0 +1,74 @@
+.navbar{
+    padding-top: 1.5em;
+}
+.edowl{
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.Main-element{
+        text-decoration: none;
+        color: #ffff;
+        padding-top: 0.5em;
+        cursor: pointer;
+        padding-left: 1em;
+    }
+
+// .Drop-element{
+//     .title{
+//     }
+// }
+
+.Secondary-element{
+    text-decoration: none;
+    padding-top: 0.5em;
+    text-align: center; // this doesnt work
+    
+}
+
+
+.wave {
+    position: absolute;
+    top: 20;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: 2em;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 6%;
+        max-height: 5em;
+    }
+
+    .shape-fill {
+        fill: rgb(33,37,41);
+    }
+    
+}
+
+    // .spacer{
+    //     padding-bottom: 2em;
+    // }
+
+    @media only screen and (min-width: 810px) {
+        .wave{
+            .svg{
+                height: 10%;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1080px) {
+        .wave{
+            .svg{
+                height: 18%;
+            }
+        }
+    }
+
+

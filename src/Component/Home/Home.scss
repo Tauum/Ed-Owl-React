@@ -1,0 +1,296 @@
+:root{
+    min-width: 410;
+    --PrimaryColour: #47b883; /* this is how properties are declared */
+    --SecondaryColour: #378f66;
+    --GrayPrimary: rgb(129, 125, 125);
+    --GraySecondary: rgb(77, 75, 75);
+}
+
+.home{
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    
+    section{
+       padding: 15em 0em 15em 0em;
+       border-bottom-right-radius: 4em;
+       border-bottom-left-radius: 4em;
+    }
+
+    .heading{
+        text-transform: capitalize;
+        padding: 0em 4em 1em 4em;
+
+    }
+
+    .description{
+        display: inline-block;
+        width: 70%;
+        font-size: 1.4em;
+    }
+
+    .hero-transition{
+        display: block;
+    }
+
+    .hero-section{
+        padding-top: 8em;
+        background-color: var(--GrayPrimary);
+        // background-color: var(--GrayPrimary);
+        align-items: center;
+
+        .img{
+            height: 270px;
+            width: 270px;
+            border-radius: 4em;  
+            background-color: var(--GraySecondary);          
+            transition: transform .6s; /* Animation */
+            transform: scale(1);
+
+        }
+        .img:hover{
+            transition: transform .6s; /* Animation */
+            transform: scale(1.15);
+            border: 5px DOUBLE white;   
+        }
+        .heading{
+            h1{
+                padding-top: 1.5em;
+            }
+        }
+
+        .btn{
+            margin: 1em;
+            border-color: white;
+            transition: transform .6s; /* Animation */
+            transform: scale(1.2);
+            &:hover{
+                font-weight: bold; //so when highlighting text changes to bold
+                transition: transform .6s; /* Animation */
+                transform: scale(1.5);
+                border-color: white;
+            }
+        }
+        .btn-dark{
+            margin-top: 1em;
+            width: 5em;
+            margin-right: 3em;
+        }
+        .btn-primary{
+            margin-top: 1em;
+            background-color: rgb(230, 80, 80);
+            width: 5em;
+        }
+    }
+
+    .features-section{
+        background-color: var(--GraySecondary);
+        .description{
+            padding-top: 0;
+        }
+
+        .list{
+            margin: auto;
+            display: inline-block;
+            padding-top: 1em;
+            padding-left: 8%;
+            li{
+                width: 85%;
+                border-radius: 2em;
+                padding: 1em;
+                background-color: rgb(139, 136, 136);
+                list-style-type: none;
+                margin-bottom: 0.7em;
+
+                h2{
+                    font-size: 1.3em;
+                }
+                p{
+                    font-size: .8em;
+                }
+
+                transition: transform .6s; /* Animation off */
+                transform: scale(1); // DECREASE SCALE
+
+                &:hover{
+                    transition: transform .6s; /* Animation */
+                    transform: scale(1.19);
+                }
+            }
+
+        }
+    }
+
+    .testimonials-section{
+        background: wheat;
+        color: white;
+        ul{
+            padding-left: 0;
+        
+            li{
+                list-style-type: none;
+                background: gray;
+                text-align: center;
+                padding: 1.7em 0.7em;
+                width: 80%;
+                margin: 0 auto 4em auto;
+                border-radius: 1em;
+        
+                transition: transform .6s; /* Animation off */
+                transform: scale(1); // DECREASE SCALE
+                
+                img{
+                    width: 4.5em;
+                    height: 4.5em;
+                    border: 5px solid gray;
+                    border-radius: 50%;
+                    margin-top: -4.9em;
+                }
+        
+                &:hover{
+                    border: white;
+                    font-weight: bold; //so when highlighting text changes to bold
+                    transition: transform .6s; /* Animation */
+                    transform: scale(1.19);
+                }
+            }
+        }
+
+    }
+
+    .posts-section{
+        background-color: var(--GrayPrimary);
+        .description{
+            padding-top: 0;
+        }
+
+        .list{
+            margin: auto;
+            display: inline-block;
+            padding-top: 1em;
+            padding-left: 8%;
+            li{
+                width: 85%;
+                border-radius: 2em;
+                padding: 1em;
+                background-color: rgb(139, 136, 136);
+                list-style-type: none;
+                margin-bottom: 0.7em;
+
+                h2{
+                    font-size: 1.3em;
+                }
+                p{
+                    font-size: .8em;
+                }
+
+                transition: transform .6s; /* Animation off */
+                transform: scale(1); // DECREASE SCALE
+
+                &:hover{
+                    transition: transform .6s; /* Animation */
+                    transform: scale(1.19);
+                }
+            }
+
+        }
+    }
+
+    // .posts-section{
+    //     .heading{
+    
+    //     }
+    //     ul{
+    //     width: 90%;
+    //     display: block;
+    //     margin: auto;
+        
+    //     padding-left: 0;
+    
+    //         li{
+    //             background-color: rgb(230, 230, 230);
+    //             list-style-type: none;
+    //             margin-top: 0.2em;
+    //             padding: 0.3em;
+    //             border-radius: 2em;
+    //             margin-bottom: 2em;
+    
+    //             img{
+    //                 width: 100%;
+    //                 max-height: 210px;
+    //             }
+    
+    //             cite{
+    
+    //             }
+                
+    //             h2{
+    
+    //             }
+                
+    //             p{
+    
+    //             }
+    
+    //         }
+    //     }
+    // }
+
+    .contact-Section{
+        width: 100%;
+        padding-top: 15em;
+        padding-bottom: 8em;
+        background: rgb(31, 30, 30);
+        color: rgb(204, 196, 196);
+        margin: auto;
+        text-align: start;
+    
+        h2{
+            font-size: 2em;
+        }
+    
+        label{
+            display: block;
+            font-size: 1.2em;
+            margin-bottom:  .5em;
+        }
+    
+        input,textarea{ // <<can apply to multiple things
+            background-color: white;
+            color: whitesmoke;
+            width: 100%;
+            padding: .8em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 5px solid gray;
+            border-style:outset;
+            box-sizing: border-box;
+        } 
+    
+        input[type="submit"] { // can also select things like this
+            color: black;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5em;
+            display: block;
+            padding: .8em 2em;
+            width: unset;
+            cursor: pointer;
+            margin: auto;
+            
+            border-radius: 1em;
+            border: 5px outset gray;
+    
+            transition: transform .6s; /* Animation off */
+            transform: scale(1); // DECREASE SCALE
+            &:hover{    
+            transition: transform .6s; /* Animation off */
+            transform: scale(1.1); // DECREASE SCALE
+            }
+        }
+    }
+    
+
+
+}

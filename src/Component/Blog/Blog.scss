@@ -1,0 +1,140 @@
+body{
+    background-color: gray;
+}
+h1{
+    padding-top: 3em;
+}
+
+.list{
+    margin: auto;
+    display: inline-block;
+    padding-bottom: 8em;
+
+    .card{
+        margin-top: 3em;
+        width: 400px;
+        text-align: center;
+        .tags{
+            padding: 0;
+            list-style: none;
+            display:flex;
+            justify-content: center;
+            margin-bottom: 0;
+        
+            .tag{
+                text-align: center;
+            }
+        }
+        Button{
+            margin-bottom: 1em;
+        }
+
+    }
+}
+
+.search{
+    padding-top: 2em;
+    h2{
+        font-size: 1.5em;
+    }
+
+    label{
+        padding-right: 1em;
+        font-size: 1.2em;
+        margin-bottom: .5em;
+    }
+
+    input,textarea{ // <<can apply to multiple things
+        background-color: white;
+        color: black;
+        padding: .8em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        border-radius: 1em;
+        border: 5px outset rgb(175, 175, 175);
+        box-sizing: border-box;
+    } 
+    .dropdown{
+            background-color: white;
+            padding: .8em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 5px outset rgb(175, 175, 175);
+            box-sizing: border-box;
+    }
+
+    input[type="submit"] { // can also select things like this
+        color: black;
+        font-weight: bold;
+        font-size: 1.1em;
+        padding: .8em 2em;
+        margin-left: 1em;
+        cursor: pointer;
+        border-radius: 1em;
+        border: 5px outset rgb(175, 175, 175);
+
+        transition: transform .6s; /* Animation off */
+        transform: scale(1); // DECREASE SCALE
+        &:hover{    
+        transition: transform .6s; /* Animation off */
+        transform: scale(1.1); // DECREASE SCALE
+        }
+    }
+}
+
+.article-modal{
+    //padding: 0;
+    img{
+        border-radius: 1em;
+        width: 5em;
+        max-width: 400px;
+        overflow: hidden;
+    }
+    .video{
+        width: 300px;
+        height: 180px ;
+        overflow: hidden;
+    }
+    .cite{
+        padding: 2em;
+    }
+    .source{
+        padding:2em;
+    }
+}
+
+
+@media only screen and (min-width: 810px) {
+
+    .video{
+        height: 205px;
+        width:450px
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .video{
+        height: 225px;
+        width:400px
+    }
+}
+
+
+
+// <Modal class="article-modal">
+// <div class="card text-center shadow" key={post.id}>
+//             <div class="card-header"> </div>
+//             <div class="card-body">
+//                 <h4 class="card-title"> {post.title}  </h4>
+//                 <p class="card-text"> {post.author} - {post.creation}  </p>
+//                 <p class="card-text">{post.summary}</p>
+//                 <img src={post.image}/>
+//                 <br/>
+//                 <cite><a href={post.image} target="_blank" rel="noopener noreferrer">image source</a></cite>
+
+//             <div class="card-footer text-muted"> {post.content} </div>
+            
+//             <Button variant="primary" onClick={() => showArticle(post)}>Close</Button>
+//         </div>
+//     </div>
+// </Modal>
