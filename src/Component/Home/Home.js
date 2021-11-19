@@ -11,7 +11,7 @@ class Home extends Component {
           <div className="home">
             <section className="hero-section">
 
-                <img className="img shadow" src="/Image/baselogo.svg" alt="" />
+                <img className="img shadow" src={require("/Image/baselogo.svg")} alt="" />
 
                 <div className="text">
                     <div className="heading">
