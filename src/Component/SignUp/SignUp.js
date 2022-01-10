@@ -3,7 +3,7 @@ import { Modal, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import Logout from '../Logout'
+import Logout from '../../Function/Logout'
 
 function SignUp() {
 
@@ -90,7 +90,7 @@ function SignUp() {
 
                 <Modal.Footer>
                     <Button type="submit" className="btn btn-dark"> <Logout/> </Button>
-                    <Button onClick={handleClick} type="submit" className="btn btn-primary submit" id="submit">Submit</Button>
+                    <Button onClick={handleClick} type="button" className="btn btn-primary submit" id="submit">Submit</Button>
                 </Modal.Footer>
 
             </Modal>

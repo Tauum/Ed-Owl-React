@@ -1,17 +1,18 @@
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import baselogo from "../../../public/Image/baselogo.svg" 
 
 import React, { Component } from "react";
 
 class Home extends Component {
+
+    
 
     render() {
         return (
           <div className="home">
             <section className="hero-section">
 
-                <img className="img shadow" src={require("/Image/baselogo.svg")} alt="" />
+                <img className="img shadow" src="/Image/baselogo.svg" alt=""/>
 
                 <div className="text">
                     <div className="heading">
@@ -54,15 +55,6 @@ class Home extends Component {
 
                         <li className="card shadow p-3 mb-5">
                             <div className="card-body">
-                            <img className="card-img-top" src="images/notifications.svg" alt="notifications"/>
-                                <h2 className="card-title">Notifications</h2>
-                                <p className="card-text">Visit the notifications tab to keep track of progress wherever you are. See exactly what work needs completing and enable push notifications to know when close to deadlines.</p>
-                                
-                            </div>
-                        </li>
-
-                        <li className="card shadow p-3 mb-5">
-                            <div className="card-body">
                             <img className="card-img-top" src="images/sign-up-process.svg" alt="notifications"/>
                                 <h2 className="card-title">Getting started</h2>
                                 <p className="card-text">Open your account in minutes online and start taking control of your studies right away.</p>
@@ -70,74 +62,6 @@ class Home extends Component {
                             </div>
                         </li>
 
-                    </ul>
-                </div>
-            </section>
-{/* 
-            <section class="testimonials-section">
-                <div>
-                    <ul>
-                        <li>
-                            <img src="Images/Person.jpg" alt="Person"/>
-                            <blockquote>"aaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbb cccccccccccccccccccc"</blockquote>
-                            <cite> - User1</cite>
-                        </li>
-                        
-                        <li>
-                            <img src="Images/Person.jpg" alt="Person"/>
-                            <blockquote>"bbbbbbbbbbbbbbbbbbb  cccccccccccccccccccc dddddddddddddddd"</blockquote>
-                            <cite> - User2</cite>
-                        </li>
-
-                        <li>
-                            <img src="Images/Person.jpg" alt="Person"/>
-                            <blockquote>"cccccccccccccccccccc ddddddddddddddddddd eeeeeeeeeeeeeeeeee"</blockquote>
-                            <cite> - User3</cite>
-                        </li>
-                    </ul>
-                </div>
-            </section> */}
-
-            <section className="posts-section" id="blog">
-                <div className="heading"><h1>Latest Articles</h1></div>
-                <div className="list">
-                    <ul>
-
-                        <li className="card shadow p-3 mb-5">
-                            <div className="card-body">
-                            <img className="card-img-top" src="images/image-currency.jpg" alt="Money"/>
-                                <h2 className="card-title">Whats in store for the new term?</h2>
-                                <cite>By Nurun Nahar</cite>
-                                <p className="card-text">The world is getting smaller and we're becoming more mobile. So why should you  be forced to only recieve money in a single ....</p>
-                            </div>
-                        </li>
-
-                        <li className="card shadow p-3 mb-5">
-                            <div className="card-body">
-                            <img className="card-img-top" src="images/image-restaurant.jpg" alt="Restaraunt"/>
-                                <h2 className="card-title">New GDPR regulation, what it means for new buisnesses?</h2>
-                                <cite>By Nurun Nahar</cite>
-                                <p className="card-text">Our simple budgeting feature allows you to seperate out your spending and set realistic limits each month. That means you ....</p>
-                            </div>
-                        </li>
-
-                        <li className="card shadow p-3 mb-5">
-                            <div className="card-body">
-                            <img className="card-img-top" src="images/image-plane.jpg" alt="Plane"/>
-                                <h2 className="card-title">Tips on where to start with ED OWL</h2>
-                                <cite>By Nurun Nahar</cite>
-                                <p className="card-text">We want you to suceed with your studies. We'll even show you how to with the following ....</p>
-                            </div>
-                        </li>
-
-                        <li className="card shadow p-3 mb-5">
-                            <div className="card-body">
-                            <img className="card-img-top" src="images/image-confetti.jpg" alt="Confetti"/>
-                                <h2 className="card-title">Our Services are now Live!</h2>
-                                <cite>By Nurun Nahar</cite>
-                                <p className="card-text">After a lot of hard work by the whole team, we're excited to launch our first supported module!....</p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </section>

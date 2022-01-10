@@ -4,18 +4,19 @@
     --SecondaryColour: #378f66;
     --GrayPrimary: rgb(129, 125, 125);
     --GraySecondary: rgb(77, 75, 75);
+    scroll-behavior: smooth;
 }
 
 .home{
-    overflow: hidden;
+    background: rgb(12,8,28);
+    background: linear-gradient(0deg, rgba(12,8,28,1) 30%, rgba(110,60,188,1) 39%, rgba(114,103,203,1) 90%);
+    // overflow: hidden;
     width: 100%;
     margin: 0 auto;
     text-align: center;
     
     section{
        padding: 15em 0em 15em 0em;
-       border-bottom-right-radius: 4em;
-       border-bottom-left-radius: 4em;
     }
 
     .heading{
@@ -27,7 +28,7 @@
     .description{
         display: inline-block;
         width: 70%;
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .hero-transition{
@@ -36,18 +37,15 @@
 
     .hero-section{
         padding-top: 8em;
-        background-color: var(--GrayPrimary);
-        // background-color: var(--GrayPrimary);
         align-items: center;
 
         .img{
             height: 270px;
             width: 270px;
             border-radius: 4em;  
-            background-color: var(--GraySecondary);          
+            background-color: #9488a8;          
             transition: transform .6s; /* Animation */
             transform: scale(1);
-
         }
         .img:hover{
             transition: transform .6s; /* Animation */
@@ -85,7 +83,8 @@
     }
 
     .features-section{
-        background-color: var(--GraySecondary);
+        padding-top: 8em;
+        padding-bottom: 8em;
         .description{
             padding-top: 0;
         }
@@ -99,7 +98,7 @@
                 width: 85%;
                 border-radius: 2em;
                 padding: 1em;
-                background-color: rgb(139, 136, 136);
+                background-color: #9488a8;
                 list-style-type: none;
                 margin-bottom: 0.7em;
 
@@ -121,133 +120,19 @@
 
         }
     }
-
-    .testimonials-section{
-        background: wheat;
-        color: white;
-        ul{
-            padding-left: 0;
-        
-            li{
-                list-style-type: none;
-                background: gray;
-                text-align: center;
-                padding: 1.7em 0.7em;
-                width: 80%;
-                margin: 0 auto 4em auto;
-                border-radius: 1em;
-        
-                transition: transform .6s; /* Animation off */
-                transform: scale(1); // DECREASE SCALE
-                
-                img{
-                    width: 4.5em;
-                    height: 4.5em;
-                    border: 5px solid gray;
-                    border-radius: 50%;
-                    margin-top: -4.9em;
-                }
-        
-                &:hover{
-                    border: white;
-                    font-weight: bold; //so when highlighting text changes to bold
-                    transition: transform .6s; /* Animation */
-                    transform: scale(1.19);
-                }
-            }
-        }
-
-    }
-
-    .posts-section{
-        background-color: var(--GrayPrimary);
-        .description{
-            padding-top: 0;
-        }
-
-        .list{
-            margin: auto;
-            display: inline-block;
-            padding-top: 1em;
-            padding-left: 8%;
-            li{
-                width: 85%;
-                border-radius: 2em;
-                padding: 1em;
-                background-color: rgb(139, 136, 136);
-                list-style-type: none;
-                margin-bottom: 0.7em;
-
-                h2{
-                    font-size: 1.3em;
-                }
-                p{
-                    font-size: .8em;
-                }
-
-                transition: transform .6s; /* Animation off */
-                transform: scale(1); // DECREASE SCALE
-
-                &:hover{
-                    transition: transform .6s; /* Animation */
-                    transform: scale(1.19);
-                }
-            }
-
-        }
-    }
-
-    // .posts-section{
-    //     .heading{
-    
-    //     }
-    //     ul{
-    //     width: 90%;
-    //     display: block;
-    //     margin: auto;
-        
-    //     padding-left: 0;
-    
-    //         li{
-    //             background-color: rgb(230, 230, 230);
-    //             list-style-type: none;
-    //             margin-top: 0.2em;
-    //             padding: 0.3em;
-    //             border-radius: 2em;
-    //             margin-bottom: 2em;
-    
-    //             img{
-    //                 width: 100%;
-    //                 max-height: 210px;
-    //             }
-    
-    //             cite{
-    
-    //             }
-                
-    //             h2{
-    
-    //             }
-                
-    //             p{
-    
-    //             }
-    
-    //         }
-    //     }
-    // }
 
     .contact-Section{
+        // background-color: #0c081c;
         width: 100%;
-        padding-top: 15em;
+        padding-top: 8em;
         padding-bottom: 8em;
-        background: rgb(31, 30, 30);
         color: rgb(204, 196, 196);
         margin: auto;
         text-align: start;
     
         h2{
             font-size: 2em;
+            text-align: center;
         }
     
         label{

@@ -1,8 +1,11 @@
-body{
-    background-color: gray;
-}
 h1{
     padding-top: 3em;
+}
+
+.blog-container{
+background: rgb(166,141,173);
+background: linear-gradient(0deg, rgba(166,141,173,1) 0%, rgba(115,104,202,1) 100%);
+padding-bottom: 10em;
 }
 
 .list{

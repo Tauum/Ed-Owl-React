@@ -1,0 +1,17 @@
+
+// this doesnt work
+.page{
+    background: rgb(87,73,217);
+    background: linear-gradient(0deg, #6ba3d7 0%,#675bda 82%, );
+
+    .a{
+        position: fixed;
+    }
+    *{
+        -ms-overflow-style: none;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+}

@@ -1,0 +1,18 @@
+.page {
+  background: #5749d9;
+  background: -webkit-gradient(linear, left bottom, left top, from(#6ba3d7), color-stop(82%, #675bda));
+  background: linear-gradient(0deg, #6ba3d7 0%, #675bda 82%);
+}
+
+.page .a {
+  position: fixed;
+}
+
+.page * {
+  -ms-overflow-style: none;
+}
+
+.page ::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=Dashboard2.css.map */

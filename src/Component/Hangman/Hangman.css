@@ -1,0 +1,29 @@
+.hangman-container {
+  background: #beaee2;
+  background: -webkit-gradient(linear, left bottom, left top, from(#beaee2), to(#9b72aa));
+  background: linear-gradient(0deg, #beaee2 0%, #9b72aa 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+}
+
+.hint p {
+  display: none;
+}
+
+.buttonhint {
+  margin-right: 1.1em;
+}
+
+.buttons {
+  margin: 4em;
+}
+
+.buttons .letterbutton {
+  margin: .3em;
+}
+/*# sourceMappingURL=Hangman.css.map */

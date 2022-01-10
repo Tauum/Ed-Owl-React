@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,OAAc;EAC1B,UAAU,EAAE,8CAA+C;CAY9D;;AAdD,AAII,KAJC,CAID,EAAE,CAAA;EACE,QAAQ,EAAE,KAAK;CAClB;;AANL,AAOI,KAPC,CAOD,CAAC,CAAA;EACG,kBAAkB,EAAE,IAAI;CAC3B;;AATL,AAUI,KAVC,CAUD,mBAAmB,CAAC;EAChB,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "Dashboard2.scss"
+    ],
+    "names": [],
+    "file": "Dashboard2.css"
+}

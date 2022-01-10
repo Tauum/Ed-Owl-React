@@ -14,6 +14,9 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
   }
 };
 
+var timeLimit = 300; // intended seconds ammount
+
+timeLimit = timeLimit * 1000; // converts from ms to seconds i presume
 
 export default function timer() {
   
@@ -21,7 +24,7 @@ export default function timer() {
     <>  
         <br/><br/><br/><br/><br/>
 
-        <Countdown date={Date.now() + 5000}>
+        <Countdown date={Date.now() + timeLimit}>
             <Completionist />
         </Countdown>
     </>

@@ -9,8 +9,6 @@ export default function Blog() {
     var errorVal = new Boolean(false);
 
     const[searchTitle, setSearchTitle]=useState("")
-    const[searchTag, setSearchTag]=useState("")
-    const [ data, setData ]=useState('')
 
     // for search function
     const handleClick=(e)=>{
@@ -18,9 +16,9 @@ export default function Blog() {
         
         // rework this to locally store the main list so when search is set back to "" it will just display the local list to prevent grabbing it again
 
-        if(searchTitle !== null && searchTitle !== ""){
+        if(searchTitle !== ""){
             var refine = { title : searchTitle }
-            fetch(`${window.ipAddress.ip}/Post/getPostsContainingTitleAndTag`, {
+            fetch(`${window.ipAddress.ip}/Post/getPostsContainingTitle`, {
                 method: "POST",  
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify( refine )
@@ -34,7 +32,7 @@ export default function Blog() {
             })
         }
         else{
-            fetch ("http://localhost:8080/Post/")
+            fetch ("http://localhost:8080/Post/allOrderByDate")
             .then(res=>res.json())
             .then((result)=>{
                 setPosts(result)
@@ -54,22 +52,10 @@ export default function Blog() {
 
     useEffect(()=>{
 
-        fetch (`${window.ipAddress.ip}/Post/`)
+        fetch (`${window.ipAddress.ip}/Post/allOrderByDate`)
         .then(res=>res.json())
         .then((result)=>{
             setPosts(result)
-        })
-    },[])
-
-    // rework this so tags is an included call for posts -> get posts -> seperate tags -> put tags in list
-    //for getting tags
-    const[tags, setTags]=useState([])
-
-    useEffect(()=>{
-        fetch(`${window.ipAddress.ip}/Tag/`)
-        .then(res=>res.json())
-        .then((result)=>{
-            setTags(result)
         })
     },[])
 
@@ -79,20 +65,13 @@ export default function Blog() {
 
 return (
 
-    <div>
+    <div className='blog-container'>
         <h1>Blog Posts</h1>
 
         <div className="search"> 
             <form action="">
                 <label htmlFor="searchF"> <h2> Refine: </h2> </label>
                 <input type="text" value={searchTitle} onChange={(e)=>setSearchTitle(e.target.value)} name="search"/>
-
-                <select className="dropdown" id="dropdown" name = "dropdown" defaultValue={searchTag[0]} onChange={(e)=>setSearchTag(e.target.value)}>
-
-                    <option value = "Any">Any</option>
-                    {tags.map(tag=>( <option value = {tag.id} key={tag.id}>{tag.content}  </option> ))}
-
-                </select>
 
                 <input type="submit" className="Send-Message-CTA shadow" value="Search" onClick={handleClick}/>
             </form>
@@ -106,13 +85,7 @@ return (
                 <div className="card-body">
                     <h4 className="card-title"> {post.title}  </h4>
                     <p className="card-text"> {post.author}  </p>
-                    
-                    <ul className="tags">
-                        <li className="tag auto"> <p>Tags -</p> </li>
-                        {tags.map(tag=>( 
-                            <li className="tag auto" key={tag.id}> <p> {tag.content} </p> </li>
-                        ))}
-                    </ul>
+
                     <p className="card-text">{post.summary}</p>
                     <Button variant="primary" onClick={() => showArticle(post)}>Full Article</Button>
                     <div className="card-footer text-muted"> {post.creation} </div>
@@ -132,8 +105,12 @@ return (
 
                     {/* <img src={post.image} alt="post image" width="300"/> */}
                     {/* <cite><a href={post.image} target="_blank" rel="noopener noreferrer">image source</a></cite> */}
-
+                    
+                    {post.video
+                    ? 
                     <iframe className="video shadow" src={post.video} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    :  <br/>
+                    }
                     <br/>
 
                 <div className="card-footer text-muted" onCopy={handleCopy}> {post.content} </div>

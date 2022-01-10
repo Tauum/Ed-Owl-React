@@ -1,0 +1,99 @@
+
+
+
+.carousel{
+    width: 25em;
+    margin: 0 auto;
+    .item{
+        .elementiconbutton{ 
+             border-radius: 2em;
+             width: 14em;
+             height: 14em;
+             padding-left: 1.8em;
+                 .circle{
+                     padding-left: 0.9em;
+                     padding-right: 4em;
+                     background: rgb(212, 212, 212);
+                     height: 10em;
+                     width:10em;
+                     border: 0.1em black dashed;
+                     border-radius: 6em;
+                     button{
+                         
+                     }
+                     svg{
+                         padding-top: 0.8em;
+                         width: 8em;
+                     }
+                     
+                 }
+             
+
+        }
+        padding-left: 0.2em;
+        h3{
+            padding-top: 1em;
+        }
+        p{
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+       
+        .circle{
+            padding-top: 0.2em;
+            padding-left: 0.1em;
+        }
+
+        .quiz{ 
+            background-color: #936C88;
+            .circle{
+                svg{
+                    padding-top: 1.2em;
+                }
+            }
+        }
+
+        .filltheblanks{ 
+            background-color: #69967E; 
+        }
+        
+        .hangman{ background-color: #5780a8; 
+            .circle{
+                svg{
+                    padding-top: 0.4em;
+                }
+            }
+        }
+        svg:hover{
+            transition: transform .6s; /* Animation */
+            transform: scale(1.25);
+        }
+        
+        svg{
+            transition: transform .6s; /* Animation */
+            transform: scale(1);
+        }
+        .blog{ background-color: #b9a06d; 
+
+            .circle{
+                svg{
+                    svg{
+                        transition: transform .6s; /* Animation */
+                        transform: scale(1);
+                    }
+                    
+                }
+                svg:hover{
+                    transition: transform .6s; /* Animation */
+                    transform: scale(1.3);
+                }
+            }
+
+        }
+    }
+}
+
+
+
+

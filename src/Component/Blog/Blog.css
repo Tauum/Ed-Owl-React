@@ -1,9 +1,12 @@
-body {
-  background-color: gray;
-}
-
 h1 {
   padding-top: 3em;
+}
+
+.blog-container {
+  background: #a68dad;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a68dad), to(#7368ca));
+  background: linear-gradient(0deg, #a68dad 0%, #7368ca 100%);
+  padding-bottom: 10em;
 }
 
 .list {
