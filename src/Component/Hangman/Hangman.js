@@ -35,7 +35,7 @@ export default function Hangman(props) {
   useEffect(() => {
     if (submitHangman){
         var currentDate = new Date()
-        fetch (`${window.ipAddress.ip}/HangmanSubmitted/add`,{
+        fetch (`${window.ipAddress.ip}/SubmittedHangman/add`,{
             method: "POST",  
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(
@@ -45,7 +45,7 @@ export default function Hangman(props) {
                     hintUsed : hintUsed,
                     incorrect : (5 - lives), 
                     completed : completed,
-                    submissionDate : currentDate
+                    generatedDate : currentDate
                 }
             ) 
           })
@@ -100,30 +100,36 @@ export default function Hangman(props) {
                 setCompleted(true);
                 setSubmitHangman(true);
             }
+            else{
+                setSubmitHangman(true);
+            }
         }
     
         return (
-            <div className='hangman-container'>
+            <div className='hangman-container body'>
                 <br/>    <br/>    <br/>
-                <h1> {hangman.title}  </h1>  <br/> 
-                <p> Find the hidden word by entering letters</p>  <br/>
-                <h2> Lives: {lives} </h2> <br/>
+
+                <div className='hangman-main-content'>
+                    <h1> {hangman.title}  </h1>  <br/> 
+                    <p> Find the hidden word by entering letters</p>  <br/>
+                    <h2> Lives: {lives} </h2> <br/>
+                    
+                    <div className="hint"> 
+                        <Button onClick={handleHintClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Hint</Button>
+                        <p id="hintp"> {hangman.hint} </p>
+                    </div>
+
+                    <br/>
+                    <h2>{displayWord}</h2>
+
+                    <div className='buttons'>
+                        {alphabet.map((character, index) => 
+                        <button className='letterbutton' key={index} onClick={() => handleLetterClicked(character, displayWord, hangman, hintUsed, lives)}> {character} </button>)}
+                    </div>
+    
+                    <Button onClick={handleSubmitClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Submit</Button>
                 
-                <div className="hint"> 
-                    <Button onClick={handleHintClicked} type="buton" className="btn btn-dark submit buttonhint" id="hintbutton">Hint</Button>
-                    <p id="hintp"> {hangman.hint} </p>
                 </div>
-
-                <br/>
-                <h2>{displayWord}</h2>
-
-                <div className='buttons'>
-                    {alphabet.map((character, index) => 
-                    <button className='letterbutton' key={index} onClick={() => handleLetterClicked(character, displayWord, hangman, hintUsed, lives)}> {character} </button>)}
-                </div>
-
-                <Button onClick={handleSubmitClicked} type="buton" className="btn btn-dark submit buttonhint" id="hintbutton">Submit</Button>
-                
                 <Modal className="article-modal" show={show}>
                     <div className="card text-center shadow">
                         <div className="card-header">

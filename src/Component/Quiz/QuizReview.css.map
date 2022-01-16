@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EACd,GAAG,EAAE,IAAI;CACR",
+    "sources": [
+        "QuizReview.scss"
+    ],
+    "names": [],
+    "file": "QuizReview.css"
+}

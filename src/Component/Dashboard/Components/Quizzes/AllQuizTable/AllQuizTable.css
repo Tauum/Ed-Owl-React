@@ -8,6 +8,10 @@
   background-color: #95A5A6;
 }
 
+.btntable {
+  margin-top: 0em;
+}
+
 h2 {
   font-size: 26px;
   margin: 20px 0;
@@ -19,6 +23,7 @@ h2 small {
 }
 
 .responsive-table {
+  padding-right: 0;
   padding-left: 0;
 }
 
@@ -31,11 +36,12 @@ h2 small {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 25px;
 }
 
 .responsive-table .table-header {
-  background-color: #95A5A6;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -98,4 +104,4 @@ h2 small {
     text-align: right;
   }
 }
-/*# sourceMappingURL=UncompleTable.css.map */
+/*# sourceMappingURL=AllQuizTable.css.map */

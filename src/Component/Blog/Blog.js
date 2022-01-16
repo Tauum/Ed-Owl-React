@@ -79,15 +79,15 @@ return (
 
         <div className="list">
             {posts.map(post=>(
-            <div className="card text-center shadow" key={post.id} >
+            <div className="card text-center shadow articlediv" key={post.id} >
                 <div className="card-header">
                 </div>
                 <div className="card-body">
-                    <h4 className="card-title"> {post.title}  </h4>
+                    <h4 className="card-title articletitle"> {post.title}  </h4>
                     <p className="card-text"> {post.author}  </p>
 
                     <p className="card-text">{post.summary}</p>
-                    <Button variant="primary" onClick={() => showArticle(post)}>Full Article</Button>
+                    <Button variant="btn btn-warning shadow blogbutton" onClick={() => showArticle(post)}>Full Article</Button>
                     <div className="card-footer text-muted"> {post.creation} </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@ return (
         </div>
 
 {/* THIS BELOW WORKS BUT ONLY AFTER COMMENTING IT BACK IN - I THINK ITS TRYING TO LOAD IT BEFORE THE ELEMENTS EXIST */}
-     <Modal className="article-modal" show={show} onHide={handleClose}>
+     <Modal className="article-modal blog-modal" show={show} onHide={handleClose}>
         <div className="card text-center shadow" key={post.id}>
                 <div className="card-header"> </div>
                 <div className="card-body">

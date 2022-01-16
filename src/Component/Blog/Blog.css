@@ -3,10 +3,42 @@ h1 {
 }
 
 .blog-container {
-  background: #a68dad;
-  background: -webkit-gradient(linear, left bottom, left top, from(#a68dad), to(#7368ca));
-  background: linear-gradient(0deg, #a68dad 0%, #7368ca 100%);
+  color: white;
   padding-bottom: 10em;
+  overflow: hidden;
+}
+
+.blog-modal {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+.articlediv {
+  color: black;
+  margin: 1em;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.articlediv:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  /* border-color: white */
+  border: 1px solid white;
+}
+
+.articlediv:hover .articletitle {
+  font-weight: bold;
 }
 
 .list {
@@ -37,7 +69,7 @@ h1 {
   text-align: center;
 }
 
-.list .card Button {
+.blogbutton {
   margin-bottom: 1em;
 }
 

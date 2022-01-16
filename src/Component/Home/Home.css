@@ -9,16 +9,14 @@
 }
 
 .home {
-  background: #0c081c;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #0c081c), color-stop(39%, #6e3cbc), color-stop(90%, #7267cb));
-  background: linear-gradient(0deg, #0c081c 30%, #6e3cbc 39%, #7267cb 90%);
+  color: white;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 
 .home section {
-  padding: 15em 0em 15em 0em;
+  padding: 5em 0em 5em 0em;
 }
 
 .home .heading {
@@ -47,7 +45,9 @@
   height: 270px;
   width: 270px;
   border-radius: 4em;
-  background-color: #9488a8;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
   -webkit-transition: -webkit-transform .6s;
   transition: -webkit-transform .6s;
   transition: transform .6s;
@@ -69,48 +69,25 @@
 }
 
 .home .hero-section .heading h1 {
-  padding-top: 1.5em;
+  padding-top: 1.6em;
 }
 
-.home .hero-section .btn {
-  margin: 1em;
-  border-color: white;
-  -webkit-transition: -webkit-transform .6s;
-  transition: -webkit-transform .6s;
-  transition: transform .6s;
-  transition: transform .6s, -webkit-transform .6s;
-  /* Animation */
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.home .hero-section .btn:hover {
-  font-weight: bold;
-  -webkit-transition: -webkit-transform .6s;
-  transition: -webkit-transform .6s;
-  transition: transform .6s;
-  transition: transform .6s, -webkit-transform .6s;
-  /* Animation */
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  border-color: white;
-}
-
-.home .hero-section .btn-dark {
+.home .hero-section .btn-warning {
   margin-top: 1em;
   width: 5em;
   margin-right: 3em;
+  color: black;
 }
 
-.home .hero-section .btn-primary {
+.home .hero-section .btn-red {
   margin-top: 1em;
   background-color: #e65050;
   width: 5em;
+  color: black;
 }
 
 .home .features-section {
   padding-top: 8em;
-  padding-bottom: 8em;
 }
 
 .home .features-section .description {
@@ -125,10 +102,13 @@
 }
 
 .home .features-section .list li {
+  color: white;
   width: 85%;
   border-radius: 2em;
   padding: 1em;
-  background-color: #9488a8;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
   list-style-type: none;
   margin-bottom: 0.7em;
   -webkit-transition: -webkit-transform .6s;
@@ -160,11 +140,10 @@
 
 .home .contact-Section {
   width: 100%;
-  padding-top: 8em;
-  padding-bottom: 8em;
-  color: #ccc4c4;
+  padding-top: 2em;
   margin: auto;
   text-align: start;
+  margin-bottom: 5em;
 }
 
 .home .contact-Section h2 {
@@ -180,12 +159,12 @@
 
 .home .contact-Section input, .home .contact-Section textarea {
   background-color: white;
-  color: whitesmoke;
+  color: black;
   width: 100%;
   padding: .8em;
   margin-bottom: 1em;
   border-radius: 1em;
-  border: 5px solid gray;
+  border: 5px outset #afafaf;
   border-style: outset;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -202,7 +181,7 @@
   cursor: pointer;
   margin: auto;
   border-radius: 1em;
-  border: 5px outset gray;
+  border: 5px outset #afafaf;
   -webkit-transition: -webkit-transform .6s;
   transition: -webkit-transform .6s;
   transition: transform .6s;
@@ -220,5 +199,43 @@
   /* Animation off */
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.home .contact-Section .contact-details {
+  text-align: center;
+  border-radius: 4em;
+  width: 50%;
+  margin: auto;
+  margin-top: 5em;
+  padding: 1em;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  color: white;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation off */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.home .contact-Section .contact-details h2 {
+  font-size: 1.6em;
+}
+
+.home .contact-Section .contact-details p {
+  font-size: 0.9em;
+}
+
+.home .contact-Section .contact-details:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.19);
+          transform: scale(1.19);
 }
 /*# sourceMappingURL=Home.css.map */

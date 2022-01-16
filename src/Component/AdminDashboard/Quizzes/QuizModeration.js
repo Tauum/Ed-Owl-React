@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 export default function QuizModeration() {
 
     const [loadUncompleted, setLoadUncompleted] = useState(false) 
-    const [uncompletedQuizList, setUncompletedQuizList] = useState([]) 
-
     const[ parentToChildData, setParentToChildData]=useState([])
 
     useEffect(() => {

@@ -1,12 +1,26 @@
 .navbar {
+  background: #0765c3;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
+  background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
   padding-top: 1.5em;
+  padding-bottom: 2em;
 }
 
-.edowl {
-  font-size: 2em;
+.bolton-img {
+  margin-left: 0;
+  max-width: 150px;
+}
+
+.edowl-title {
+  font-size: 2.5em;
   text-decoration: none;
   color: white;
   font-weight: 500;
+  font-style: bold;
+}
+
+.edowl-title:hover {
+  color: black;
 }
 
 .Main-element {
@@ -17,10 +31,89 @@
   padding-left: 1em;
 }
 
+.Main-element:hover {
+  color: black;
+}
+
 .Secondary-element {
   text-decoration: none;
   padding-top: 0.5em;
   text-align: center;
+}
+
+.drop-element {
+  color: black;
+}
+
+.drop-element:hover {
+  color: black;
+}
+
+.announcement ul {
+  margin-bottom: 0;
+}
+
+.announcement ul li {
+  padding-top: 0.5em;
+}
+
+.nav-note-complete .nav-note-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 0.4em;
+  padding-left: .8em;
+}
+
+.nav-note-complete .nav-note-form .nav-note-submit {
+  margin: 0.3em;
+  margin-right: 1em;
+  color: black;
+}
+
+.nav-note-complete .nav-note-form .nav-note-submit:hover {
+  background: #ce902c;
+}
+
+.nav-note-complete .nav-note-form .nav-note-input {
+  height: 2.9em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-note-complete .nav-note-list .note-elemenet {
+  padding: 0;
+}
+
+.nav-note-complete .nav-note-list .note-elemenet .nav-note-delete {
+  margin: 0;
+}
+
+.nav-note-complete .nav-note-list .note-elemenet .nav-note-delete:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  margin: 0;
+  background: #c28829;
+}
+
+.announcement-container .announcement-list {
+  padding: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.Secondary-Main-element {
+  color: black;
 }
 
 .wave {
@@ -42,12 +135,16 @@
 }
 
 .wave .shape-fill {
-  fill: #212529;
+  fill: #0765c3;
 }
 
 @media only screen and (min-width: 810px) {
   .wave .svg {
     height: 10%;
+  }
+  .bolton-img {
+    margin-left: 0;
+    max-width: 220px;
   }
 }
 

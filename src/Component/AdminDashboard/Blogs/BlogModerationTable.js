@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
-import { Button} from 'react-bootstrap';
 
 export default function BlogModerationTable({parentToChild}) {
 

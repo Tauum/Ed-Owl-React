@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Logout from '../../Function/Logout'
+import './SignUp.css'
 
 function SignUp() {
 
@@ -54,7 +55,7 @@ function SignUp() {
     return (
         <div>
             {/* show here cannot be disabled above???? */}
-            <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} className="signup-all">
 
                 <Modal.Header>
                     <Modal.Title>Initial Sign-up Process</Modal.Title>
@@ -88,9 +89,9 @@ function SignUp() {
                     </Form>
                 </Modal.Body>
 
-                <Modal.Footer>
-                    <Button type="submit" className="btn btn-dark"> <Logout/> </Button>
-                    <Button onClick={handleClick} type="button" className="btn btn-primary submit" id="submit">Submit</Button>
+                <Modal.Footer className='signup-modal-footer'>
+                    <Button type="submit" className="btn btn-dark sign-up-buttons"> <Logout/> </Button>
+                    <Button onClick={handleClick} type="button" className="btn btn-primary sign-up-buttons submit" id="submit">Submit</Button>
                 </Modal.Footer>
 
             </Modal>

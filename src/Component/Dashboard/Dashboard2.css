@@ -1,18 +1,40 @@
 .page {
-  background: #5749d9;
-  background: -webkit-gradient(linear, left bottom, left top, from(#6ba3d7), color-stop(82%, #675bda));
-  background: linear-gradient(0deg, #6ba3d7 0%, #675bda 82%);
+  color: white;
+  padding-bottom: 20em;
 }
 
-.page .a {
-  position: fixed;
+.page h1 {
+  padding-bottom: 2em;
 }
 
-.page * {
-  -ms-overflow-style: none;
+.accordian-container {
+  margin-left: 1em;
+  margin-right: 1em;
+  color: black;
 }
 
-.page ::-webkit-scrollbar {
-  display: none;
+.accordian-container .container {
+  width: 5em;
+}
+
+@media only screen and (min-width: 810px) {
+  .accordian-container {
+    margin-left: 7em;
+    margin-right: 7em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .accordian-container {
+    margin-left: 13em;
+    margin-right: 13em;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .accordian-container {
+    margin-left: 22em;
+    margin-right: 22em;
+  }
 }
 /*# sourceMappingURL=Dashboard2.css.map */

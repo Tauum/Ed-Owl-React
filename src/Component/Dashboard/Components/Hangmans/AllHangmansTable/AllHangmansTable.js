@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
-import { Button} from 'react-bootstrap';
 
-import './Table.css'
+import './AllHangmansTable.css'
 
-export default function Table({parentToChild}) {
+export default function AllHangmansTable({parentToChild}) {
 
     return (    
         <div>
@@ -14,7 +13,7 @@ export default function Table({parentToChild}) {
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Subject</div>
                     <div className="col col-3">Date</div>
-                    <div className="col col-4">Value</div>
+                    <div className="col col-4">Score available</div>
                     <div className="col col-5">Start</div>
                     </li>
 
@@ -23,7 +22,7 @@ export default function Table({parentToChild}) {
                             <div className="col col-1" data-label="Title">{hangman.title}</div>
                             <div className="col col-2" data-label="Subject">{hangman.subject}</div>
                             <div className="col col-3" data-label="Date">{hangman.generatedDate}</div>
-                            <div className="col col-4" data-label="Value">{hangman.value}</div> 
+                            <div className="col col-4" data-label="Score available">{hangman.value}</div> 
                             <div className="col col-5" data-label="Start">
                                 
                                 <Link to={ { pathname:"/Hangman", state: hangman }}>

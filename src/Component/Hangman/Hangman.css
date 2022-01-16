@@ -1,7 +1,5 @@
 .hangman-container {
-  background: #beaee2;
-  background: -webkit-gradient(linear, left bottom, left top, from(#beaee2), to(#9b72aa));
-  background: linear-gradient(0deg, #beaee2 0%, #9b72aa 100%);
+  color: white;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -9,21 +7,41 @@
   left: 0;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow: inset 0 0 10px #000000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.hint p {
+.hangman-container .hangman-main-content {
+  -webkit-box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  width: 70%;
+  background: #0867c6;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0867c6), to(#0765c3));
+  background: linear-gradient(0deg, #0867c6 0%, #0765c3 100%);
+  border-radius: 2em;
+  padding-bottom: 3em;
+}
+
+.hangman-container .hint p {
   display: none;
 }
 
-.buttonhint {
+.hangman-container .buttonhint {
   margin-right: 1.1em;
 }
 
-.buttons {
+.hangman-container .buttons {
   margin: 4em;
 }
 
-.buttons .letterbutton {
+.hangman-container .buttons .letterbutton {
   margin: .3em;
 }
 /*# sourceMappingURL=Hangman.css.map */

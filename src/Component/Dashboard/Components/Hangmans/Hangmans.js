@@ -1,36 +1,47 @@
 import React, {useState, useEffect} from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
-import './Hangmans.css';
-import Table from "./Table/Table"
-
+import AllHangmansTable from "./AllHangmansTable/AllHangmansTable"
+import AllHangmansAttemptedTable from "./AllHangmaAttemptedTable/AllHangmaAttemptedTable"
 
 export default function Hangmans() {
 
-    const [loadUncompleted, setLoadUncompleted] = useState(false) 
-    const [uncompletedHangmanList, setUncompletedHangmanList] = useState([]) 
+    const [LoadAll, setLoadAll] = useState(false)
+    const [parentToChildData, setParentToChildData] = useState([])
 
-    const[ parentToChildData, setParentToChildData]=useState([])
+    const [parentToChildData2, setParentToChildData2] = useState([])
+    const [loadAttempted, setloadAttempted] = useState(false)
 
     useEffect(() => {
-        if (loadUncompleted === true){
-        fetch(`${window.ipAddress.ip}/Hangman`)
-        .then(response => response.json())
-        .then(json => { 
-            setParentToChildData(json);
-         })
+        if (LoadAll){
+            fetch(`${window.ipAddress.ip}/Hangman/newestOrder`)
+            .then(response => response.json())
+            .then(json => { 
+                setParentToChildData(json);
+                })
+            }
+        // v CHANGE THIS REQUEST TO STUFF THAT HAS BEEN ATTEMPTED SOMEHOW
+        if (loadAttempted){
+            fetch(`${window.ipAddress.ip}/SubmittedHangman/getForUser/${window.BackendUser.id}`)
+            .then(response => response.json())
+            .then(json => {
+                setParentToChildData2(json);
+                console.log(json)
+            })
         }
-      },[loadUncompleted]) 
+    }, [LoadAll, loadAttempted])
+
+
 
 
     return (    
         <div>
             <h1> Hangman </h1>
-            <div className='container'>
-                <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}>
+            <div className='accordian-container'>
+                <Accordion className="accordian shadow" onClick= {() => {setLoadAll(true)}}>
                     <Card className='card'>
                         <Card.Header className='header'>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Uncompleted
+                            Available
                             </Accordion.Toggle>
                         </Card.Header>
                     <Accordion.Collapse eventKey="0">
@@ -39,7 +50,7 @@ export default function Hangmans() {
                             These are Hangman tasks which you have not attempted yet.
                             <br/><br/>
                             {parentToChildData.length > 0 &&
-                                <Table parentToChild={parentToChildData}/>
+                                <AllHangmansTable parentToChild={parentToChildData}/>
                             }       
                     
                         </Card.Body>
@@ -47,21 +58,21 @@ export default function Hangmans() {
                     </Card>
                 </Accordion>
 
-                <Accordion>
+                <Accordion className="accordian shadow" onClick={() => { setloadAttempted(true) }}>
                     <Card>
                         <Card.Header>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Completed
+                            Attempted
                             </Accordion.Toggle>
                         </Card.Header>
                     <Accordion.Collapse eventKey="0">
 
                         <Card.Body>
                             These are Hangman tasks which you have attempted.
-                            <br/>
-                            You can review the results by clicking the play button.
-                            <br/>
-                            (PUT TABLE HERE)
+                            <br/><br/>
+                                {parentToChildData2.length > 0 &&
+                                    <AllHangmansAttemptedTable parentToChild={parentToChildData2} />
+                                }
                         </Card.Body>
 
                     </Accordion.Collapse>

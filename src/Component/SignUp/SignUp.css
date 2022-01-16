@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=SignUp.css.map */
+.signup-modal-footer {
+  margin: 1rem;
+}
+
+.signup-modal-footer .sign-up-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2em;
+}
+
+.signup-all {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+/*# sourceMappingURL=SignUp.css.map */

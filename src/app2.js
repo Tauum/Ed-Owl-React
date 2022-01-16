@@ -20,8 +20,6 @@ function App() {
 
   if (isLoading) { return <div> Loading... </div> }
   else {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAA")
-
     // replace this with grabbing of user
     if (isAuthenticated){
       //this loops twice for some reason

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import QuizModeration from "./Quizzes/QuizModeration"
 import HangmanModeration from "./Hangmans/HangmanModeration"
 import BlogModeration from "./Blogs/BlogModeration"
@@ -8,8 +8,6 @@ import UserModeration from './User/UserModeration';
 
 export default function AdminDashboard() {
 
-  useEffect(() => {
-  },[]) 
 
 return (    
   <div className='page'>
@@ -19,7 +17,6 @@ return (
     <BlogModeration className="blogs"/>
     <BlankFillModeration className="blankFills"/>
     <UserModeration className="users"/>
-    <br/><br/><br/><br/><br/><br/>
   </div>
   );
 

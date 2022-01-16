@@ -1,6 +1,6 @@
+
+
 .quiz-main {
-    background: rgb(124,48,158);
-    background: linear-gradient(0deg, rgba(124,48,158,1) 0%, rgba(155,114,170,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,64 +14,62 @@
     box-shadow:         inset 0 0 10px #000000;   
 
     }
-  
-  .question {
-    margin: 1em;
-    padding: 2em;
-    background-color: #9488a8;
-    border-radius: 15px;
+ 
+  .quiz-container{
+    padding-top: 4em;
     color: white;
+    background: #0765c3;
+    border-radius: 1em;
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
-    }
+  }
   
   
   .answer{
-    width: 100%;
     font-size: 16px;
-    color: #ffffff;
-    background-color: #9488a8;
+    
     display: inline-block;
     padding: 0.5em;
     align-items: center;
-    border-radius: 1em;
-    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
     text-align: center;
     margin-top: 1em;
       .answer-text{
         text-align: center;
+        color: black;
       }
     }
-    .btn{
-      margin: 1em;
-      transition: transform .6s; /* Animation */
-      transform: scale(1.2);
-      cursor: pointer;
-      &:hover{
-        font-weight: bold; //so when highlighting text changes to bold
-        transition: transform .6s; /* Animation */
-        transform: scale(1.5);
-        border-color: white;
-      }
-  }
-  .btn-dark{
-    width: 5em;
-  }
+    ul{
+      padding-left: 0;
+      padding: 2em;
+    }
+  
 
-  .answbutton{
+  .button-quiz{
     margin-top: 2em;
-    background-color: #9062af;
+    background: rgb(194,136,41);
+    background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
     min-width: 16em;
     border-radius: 1em;
+    transition: transform .6s; /* Animation */
+    transform: scale(1);
+    &:hover{
+      background: rgb(194,136,41);
+      background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+      border: white;
+      transition: transform .6s; /* Animation */
+      transform: scale(1.19);
+  }
+
+  .answer-text{
+    color: white;
+  }
+
+}
+
+.otherbutton{
     transition: transform .6s; /* Animation */
     transform: scale(1);
     &:hover{
       transition: transform .6s; /* Animation */
       transform: scale(1.19);
   }
-
-  .answer-list{
-      padding-left: 0;
-      margin: 0;
-  }
-
 }

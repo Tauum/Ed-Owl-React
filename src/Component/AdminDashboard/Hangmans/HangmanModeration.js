@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 export default function HangmanModeration() {
 
     const [loadUncompleted, setLoadUncompleted] = useState(false) 
-    const [uncompletedHangmanList, setUncompletedHangmanList] = useState([]) 
-
     const[ parentToChildData, setParentToChildData]=useState([])
 
     useEffect(() => {

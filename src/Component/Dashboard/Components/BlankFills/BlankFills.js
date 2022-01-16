@@ -8,7 +8,7 @@ export default function BlankFills() {
     return (    
         <div>
             <h1> Fill the blank </h1>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow">
                     <Card className='card'>
                         <Card.Header className='header'>

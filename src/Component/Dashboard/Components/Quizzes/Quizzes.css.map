@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACI,UADM,CACN,UAAU,CAAA;EACN,KAAK,EAAE,GAAG;CACb",
-    "sources": [
-        "Quizzes.scss"
-    ],
-    "names": [],
-    "file": "Quizzes.css"
-}

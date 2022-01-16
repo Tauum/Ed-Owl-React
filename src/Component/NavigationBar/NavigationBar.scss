@@ -1,11 +1,26 @@
 .navbar{
+    background: rgb(7,101,195);
+background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
+// background-color: rgb(33,37,41);
+
     padding-top: 1.5em;
+    padding-bottom: 2em;
 }
-.edowl{
-    font-size: 2em;
+
+.bolton-img{
+    margin-left: 0;
+    max-width: 150px;
+}
+
+.edowl-title{
+    font-size: 2.5em;
     text-decoration: none;
     color: white;
     font-weight: 500;
+    font-style: bold;
+    &:hover{
+        color: black;
+    }
 }
 .Main-element{
         text-decoration: none;
@@ -13,18 +28,90 @@
         padding-top: 0.5em;
         cursor: pointer;
         padding-left: 1em;
+        &:hover{
+            color: black;
+        }
     }
 
-// .Drop-element{
-//     .title{
-//     }
-// }
-
 .Secondary-element{
+
     text-decoration: none;
     padding-top: 0.5em;
     text-align: center; // this doesnt work
+}
+
+.drop-element{
+    color: black;
+    &:hover{
+        color: black;
+    }
+}
+
+.announcement{
+    ul{
+        margin-bottom: 0;
+        li{
+            padding-top: 0.5em;
+        }
+    }
+}
+.nav-note-complete{
+
+    .nav-note-form{
+
+        .nav-note-submit{
+            margin: 0.3em;
+            margin-right: 1em;
+            color: black;
+            &:hover{
+                background: rgb(206, 144, 44);
+            }
+        }
+        
+        
+        .nav-note-input{
+            height: 2.9em;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        display: flex;
+        justify-content: center;
+        padding-top: 0.4em;
+        padding-left: .8em;
+    }
     
+    .nav-note-list{
+        .note-elemenet{
+            padding: 0;
+            .nav-note-delete{
+                margin: 0;
+                &:hover{
+                    transform: scale(1.2);
+                    margin: 0;
+                    background: rgb(194,136,41);
+                }
+            }
+    
+        }
+    }
+    
+
+}
+
+.announcement-container{
+
+    
+    .announcement-list{
+        padding: 0.3em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+
+.Secondary-Main-element{
+    color: black;
 }
 
 
@@ -46,20 +133,24 @@
     }
 
     .shape-fill {
-        fill: rgb(33,37,41);
+        fill: #0765c3;
+        // fill: rgb(33,37,41);
+
+
     }
     
 }
-
-    // .spacer{
-    //     padding-bottom: 2em;
-    // }
 
     @media only screen and (min-width: 810px) {
         .wave{
             .svg{
                 height: 10%;
             }
+        }
+
+        .bolton-img{
+            margin-left: 0;
+            max-width: 220px;
         }
     }
 

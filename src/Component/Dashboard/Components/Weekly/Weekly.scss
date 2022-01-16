@@ -1,59 +1,70 @@
+    .all-weekly-content{
+        
+    }
 
+    .weekly-list{
 
+        display: inline-block;
+    }
 
-.carousel{
-    width: 25em;
-    margin: 0 auto;
     .item{
+        padding-bottom: 5em;
+        width: 25em;
         .elementiconbutton{ 
              border-radius: 2em;
              width: 14em;
              height: 14em;
              padding-left: 1.8em;
-                 .circle{
-                     padding-left: 0.9em;
-                     padding-right: 4em;
-                     background: rgb(212, 212, 212);
-                     height: 10em;
-                     width:10em;
-                     border: 0.1em black dashed;
-                     border-radius: 6em;
-                     button{
-                         
-                     }
-                     svg{
-                         padding-top: 0.8em;
-                         width: 8em;
-                     }
-                     
-                 }
-             
+            .circle{
+                padding-left: 0.9em;
+                padding-right: 4em;
+                background: rgb(212, 212, 212);
+                height: 10em;
+                width:10em;
+                border: 0.1em black dashed;
+                border-radius: 6em;
+                svg{
+                    padding-top: 0.8em;
+                    width: 8em;
+                }
+            }
+        }
+        transition: transform .6s; /* Animation off */
+        transform: scale(1); // DECREASE SCALE
 
+        &:hover{
+
+            transition: transform .6s; /* Animation */
+            transform: scale(1.19);
+            h3{
+                transition: transform .6s; /* Animation */
+                transform: scale(1.19);
+            }
         }
         padding-left: 0.2em;
         h3{
             padding-top: 1em;
+            transition: transform .6s; /* Animation off */
+            transform: scale(1); // DECREASE SCALE
         }
         p{
             padding-top: 1em;
             padding-bottom: 1em;
         }
-
-       
         .circle{
             padding-top: 0.2em;
             padding-left: 0.1em;
         }
-
         .quiz{ 
             background-color: #936C88;
+//             background: rgb(147,108,136);
+// background: linear-gradient(0deg, rgba(147,108,136,1) 0%, rgba(159,117,147,1) 100%);
             .circle{
                 svg{
                     padding-top: 1.2em;
                 }
             }
         }
-
         .filltheblanks{ 
             background-color: #69967E; 
         }
@@ -91,7 +102,6 @@
             }
 
         }
-    }
 }
 
 

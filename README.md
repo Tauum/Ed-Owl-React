@@ -1,3 +1,92 @@
+# tips were provided: https://www.youtube.com/watch?v=w3RFk35synM&list=PL4glSN_6E9amotmiyQ6fIi_zdUnog88wi&index=30&t=796s
+
+# HOW TO GENERATE INSTANCE
+
+1. Create a new react app with: ```npx create-react-app <app name> ```
+2. Create a new Github repo at: github.com/new
+
+3. Go to the directory in terminal and type: ```git add . ``` and ``` git commit -m "initial commit" ```
+4. Then run the commit code linked to the github repo (this will push all project files to github):
+5. ```Remote add origin <link to repo>```
+6 ```git branch -M main```
+7 ```git push -u origin main```
+
+# INSTALL FROM BARE VM
+
+1. Install a new instance of Ubuntu 20.04 64bit
+2. Login as root
+3. disable apache2 if installed with the commands below (this uses nginx):
+4. ```systemctl stop apache2```
+5. ```systemctl disable apache2```
+6. ```sudo apt remove apache2```
+
+1. ```apt clean all```
+2. ```apt update```
+3. ```apt dist-upgrade```
+4. ```sudo apt-get update ```
+5. ```sudo apt-get upgrade```
+6. ```sudo apt-get nginx```
+7. The web server will now be running if you go to the ```<machine ip address> ```
+7.1 It will show either the apache2 page or nginx, if apache2 go to ```<machine ip address>/index.nginx-debian.html```
+8. ```apt install npm```
+9. ```apt install git```
+  
+# CLONE GITHUB REPO
+1. ```cd /home```
+2. Get the link from Github of the repo to clone eg: ```git clone https://github.com/Tauum/EdOwlReact.git```  
+3. ```cd /<project name>```
+4. ```npm install```
+5. ```npm run build ```
+
+# DEPLOY REACT APPLICATION
+1. Copy the built repository to ```/var/www/html``` eg: ```cp -r build/* /var/www/html```
+
+# DOMAIN SETUP / CONFIGURATION
+1. Go to platform hosting domain (it may take up to 48 hours to fully set after completion)
+2. Type in a new: ``` A type record``` and pointing to: ```<machine ip address>```
+3. type in a new ```www type record``` and pointing to: ```<machine ip address>```
+4. now you can test the website domain
+
+
+# HTTPS SETUP
+ 1. Trying to go to ```https://<domain>``` will fial because ssl requirements are not met
+ 2. install certbot ```https://certbot.eff.org/``` with ```sudo apt install certbot python3-certbot-nginx```
+ 3. Then install a certificate with ``` certbot --nginx -d <domain> -d www.<domain>```
+ 4. Enter an email address
+ 5. follow the rest of the steps
+ 6. ```sudo nginx -s reload```
+
+# AUTOMATIC RENEW OF HTTPS CERTIFICATES from this documentation 
+https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal
+https://eff-certbot.readthedocs.io/en/stable/using.html#setting-up-automated-renewal
+1. ```sudo certbot renew --dry-run```                                  1. min. hour. day. week. month,
+2. this might work havent tested it: ammend ```vi /etc/crontab``` add ```0 0 0 0 4,8,12 root certbot renew --dry-run```
+
+# AUTH0 CONFIGURATION 
+
+
+# SPRINGBOOT BUILD
+
+
+# SPRINGBOOT DEPLOY
+
+
+# COPY SSL FROM WEB-APP TO SPRINGBOOT
+
+
+# APP & SPRINGBOOT LINK
+
+
+# MySQL installation
+
+  
+ 
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
