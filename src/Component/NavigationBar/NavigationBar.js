@@ -50,12 +50,7 @@ function NavigationBar() {
         <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
           <Container>
           
-          {/* <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"></Navbar.Brand> */}
-
-  
-           <a href="https://moodle.bolton.ac.uk/my/" alt="Bolton Moodle"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></a>
-
-          
+          <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></Navbar.Brand>
 
             <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -172,7 +167,7 @@ function NavigationBar() {
       <HashRouter>
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Container>
-        <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"><img className="bolton-img" src="/Image/download.png" alt=""/></Navbar.Brand>
+        <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></Navbar.Brand>
         <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
