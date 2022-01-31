@@ -50,9 +50,9 @@ function NavigationBar() {
         <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
           <Container>
           
-          {/* <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"><img className="bolton-img" src="/Image/download.png" alt=""/></Navbar.Brand> */}
+          {/* <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"></Navbar.Brand> */}
 
-           {/* <a href="https://moodle.bolton.ac.uk/my/" alt="Moodle"> <img className="bolton-img" src="/Image/Moodle.png" alt="" className="moodleimg"/> </a> */}
+  
            <a href="https://moodle.bolton.ac.uk/my/" alt="Bolton Moodle"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></a>
 
           
@@ -66,7 +66,7 @@ function NavigationBar() {
                 <NavLink className="Main-element" to="/Blog">Blog</NavLink>
                 <NavLink className="Main-element" to="/Dashboard">Dashboard</NavLink>
                 
-                <NavDropdown className="Drop-element" title="test stuff" id="basic-nav-dropdown">
+                {/* <NavDropdown className="Drop-element" title="test stuff" id="basic-nav-dropdown">
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/StateEffect">StateEffect</NavLink>  
                   </NavDropdown.Item>
@@ -103,7 +103,7 @@ function NavigationBar() {
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/Match">Match</NavLink>
                   </NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
 
                 <NavDropdown className="Drop-element" title="Quick Notes" id="basic-nav-dropdown" >
                   <Note/>
