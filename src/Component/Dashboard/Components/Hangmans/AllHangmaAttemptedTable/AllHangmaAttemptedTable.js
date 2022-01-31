@@ -2,14 +2,16 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import { Button} from 'react-bootstrap';
 
-import './AllHangmaAttemptedTable.css'
+import './AllHangmanAttemptedTable.css'
 
 export default function AllHangmaAttemptedTable({parentToChild}) {
+
+    console.log(parentToChild)
 
     return (    
         <div>
             <div className="table-container">
-                <ul className="responsive-table">
+                <ul className="AllHangman-responsive-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Date</div>
@@ -21,12 +23,12 @@ export default function AllHangmaAttemptedTable({parentToChild}) {
                     </li>
                     {parentToChild.map((SubmittedHangman, index)=>( 
                         <li className="table-Row" key={index}>
-                            <div className="col col-1" data-label="Title">{SubmittedHangman.hangman.title}</div>
+                            <div className="col col-1" data-label="Title">{SubmittedHangman.hangmanTitle}</div>
                             <div className="col col-2" data-label="Date">{SubmittedHangman.generatedDate}</div>
-                            <div className="col col-3" data-label="lives Used">{SubmittedHangman.incorrect}</div>
-                            <div className="col col-4" data-label="Hint Used">{SubmittedHangman.hintUsed}</div>
-                            <div className="col col-5" data-label="Time Limit">{SubmittedHangman.timeLimit}</div>
-                            <div className="col col-6" data-label="Completed">{SubmittedHangman.completed}</div>
+                            <div className="col col-3" data-label="lives Used">{SubmittedHangman.incorrect} / 5</div>
+                            <div className="col col-4" data-label="Hint Used">{SubmittedHangman.hintUsed ? "Yes" : "No" }</div>
+                            <div className="col col-5" data-label="Time Limit">{SubmittedHangman.timeTaken}</div>
+                            <div className="col col-6" data-label="Completed">{SubmittedHangman.completed ? "Yes" : "No" }</div>
                             <div className="col col-7" data-label="Score">{SubmittedHangman.score}</div>
 
                         </li>

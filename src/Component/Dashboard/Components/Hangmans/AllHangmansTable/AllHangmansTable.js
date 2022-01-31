@@ -8,7 +8,7 @@ export default function AllHangmansTable({parentToChild}) {
     return (    
         <div>
             <div className="table-container">
-                <ul className="responsive-table">
+                <ul className="AllHangman-responsive-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Subject</div>

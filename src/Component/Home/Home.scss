@@ -51,7 +51,7 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
         }
         .img:hover{
             transition: transform .6s; /* Animation */
-            transform: scale(1.15);
+            transform: scale(1.2);
             border: 5px DOUBLE white;   
         }
         .heading{
@@ -59,17 +59,18 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
                 padding-top:1.6em;
             }
         }
-        .btn-warning{
-            margin-top: 1em;
+        .btn-dark{
             width: 5em;
-            margin-right: 3em;
-            color: black;
+            color: white;
+            &:hover{
+                border-color: white;
+            }
+
         }
         .btn-red{
-            margin-top: 1em;
             background-color: rgb(230, 80, 80);
             width: 5em;
-            color: black;
+            color: white;
         }
     }
 
@@ -99,6 +100,9 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
                 }
                 p{
                     font-size: .8em;
+                }
+                .features-image{
+                    width: 100px;
                 }
 
                 transition: transform .6s; /* Animation off */

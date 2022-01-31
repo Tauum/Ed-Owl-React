@@ -5,9 +5,7 @@ import { Redirect } from 'react-router-dom'
 
 export default function EditHangman(props) {
 
-  const [hangman, setHangman] = useState({ id: 999, title: "", word: "", hint: "", value: 0, subject: "" });
-  const [submitHangman, setSubmitHangman] = useState(false);
-  const [deleteHangman, setDeleteHangman] = useState(false);
+  const [hangman, setHangman] = useState({ id: 999, title: "", word: "", hint: "", value: 0, subject: "", hidden: true });
   const [missingParentData, setMissingParentData] = useState(false);
   const [completed, setCompleted] = useState(false);
 
@@ -20,10 +18,12 @@ export default function EditHangman(props) {
     }
   }, [])
 
-  //this submits the result
-  useEffect(() => {
-    if (submitHangman) {
-      if (hangman.title !== "" && hangman.word !== "" && hangman.hint !== "")
+  const handleHideClicked = () => {
+    setHangman((prev) => ({...prev, hidden:!hangman.hidden }));
+  };
+
+  const handleSubmitButton = (hangman) => {
+    if (hangman.title !== "" && hangman.word !== "" && hangman.hint !== "")
         if (missingParentData) {
           var todayDate = new Date().toISOString().slice(0, 10);
           fetch(`${window.ipAddress.ip}/Hangman/add`, {
@@ -36,6 +36,7 @@ export default function EditHangman(props) {
                 hint: hangman.hint,
                 value: hangman.value,
                 subject: hangman.subject,
+                hidden: hangman.hidden,
                 generatedDate: todayDate
               })
           })
@@ -58,6 +59,7 @@ export default function EditHangman(props) {
                 hint: hangman.hint,
                 value: hangman.value,
                 subject: hangman.subject,
+                hidden: hangman.hidden,
                 generatedDate: todayDate
               })
           })
@@ -69,48 +71,34 @@ export default function EditHangman(props) {
               setCompleted(true)
             })
         }
-    }
-  }, [submitHangman])
+  }
 
+  const handleDeleteButton = () => {
+    if (!missingParentData) {
+      var id = props.location.state.id
+      console.log(id)
 
-
-  useEffect(() => {
-    if (deleteHangman) {
-      if (!missingParentData) {
-        var id = props.location.state.id
-        console.log(id)
-
-        fetch(`${window.ipAddress.ip}/Hangman/delete/${id}`, {
-          method: "DELETE",
-          headers: { 'Content-Type': 'application/json' }
+      fetch(`${window.ipAddress.ip}/Hangman/delete/${id}`, {
+        method: "DELETE",
+        headers: { 'Content-Type': 'application/json' }
+      })
+        .then(res => 
+          {
+            return res.json
+        }
+        )
+        .catch(error => {
+          console.log("error: " + error);
+          
         })
-          .then(res => 
-            {
-              return res.json
-          }
-          )
-          .catch(error => {
-            console.log("error: " + error);
-            
-          })
-          .then((result) => {
-            setCompleted(true)
-          })
-      }
+        .then((result) => {
+          setCompleted(true)
+        })
     }
-  }, [deleteHangman])
-
-
-  const handleSubmitButton = (hangman) => {
-    setSubmitHangman(true)
-  }
-
-  const handleDeleteButton = (hangman) => {
-    setDeleteHangman(true)
   }
 
 
-  if (completed === true) {
+  if (completed) {
     return (<Redirect to="/AdminDashboard"></Redirect>);
   }
 
@@ -143,7 +131,17 @@ export default function EditHangman(props) {
 
         <br />
 
-        <button onClick={() => handleSubmitButton(hangman)} type="button" className="btn btn-primary submit" id="submit">Submit</button>
+        <label htmlFor="Title">HIDE </label>
+        <input defaultValue={hangman.hidden} type="checkbox" className="form-check-input stuff" id="hidden"
+          onChange={(e) => {handleHideClicked()}} />
+          <p>Current status: {hangman.hidden ? "Hidden" : "Shown"}</p>
+
+        <br/>
+
+        <h4>PLEASE HIDE CONTENT OVER DELETION <br/> DELETION IS A LAST RESORT AND CAN BREAK SERVICE FOR ALL <br/> IF SOMETHING NEEDS DELETING CONSULT tjs1crt@bolton.ac.uk</h4>
+                   
+
+        <button onClick={() => handleSubmitButton(hangman)} type="button" className="btn btn-warning submit" id="submit">Submit</button>
         <button onClick={() => handleDeleteButton()} type="button" className="btn btn-dark submit" id="submit">Delete</button>
       </form>
 

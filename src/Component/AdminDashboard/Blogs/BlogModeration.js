@@ -3,6 +3,8 @@ import { Button, Accordion, Card } from 'react-bootstrap';
 import BlogModerationTable from "./BlogModerationTable";
 import { Link } from 'react-router-dom'
 
+import "./BlogModeration.css"
+
 
 export default function BlogModeration() {
 
@@ -22,7 +24,7 @@ export default function BlogModeration() {
 
     return (    
         <div>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}>
                     <Card className='card'>
                         <Card.Header className='header'>

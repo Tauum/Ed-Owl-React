@@ -1,16 +1,9 @@
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { useAuth0 } from '@auth0/auth0-react';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Route, NavLink, HashRouter } from "react-router-dom";
 
 import './NavigationBar.css';
-
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
-
-
 
 import Announcement from "./Announcement"
 import Note from "./Note"
@@ -18,22 +11,23 @@ import Note from "./Note"
 import Home from "../Home/Home";
 import Blog from "../Blog/Blog";
 import Quiz from "../Quiz/Quiz";
-import Dashboard2 from "../Dashboard/Dashboard2";
 import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import Hangman from '../Hangman/Hangman';
 import BlankFill from '../BlankFill/BlankFill';
+import Match from '../Match/Match';
 
 import Login from '../../Function/Login';
 import Logout from '../../Function/Logout';
 
 import EditQuiz from '../AdminDashboard/Quizzes/EditQuiz';
 import EditHangman from '../AdminDashboard/Hangmans/EditHangman';
+import EditMatch from '../AdminDashboard/Match/EditMatch';
 import EditBlog from '../AdminDashboard/Blogs/EditBlog';
+import EditAnnouncement from '../AdminDashboard/Announcement/EditAnnouncement';
 
 import QuizReview from "../Quiz/QuizReview";
 
-
-
+import tester2 from "../Test-stuff/tester2"
 import StateEffect from "../Test-stuff/StateEffect";
 import Etc from "../Test-stuff/Etc/Etc";
 import Dashboard from "../Dashboard/Dashboard";
@@ -48,41 +42,6 @@ function NavigationBar() {
 
   const { isAuthenticated } = useAuth0();
 
-  const [parentToChildData, setParentToChildData] = useState([])
-  const [loadAnnouncements, setLoadAnnouncements] = useState(false)
-
-  const [parentToChildData2, setParentToChildData2] = useState([])
-  const [loadNotes, setLoadNotes] = useState(false)
-
-  useEffect(() => {
-      if (loadAnnouncements) {
-          fetch(`${window.ipAddress.ip}/Announcement/Recent`)
-          .then(response => response.json())
-          .then(json => {
-            if (json.length < 1 ){
-              setParentToChildData([{content: "There are currently no new updates!"}]);
-            }
-            else{
-              setParentToChildData(json);
-            }
-              
-
-          })
-      }
-      // v CHANGE THIS REQUEST TO STUFF THAT HAS BEEN ATTEMPTED SOMEHOW
-      if (loadNotes){
-          fetch(`${window.ipAddress.ip}/Note/GetAllForUser/${window.BackendUser.id}`)
-          .then(response => response.json())
-          .then(json => {
-              setParentToChildData2(json);
-              console.log(json)
-          })
-      }
-  }, [loadAnnouncements, loadNotes])
-
-
-
-
   if (isAuthenticated) {
 
     return (
@@ -91,7 +50,12 @@ function NavigationBar() {
         <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
           <Container>
           
-          <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"><img className="bolton-img" src="/Image/download.png" alt=""/></Navbar.Brand>
+          {/* <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"><img className="bolton-img" src="/Image/download.png" alt=""/></Navbar.Brand> */}
+
+           {/* <a href="https://moodle.bolton.ac.uk/my/" alt="Moodle"> <img className="bolton-img" src="/Image/Moodle.png" alt="" className="moodleimg"/> </a> */}
+           <a href="https://moodle.bolton.ac.uk/my/" alt="Bolton Moodle"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></a>
+
+          
 
             <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -100,59 +64,54 @@ function NavigationBar() {
 
                 <NavLink className="Main-element" to="/Home">Home</NavLink>
                 <NavLink className="Main-element" to="/Blog">Blog</NavLink>
-                <NavLink className="Main-element" to="/Dashboard2">Dashboard2</NavLink>
-                <NavLink className="Main-element" to="/AdminDashboard">Admin Dashboard</NavLink>
-                
+                <NavLink className="Main-element" to="/Dashboard">Dashboard</NavLink>
                 
                 <NavDropdown className="Drop-element" title="test stuff" id="basic-nav-dropdown">
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/StateEffect">StateEffect</NavLink>  
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/Dashboard">Dashboard</NavLink>
                   </NavDropdown.Item>
-                  
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/Etc">Etc</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/Parent">Parent-Child-Test</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/RequestTest">Request Test</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/Planets">React Query Test</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/timer">timer Test</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/BlankFill">BlankFill Test</NavLink>
                   </NavDropdown.Item>
-
                   <NavDropdown.Item> 
                     <NavLink className="Drop-element" to="/fullpage">BlankFill Test</NavLink>
                   </NavDropdown.Item>
-
+                  <NavDropdown.Item> 
+                    <NavLink className="Drop-element" to="/tester2">tester2</NavLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item> 
+                    <NavLink className="Drop-element" to="/AdminDashboard">AdminDashboard</NavLink>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item> 
+                    <NavLink className="Drop-element" to="/Match">Match</NavLink>
+                  </NavDropdown.Item>
                 </NavDropdown>
 
-{/*   PUT NOTIFICATIONS INTO HERE */}
-                <NavDropdown className="Drop-element" title="Quick Notes" id="basic-nav-dropdown" onClick={() => { setLoadNotes(true) }}>
-                  <Note parentToChild={parentToChildData2}/>
+                <NavDropdown className="Drop-element" title="Quick Notes" id="basic-nav-dropdown" >
+                  <Note/>
                 </NavDropdown>
 
-                <NavDropdown className="Drop-element announcement" title="Updates" id="basic-nav-dropdown" onClick={() => { setLoadAnnouncements(true) }}>
-                    <Announcement parentToChild={parentToChildData}/>
+                <NavDropdown className="Drop-element announcement" title="Updates" id="basic-nav-dropdown">
+                    <Announcement/>
                 </NavDropdown>
-
-
 
                 <div className="Main-element"> <Logout/> </div>
 
@@ -177,25 +136,29 @@ function NavigationBar() {
           <Route path="/Blog" component={Blog}/>
           <Route path="/Quiz" component={Quiz}/>
           <Route path="/Profile" component={Profile}/>
-          <Route path="/Dashboard2" component={Dashboard2}/>
+          <Route path="/Dashboard" component={Dashboard}/>
           <Route path="/AdminDashboard" component={AdminDashboard}/>
           <Route path="/Hangman" component={Hangman}/>
           <Route path="/BlankFill" component={BlankFill}/>
+          <Route path="/Match" component={Match}/>
           
           <Route path="/EditQuiz" component={EditQuiz}/>
           <Route path="/EditHangman" component={EditHangman}/>
+          <Route path="/EditMatch" component={EditMatch}/>
           <Route path="/EditBlog" component={EditBlog}/>
+          <Route path="/EditAnnouncement" component={EditAnnouncement}/>
+          
 
           <Route path="/QuizReview" component={QuizReview}/>
 
           <Route path="/Etc" component={Etc}/>
-          <Route path="/Dashboard" component={Dashboard}/>
           <Route path="/StateEffect" component={StateEffect}/>
           <Route path="/Parent" component={Parent}/>
           <Route path="/RequestTest" component={RequestTest}/>
           <Route path="/Planets" component={Planets}/>
           <Route path="/timer" component={timer}/>
           <Route path="/fullpage" component={fullpage}/>
+          <Route path="/tester2" component={tester2}/>
 
         </HashRouter>
       </div>
@@ -209,14 +172,15 @@ function NavigationBar() {
       <HashRouter>
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand href="#home">Ed<span> Owl</span></Navbar.Brand>
+        <Navbar.Brand href="https://www.bolton.ac.uk/" className="edowl"><img className="bolton-img" src="/Image/download.png" alt=""/></Navbar.Brand>
+        <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
 
               <NavLink className="Main-element" to="/Home">Home</NavLink>
               <NavLink className="Main-element" to="/Blog">Blog</NavLink>
-              <div className="Main-element"> <Login/> </div>
+              <div className="Main-element"><Login/> </div>
 
             </Nav>
           </Navbar.Collapse>

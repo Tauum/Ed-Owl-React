@@ -8,17 +8,19 @@ export default function AllQuizTable({parentToChild}) {
     return (    
         <div>
             <div className="table-container">
-                <ul className="responsive-table">
+                <ul className="AllQuiz-responsive-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
-                    <div className="col col-2">Date</div>
-                    <div className="col col-3">Time Limit</div>
-                    <div className="col col-4">Score available</div>
-                    <div className="col col-5">Start</div>
+                    <div className="col col-2">Subject</div>
+                    <div className="col col-3">Date</div>
+                    <div className="col col-4">Time Limit</div>
+                    <div className="col col-5">Score available</div>
+                    <div className="col col-6">Start</div>
                     </li>
                     {parentToChild.map((quiz, index)=>( 
                         <li className="table-Row" key={index}>
                             <div className="col col-1" data-label="Title">{quiz.title}</div>
+                            <div className="col col-1" data-label="Subject">{quiz.subject}</div>
                             <div className="col col-2" data-label="Date">{quiz.generatedDate}</div>
                             <div className="col col-3" data-label="Time limit">{quiz.timeLimit}</div>
                             <div className="col col-4" data-label="Score available">{quiz.value}</div>

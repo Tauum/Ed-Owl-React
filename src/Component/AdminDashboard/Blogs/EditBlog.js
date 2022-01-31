@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom'
 
 export default function EditBlog(props) {
 
-  const [post, setPost] = useState({ id: 999, title: "", author: "", video: "", summary: "", content: "", generatedDate: "" });
-
+  const [post, setPost] = useState({ id: 999, title: "", author: "", video: "", summary: "", content: "", generatedDate: "", hidden: true });
+  
   const [submitPost, setSubmitPost] = useState(false);
   const [deletePost, setDeletePost] = useState(false);
   const [missingParentData, setMissingParentData] = useState(false);
@@ -13,13 +13,19 @@ export default function EditBlog(props) {
 
   useEffect(() => {
     if (props.location.state) {
+      console.log(props.location.state)
       setPost(props.location.state)
+
     }
     else {
       setMissingParentData(true)
     }
   }, [])
 
+  const handleHideClicked = () => {
+    setPost((prev) => ({...prev, hidden:!post.hidden }));
+  };
+  
   //this submits the result
   useEffect(() => {
     if (submitPost) {
@@ -36,7 +42,8 @@ export default function EditBlog(props) {
                 author: post.author,
                 video: post.video,
                 content: post.content,
-                creation: todayDate
+                creation: todayDate,
+                hidden: post.hidden
               })
           })
             .then(res => res.json())
@@ -57,7 +64,8 @@ export default function EditBlog(props) {
                 summary: post.summary,
                 author: post.author,
                 video: post.video,
-                content: post.content
+                content: post.content,
+                hidden: post.hidden
               })
           })
             .then(res => res.json())
@@ -65,6 +73,7 @@ export default function EditBlog(props) {
               console.log("error: " + error);
             })
             .then((result) => {
+              console.log(post)
               setCompleted(true)
             })
 
@@ -142,6 +151,16 @@ export default function EditBlog(props) {
           onChange={(e) => setPost({ ...post, content: e.target.value })}></textarea>
 
         <br />
+
+        <label htmlFor="Title">HIDE </label>
+          <input defaultValue={post.hidden} type="checkbox" className="form-check-input stuff" id="hidden"
+          onChange={(e) => {handleHideClicked()}} />
+          <p>Current status: {post.hidden ? "Hidden" : "Shown" }</p>
+
+        <br/>
+
+        <h4>PLEASE HIDE CONTENT OVER DELETION <br/> DELETION IS A LAST RESORT AND CAN BREAK SERVICE FOR ALL <br/> IF SOMETHING NEEDS DELETING CONSULT tjs1crt@bolton.ac.uk</h4>
+                            
 
         <button onClick={() => handleSubmitButton(post)} type="button" className="btn btn-primary submit" id="submit">Submit</button>
         <button onClick={() => handleDeleteButton()} type="button" className="btn btn-dark submit" id="submit">Delete</button>

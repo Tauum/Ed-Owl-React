@@ -3,6 +3,7 @@ import { Button, Accordion, Card } from 'react-bootstrap';
 import HangmanModerationTable from './HangmanModerationTable';
 import { Link } from 'react-router-dom'
 
+import "./HangmanModeration.css"
 
 export default function HangmanModeration() {
 
@@ -22,7 +23,7 @@ export default function HangmanModeration() {
 
     return (    
         <div>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}>
                     <Card className='card'>
                         <Card.Header className='header'>

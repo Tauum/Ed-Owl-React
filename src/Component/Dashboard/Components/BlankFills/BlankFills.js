@@ -7,7 +7,7 @@ export default function BlankFills() {
 
     return (    
         <div>
-            <h1> Fill the blank </h1>
+            <h1> Fill in the blanks </h1>
             <div className='accordian-container'>
                 <Accordion className="accordian shadow">
                     <Card className='card'>
@@ -19,9 +19,9 @@ export default function BlankFills() {
                     <Accordion.Collapse eventKey="0">
 
                         <Card.Body>
-                            These are Fill the blank tasks which you have not attempted yet.
+                            These are Fill in the blank tasks which you have not attempted yet.
                             <br/>
-                            (PUT TABLE HERE)
+                            (COMING SOON)
                     
                         </Card.Body>
                     </Accordion.Collapse>
@@ -32,15 +32,15 @@ export default function BlankFills() {
                     <Card>
                         <Card.Header>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Completed
+                            Attempted
                             </Accordion.Toggle>
                         </Card.Header>
                     <Accordion.Collapse eventKey="0">
 
                         <Card.Body>
-                            These are Fill the blank tasks which you have attempted.
+                            These are Fill in the blank tasks which you have attempted.
                             <br/>
-                            (PUT TABLE HERE)
+                            (COMING SOON)
                         </Card.Body>
 
                     </Accordion.Collapse>

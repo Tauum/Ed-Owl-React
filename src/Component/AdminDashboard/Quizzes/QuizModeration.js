@@ -3,6 +3,7 @@ import { Button, Accordion, Card } from 'react-bootstrap';
 import QuizModerationTable from "./QuizModerationTable";
 import { Link } from 'react-router-dom'
 
+import "./QuizModeration.css"
 
 export default function QuizModeration() {
 
@@ -22,7 +23,7 @@ export default function QuizModeration() {
 
     return (    
         <div>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}> 
                     <Card className='card'>
                         <Card.Header className='header'>

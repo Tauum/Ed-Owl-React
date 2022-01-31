@@ -13,7 +13,7 @@ export default function Quizzes() {
 
     useEffect(() => {
         if (LoadAll) {
-            fetch(`${window.ipAddress.ip}/Quiz/newestOrder`)
+            fetch(`${window.ipAddress.ip}/Quiz/newestOrder-hideHidden`)
             .then(response => response.json())
             .then(json => {
                 setParentToChildData(json);

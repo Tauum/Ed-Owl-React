@@ -18,12 +18,19 @@
 }
 
 .quiz-container {
+  margin: 1em;
   padding-top: 4em;
   color: white;
-  background: #0765c3;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
   border-radius: 1em;
   -webkit-box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+}
+
+.question {
+  padding: 1em;
 }
 
 .answer {
@@ -49,9 +56,9 @@ ul {
 
 .button-quiz {
   margin-top: 2em;
-  background: #c28829;
-  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
-  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  background: #0765c3;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
+  background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
   min-width: 16em;
   border-radius: 1em;
   -webkit-transition: -webkit-transform .6s;
@@ -64,9 +71,9 @@ ul {
 }
 
 .button-quiz:hover {
-  background: #c28829;
-  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
-  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  background: #0765c3;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
+  background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
   border: white;
   -webkit-transition: -webkit-transform .6s;
   transition: -webkit-transform .6s;
@@ -92,6 +99,30 @@ ul {
 }
 
 .otherbutton:hover {
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1.19);
+          transform: scale(1.19);
+}
+
+.emoj {
+  margin-top: 1em;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  /* Animation */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.emoj:hover {
   -webkit-transition: -webkit-transform .6s;
   transition: -webkit-transform .6s;
   transition: transform .6s;

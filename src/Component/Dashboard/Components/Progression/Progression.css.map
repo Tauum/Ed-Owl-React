@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,cAAc,EAAE,IAAI;CACvB",
-    "sources": [
-        "Progression.scss"
-    ],
-    "names": [],
-    "file": "Progression.css"
-}

@@ -22,6 +22,9 @@
         padding-bottom: 3em;
     }
 
+    
+
+
 
     .hint{
         p{
@@ -41,3 +44,15 @@
     }
 
 }
+
+.emoj{
+    margin-top: 1em;
+    background: rgb(194,136,41);
+    background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+    transition: transform .6s; /* Animation */
+    transform: scale(1);
+    &:hover{
+      transition: transform .6s; /* Animation */
+      transform: scale(1.19);
+  }
+  }

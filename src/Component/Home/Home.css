@@ -63,8 +63,8 @@
   transition: transform .6s;
   transition: transform .6s, -webkit-transform .6s;
   /* Animation */
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   border: 5px DOUBLE white;
 }
 
@@ -72,18 +72,19 @@
   padding-top: 1.6em;
 }
 
-.home .hero-section .btn-warning {
-  margin-top: 1em;
+.home .hero-section .btn-dark {
   width: 5em;
-  margin-right: 3em;
-  color: black;
+  color: white;
+}
+
+.home .hero-section .btn-dark:hover {
+  border-color: white;
 }
 
 .home .hero-section .btn-red {
-  margin-top: 1em;
   background-color: #e65050;
   width: 5em;
-  color: black;
+  color: white;
 }
 
 .home .features-section {
@@ -126,6 +127,10 @@
 
 .home .features-section .list li p {
   font-size: .8em;
+}
+
+.home .features-section .list li .features-image {
+  width: 100px;
 }
 
 .home .features-section .list li:hover {

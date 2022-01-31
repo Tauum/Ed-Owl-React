@@ -9,7 +9,7 @@ const Login= () => {
         // removes login button when logged in
         !isAuthenticated && (
             <a onClick={() => loginWithRedirect()}>
-                Login
+                Login / sign up
             </a>
             
         )

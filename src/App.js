@@ -1,13 +1,16 @@
-import './App.css';
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { HashRouter, Redirect } from "react-router-dom";
 
 //pages import here
 import NavigationBar from './Component/NavigationBar/NavigationBar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import SignUp from './Component/SignUp/SignUp';
-// import AccountError from './Function/AccountError';
+import Home from "./Component/Home/Home"
+
+import './App.css';
 
 function App() {
 
@@ -43,22 +46,38 @@ function App() {
       if(errorVal){
         return (
           <div className="App">
-          <NavigationBar/>
-          <SignUp/>
-        </div>
+            <HashRouter>
+              <NavigationBar/>
+              <Redirect to="/Home"></Redirect>
+              <SignUp/>
+            </HashRouter>
+          </div>
       );}
       //WHEN PAGE LOADS THE BELOW RUNS BEFORE THE ABOVE
       else if (!errorVal){ // works if user has an account registered
         console.log("backend - user confirmation")
-        return ( <div className="App"><NavigationBar/></div> );
+        return (
+          <div className="App">
+            <HashRouter>
+              <NavigationBar/>
+              <Redirect to="/Home"></Redirect>
+            </HashRouter>
+          </div>
+        );
+        // return ( <div className="App"><NavigationBar/></div> );
+        // return (<Redirect to="/Home"></Redirect>);
       }
     }
+
     //this runs if the user is not logged in
     else{
       console.log("not logged in")
       return (
       <div className="App">
-        <NavigationBar/>
+        <HashRouter>
+          <NavigationBar/>
+          <Redirect to="/Home"></Redirect>
+        </HashRouter>
       </div>
     );}
   }

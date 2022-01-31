@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './Index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query' // this is needed for react-query below
+import { QueryClient, QueryClientProvider } from 'react-query' // this is needed for react-query below
 
 import { Auth0Provider } from '@auth0/auth0-react'; // this is needed for auth0 below
 
 const domain= process.env.REACT_APP_AUTH0_DOMAIN; // this is needed for auth0 below
 const clientId= process.env.REACT_APP_AUTH0_CLIENT_ID; // this is needed for auth0 below
 
-window.ipAddress = { ip: "http://192.168.2.128:8080" }; //  global variable because isp keeps changing ip address
+// window.ipAddress = { ip: "http://192.168.2.128:8080" }; //  global variable because isp keeps changing ip address
+window.ipAddress = { ip: "http://localhost:8080" }; //  global variable because isp keeps changing ip address
 
 const queryClient = new QueryClient() // this is needed for react-query below
 

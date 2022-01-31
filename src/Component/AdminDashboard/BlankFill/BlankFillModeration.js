@@ -22,12 +22,12 @@ export default function BlankFillModeration() {
 
     return (    
         <div>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}>
                     <Card className='card'>
                         <Card.Header className='header'>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Fill the blanks
+                            Fill in the blanks
                             </Accordion.Toggle>
                         </Card.Header>
                     <Accordion.Collapse eventKey="0">

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, Redirect } from 'react-router-dom'
-import React, { Component } from "react";
+import React from "react";
 import { useEffect, useState } from 'react';
 import { Button, Modal, ProgressBar } from 'react-bootstrap';
 import Countdown from "react-countdown";
@@ -15,22 +15,26 @@ export default function Quiz(props) {
   const [executedSet, setExecutedSet] = useState(false);
   const [current, setCurrent] = useState(0);
   const [timeLimit, setTimeLimit] = useState('');
-  const [submitQuiz, setSubmitQuiz] = useState(false);
   const [coppied, setCoppied] = useState(false);
-  const [result, setResult] = useState(0);
+  const [scoreTotal, setScoreTotal] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
   const [show, setShow] = useState(false);
-  const [resultPercentage, setResultPercentage] = useState(0);
   const [submittedQuestions, setSubmittedQuestions] = useState([])
-
-  const [totalScore, setTotalScore] = useState(0)
-
+  const [submitQuizCondition, setSubmitQuizCondition] = useState(false)
 
   const [missingParentData, setMissingParentData] = useState();
+  const [initialDate, setInitialDate]=useState()
+  
+  const [timeTaken, setTimeTaken] = useState()
+  const [paused, setPaused] = useState(false)
+
 
   useEffect(() => {
     if (props.location.state) {
       setQuiz(props.location.state)
       setQuestionList(props.location.state.questions)
+      var startDate = Date()
+      setInitialDate(startDate)
       setTimeLimit((props.location.state.timeLimit * 1000) + Date.now()) // 1000 = seconds
       setExecutedSet(true)
     }
@@ -39,26 +43,53 @@ export default function Quiz(props) {
     }
   }, [])
 
-  // this submits the result
-  useEffect(() => {
-    if (submitQuiz) {
-      setSubmittedQuiz({
-        user: window.BackendUser, quiz: quiz, submittedQuestions: submittedQuestions,
-        score: quiz.value, submissionDate: currentDate, timeTaken: 0
-      })
+  const handleCopy = (e) => { // stores if the question was coppied
+    setCoppied(true);
+  }
 
+  const handleAnswerButton = (question, answer) => {
+    storeQuestion(answer)
+    if (answer.correct) {
+      setScoreTotal(prevScore => prevScore + question.value);
+      setCorrectAnswers(prevScore => prevScore + 1);
+      //  setScoreTotal(scoreTotal + 1);
+       }
+    const next = current + 1;
+    if (next < questionList.length) { setCurrent(next); }
+    else { finalize() }
+  };
+  
+  const Completionist = () => <h4><span>Time has run out!</span></h4>;
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    if (completed) { return <Completionist />; }
+    else { return <h4><span>{hours}:{minutes}:{seconds}</span></h4>; } // Render countdown
+  };
+
+  useEffect(() => {
+    if(submitQuizCondition){
+      var val = scoreTotal
       var currentDate = new Date()
+      var initial = new Date(initialDate) 
+      var difference = Math.round((currentDate - initial) / 1000);
+      
+      setTimeTaken(difference)
+      
       fetch(`${window.ipAddress.ip}/SubmittedQuiz/add`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(
           {
             user: window.BackendUser,
-            quiz: quiz,
+            quizTitle : quiz.title,
+            quizValue: quiz.value,
+            quizSubject: quiz.subject,
+            quizTimeLimit: quiz.timeLimit,
             submittedQuestions: submittedQuestions,
-            score: totalScore,
+            quizId: quiz.id,
+
+            score: scoreTotal,
             generatedDate: currentDate,
-            timeTaken: 0
+            timeTaken: difference
           })
       })
         .then(res => res.json())
@@ -67,26 +98,35 @@ export default function Quiz(props) {
         })
         .then((result) => {
           setShow(true)
+          setSubmittedQuiz({
+            user: window.BackendUser, quizTitle : quiz.title, quizValue: quiz.value,
+            quizTimeLimit: quiz.timeLimit, submittedQuestions: submittedQuestions,
+            score: val, submissionDate: currentDate, timeTaken: difference, quizSubject: quiz.subject,
+          })
         })
     }
-  }, [submitQuiz])
+  }, [scoreTotal, submitQuizCondition])
 
+  function finalize() { // this cuts the quiz via time here
+    setSubmitQuizCondition(true)
+  }
 
   function storeQuestion(answer) {
     var question = questionList[current]
-    var score = 0
+    var score = 0;
     if (answer.correct === true) {
       score = question.value
-      setTotalScore(prev => prev + question.value)
-      console.log(totalScore)
     }
     var submittedQuestion =
     {
+      questionId: question.id,
       question: question.question,
+      answerId: answer.id,
       answer: answer.content,
       explaination: question.explaination,
       correct: answer.correct,
       score: score,
+      questionValue: question.value,
       // timeTaken : Date.now(), // this doesnt work
       coppied: coppied
     }
@@ -95,43 +135,20 @@ export default function Quiz(props) {
     setCoppied(false)
   }
 
-  const handleAnswerButton = (answer) => {
-    storeQuestion(answer)
-    if (answer.correct) { setResult(result + 1); }
-    const next = current + 1;
-    if (next < questionList.length) { setCurrent(next); }
-    else { finalize() }
-  };
-
-  function finalize() { // this cuts the quiz via time here
-    setSubmitQuiz(true) //post request here
-    setResultPercentage((result / questionList.length).toFixed(2) * 100)                                                       // this needs doing
-    // ^ this doesnt display correctly, it misses the last question unless waiting a few seconds then updates correctly
-    setShow(true)
-  }
-
-  const handleCopy = (e) => { // stores if the question was coppied
-    setCoppied(true);
-    console.log("coppied")
-  }
-
-  const Completionist = () => <h4><span>Time has run out!</span></h4>;
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) { return <Completionist />; }
-    else { return <h4><span>{hours}:{minutes}:{seconds}</span></h4>; } // Render countdown
-  };
 
   if (missingParentData === true) {
-    return (<Redirect to="/Dashboard2"></Redirect>);
+    return (<Redirect to="/Dashboard"></Redirect>);
   }
 
   if (executedSet) {
+
+    const resultPercentage = (correctAnswers / questionList.length).toFixed(2) * 100;
     return (
       <div className='quiz-main body'>
         <br /> <br /> <br /> <br />
         <div className='quiz-container'>
 
-          <Countdown date={timeLimit} onComplete={finalize} className='timer'>
+          <Countdown date={timeLimit} onComplete={finalize} onPause={finalize} controlled={false} className='timer' id="timer">
             <Completionist />
           </Countdown>
 
@@ -146,7 +163,7 @@ export default function Quiz(props) {
             <ul>
               {questionList[current].answers.map((answer, index) => (
                 <li key={index}>
-                  <Button className='shadow btn-dark button-quiz' onClick={() => handleAnswerButton(answer)}>
+                  <Button className='shadow btn-dark button-quiz' onClick={() => handleAnswerButton(questionList[current], answer)}>
                     <h3 className='answer-text'>{answer.content}</h3>
                   </Button>
                 </li>
@@ -159,17 +176,25 @@ export default function Quiz(props) {
             <div className="card text-center shadow">
               <div className="card-header">
                 <div className="card-body">
-                  <h4 className="card-title"> Your result is {resultPercentage} %  <br /> ( {result} of {questionList.length} ) </h4>
+                  <h4 className="card-title"> Your result is {resultPercentage} %  ( {correctAnswers} of {questionList.length} ) </h4>
                 </div>
                 <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
+
+                { resultPercentage >= 0 && resultPercentage <= 16 ? <img className="shadow emoj" src="/Image/0-16.svg" alt="" /> : <div></div>  }
+                { resultPercentage >= 17 && resultPercentage <= 33 ? <div><img className="shadow emoj" src="/Image/17-33.svg" alt="" /></div> : <div></div>  }
+                { resultPercentage >= 34 && resultPercentage <= 50 ? <div><img className="shadow emoj" src="/Image/34-50.svg" alt="" /></div> : <div></div>  }
+                { resultPercentage >= 51 && resultPercentage <= 66 ? <div><img className="shadow emoj" src="/Image/51-66.svg" alt="" /></div> : <div></div>  }
+                { resultPercentage >= 67 && resultPercentage <= 83 ? <div><img className="shadow emoj" src="/Image/67-83.svg" alt="" /></div> : <div></div>  }
+                { resultPercentage >= 84 && resultPercentage <= 100 ? <div><img className="shadow emoj" src="/Image/84-100.svg" alt="" /></div> : <div></div>  }
+
                 <br />
-                <h5> It took you: (insert time here) to complete! </h5>                                                                         {/* this needs doing */}
+                <h5> It took: {timeTaken} Seconds to complete! </h5>                                                                         {/* this needs doing */}
                 <br />
                 <div className="card-footer text-muted">
-                  You may re-attempt by returning and re-entering the same task. <br/> Alternatively you can view your results by clicking review
+                  You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view your results by clicking review
                 </div>
                 <br />
-                <Link to="/Dashboard2"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
+                <Link to="/Dashboard"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
 
                 <Link to={{ pathname: "/QuizReview", state: submittedQuiz }}> <Button variant="btn btn-warning otherbutton">Review</Button> </Link>
 

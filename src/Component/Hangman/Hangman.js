@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, ProgressBar, Modal } from 'react-bootstrap';
 import './Hangman.css';
 import { Link, Redirect } from 'react-router-dom'
 
@@ -18,13 +18,19 @@ export default function Hangman(props) {
   const [completed, setCompleted] = useState(false);
   const [show, setShow] = useState(false);
   const [submitHangman, setSubmitHangman] = useState(false);
+  const [score, setScore] = useState(0);
 
+  const [timeTaken, setTimeTaken] = useState()
+  const [initialDate, setInitialDate]=useState()
   const [missingParentData, setMissingParentData] = useState();
 
   useEffect(() => {
     if (props.location.state){
+
         setHangman(props.location.state)
         setExecutedFetch(true)
+        var startDate = Date()
+        setInitialDate(startDate)
     }
     else{
         setMissingParentData(true)
@@ -35,16 +41,42 @@ export default function Hangman(props) {
   useEffect(() => {
     if (submitHangman){
         var currentDate = new Date()
+        var initial = new Date(initialDate) 
+        var difference = Math.round((currentDate - initial) / 1000);
+        setTimeTaken(difference)
+
+        console.log(initial)
+        console.log(currentDate)
+        console.log(difference)
+        var submitScore = 0;
+
+        if (correctGuesses.length > 0 ){
+
+            //incorrect aka (5 - lives) = 5%  (25% total)
+            var incorrectModifier = (hangman.value / 10) * (5 - lives);  // incorrect
+
+            if (hintUsed){ var hintModifier = (hangman.value / 10); } // hint
+            else{ var hintModifier = 0; } 
+        
+            submitScore = (hangman.value - (incorrectModifier + hintModifier));
+        }   
+
+        setScore(submitScore)
+        
         fetch (`${window.ipAddress.ip}/SubmittedHangman/add`,{
             method: "POST",  
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(
                 { 
                     user : window.BackendUser,
-                    hangman : hangman,
+                    hangmanId: hangman.id,
+                    hangmanTitle : hangman.title,
+                    hangmanValue : hangman.value,
                     hintUsed : hintUsed,
                     incorrect : (5 - lives), 
                     completed : completed,
+                    score: submitScore,
+                    timeTaken : difference,
                     generatedDate : currentDate
                 }
             ) 
@@ -57,6 +89,7 @@ export default function Hangman(props) {
             console.log(result)
         })
         setShow(true)
+        
     }
 },[submitHangman]) 
 
@@ -73,10 +106,16 @@ export default function Hangman(props) {
     }
 
     if (missingParentData === true){
-        return (<Redirect to="/Dashboard2"></Redirect>);
+        return (<Redirect to="/Dashboard"></Redirect>);
     }
 
     if (executedFetch){
+
+
+         const resultPercentage = (score / hangman.value).toFixed(2) * 100;
+         
+         console.log(resultPercentage)
+
 
         // V this needs to be contained in here because it depends on the executed fetch to exist
         const displayWord = hangman.word.split('') // splits the word by letter
@@ -133,23 +172,29 @@ export default function Hangman(props) {
                 <Modal className="article-modal" show={show}>
                     <div className="card text-center shadow">
                         <div className="card-header">
-                            <div className="card-body">
-                                <h4 className="card-title"> Your result is </h4>
-                            </div>
+                        <div className="card-body">
+                            <h4 className="card-title"> Your result is {resultPercentage} %  ( {score} of {hangman.value} ) </h4>
+                        </div>
 
-                            {/* <ProgressBar className='progress-bar-success' animated now={resultPercentage} /> */}
+                            <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
+
+                            { resultPercentage >= 0 && resultPercentage <= 16 ? <img className="shadow emoj" src="/Image/0-16.svg" alt="" /> : <div></div>  }
+                            { resultPercentage >= 17 && resultPercentage <= 33 ? <div><img className="shadow emoj" src="/Image/17-33.svg" alt="" /></div> : <div></div>  }
+                            { resultPercentage >= 34 && resultPercentage <= 50 ? <div><img className="shadow emoj" src="/Image/34-50.svg" alt="" /></div> : <div></div>  }
+                            { resultPercentage >= 51 && resultPercentage <= 66 ? <div><img className="shadow emoj" src="/Image/51-66.svg" alt="" /></div> : <div></div>  }
+                            { resultPercentage >= 67 && resultPercentage <= 83 ? <div><img className="shadow emoj" src="/Image/67-83.svg" alt="" /></div> : <div></div>  }
+                            { resultPercentage >= 84 && resultPercentage <= 100 ? <div><img className="shadow emoj" src="/Image/84-100.svg" alt="" /></div> : <div></div>  }
 
                             <br/>
-                            <h5> It took you: (insert time here) to complete! </h5>
+                            <h5> It took: {timeTaken} seconds to complete! </h5>
                             <br/>
 
                             <div className="card-footer text-muted"> 
-                                You may attempt hangman as many times as you want! <br/>
-                                You can do this by returning and re-entering the same task
+                                You may re-attempt by returning <br/> Then re-entering the same task. 
                             </div>
 
                             <br/>
-                            <Link to="/Dashboard2"><Button variant="btn btn-dark">Return</Button></Link>
+                            <Link to="/Dashboard"><Button variant="btn btn-dark">Return</Button></Link>
                         </div>
                     </div>
                 </Modal>   

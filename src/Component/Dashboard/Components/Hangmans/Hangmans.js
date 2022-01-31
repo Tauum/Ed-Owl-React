@@ -13,7 +13,7 @@ export default function Hangmans() {
 
     useEffect(() => {
         if (LoadAll){
-            fetch(`${window.ipAddress.ip}/Hangman/newestOrder`)
+            fetch(`${window.ipAddress.ip}/Hangman/newestOrder-hideHidden`)
             .then(response => response.json())
             .then(json => { 
                 setParentToChildData(json);
@@ -48,7 +48,6 @@ export default function Hangmans() {
 
                         <Card.Body>
                             These are Hangman tasks which you have not attempted yet.
-                            <br/><br/>
                             {parentToChildData.length > 0 &&
                                 <AllHangmansTable parentToChild={parentToChildData}/>
                             }       
@@ -69,7 +68,6 @@ export default function Hangmans() {
 
                         <Card.Body>
                             These are Hangman tasks which you have attempted.
-                            <br/><br/>
                                 {parentToChildData2.length > 0 &&
                                     <AllHangmansAttemptedTable parentToChild={parentToChildData2} />
                                 }

@@ -23,7 +23,7 @@ export default function UserModeration() {
 
     return (    
         <div>
-            <div className='container'>
+            <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}> 
                     <Card className='card'>
                         <Card.Header className='header'>

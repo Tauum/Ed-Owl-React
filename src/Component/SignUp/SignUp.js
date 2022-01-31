@@ -13,6 +13,7 @@ function SignUp() {
     const[yob,setYob]=useState('')
     const[termsandconditions,setTermsandconditions]=useState(false)
     const[studyacceptence,setStudyacceptence]=useState(false)
+    const[student, setStudent]=useState(false)
 
     const [show, setShow] = useState(true);
     const handleClose = () => setShow(false);
@@ -28,7 +29,15 @@ function SignUp() {
 
         if (ObjectVerify.ObjectProperties(submitUser) && termsandconditions === true){
 
-            submitUser={ name, email, yob, termsandconditions, studyacceptence }
+            if (student)
+            {
+                var role = "STUDENT"
+            }
+            else{
+                var role = "UNDEFINED"
+            }
+
+            submitUser={ name, email, yob,role, termsandconditions, studyacceptence }
             
             fetch("http://localhost:8080/User/add", {
                 method: "POST",  
@@ -66,23 +75,28 @@ function SignUp() {
                         <div className="form-group">
                             <label htmlFor="Name">Name</label>
                             <input value={name} onChange={(e)=>setName(e.target.value)}
-                                type="text" className="form-control stuff" id="Name" placeholder="Enter Name" required/>
+                                type="text" className="form-control stuff" id="Name" placeholder="Enter Name" required="required"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="dob">Year of birth</label>
-                            <input value={yob} onChange={(e)=>setYob(e.target.value)} type="number" className="form-control stuff" id="yob" required/>
+                            <input value={yob} onChange={(e)=>setYob(e.target.value)} type="number" className="form-control stuff" id="yob" required="required"/>
                         </div>
 
                         <div className="form-check">
+                        <input value={student} onChange={(e)=>setStudent(e.target.checked)}
+                             type="checkbox" className="form-check-input stuff" id="student" required="required"/>
+                                <p>I am a student</p>
+                                <br/>
+
                             <label className="form-check-label" htmlFor="termsandconditions">I have read and accept the below usage</label>
                             
                             <br/>
                             <input value={termsandconditions} onChange={(e)=>setTermsandconditions(e.target.checked)}
-                             type="checkbox" className="form-check-input stuff" id="termsandconditions" required/>
+                             type="checkbox" className="form-check-input stuff" id="termsandconditions" required="required"/>
                                 <a href="termsandconditions.html" target="_blank" rel="noopener noreferrer"> Data usage terms & conditions</a>
                                 <br/>
                                 <input value={studyacceptence} onChange={(e)=>setStudyacceptence(e.target.checked)}
-                             type="checkbox" className="form-check-input stuff" id="termsandconditions" required/>
+                             type="checkbox" className="form-check-input stuff" id="termsandconditions" required="required"/>
                                 <a href="Participant-information-sheet-and-consent.pdf" target="_blank" rel="noopener noreferrer"> Participation consent</a>
                             
                         </div>
@@ -91,7 +105,7 @@ function SignUp() {
 
                 <Modal.Footer className='signup-modal-footer'>
                     <Button type="submit" className="btn btn-dark sign-up-buttons"> <Logout/> </Button>
-                    <Button onClick={handleClick} type="button" className="btn btn-primary sign-up-buttons submit" id="submit">Submit</Button>
+                    <Button onClick={handleClick} type="button" className="btn btn-warning sign-up-buttons submit" id="submit">Submit</Button>
                 </Modal.Footer>
 
             </Modal>
