@@ -137,39 +137,30 @@
   fill: #0765c3;
 }
 
-.moodleimg {
-  width: 50px;
-  margin-left: 0.8em;
+@media only screen and (max-width: 390px) {
+  .boltonMoodle {
+    max-width: 0px;
+  }
 }
 
-.mixedimg {
-  width: 140px;
+@media only screen and (min-width: 390px) {
+  .boltonMoodle {
+    max-width: 120px;
+  }
 }
 
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: 500px) {
   .wave .svg {
     height: 10%;
   }
-  .moodleimg {
-    width: 50px;
-    margin-right: 1em;
-  }
-  .mixedimg {
-    width: 150px;
+  .boltonMoodle {
+    max-width: 150px;
   }
 }
 
 @media only screen and (min-width: 1080px) {
   .wave .svg {
     height: 18%;
-  }
-  .bolton-img {
-    margin-left: 0;
-    max-width: 50px;
-  }
-  .moodleimg {
-    width: 50px;
-    margin-right: 1em;
   }
   .mixedimg {
     margin-right: 1em;
@@ -180,14 +171,6 @@
 @media only screen and (min-width: 2000px) {
   .wave .svg {
     height: 18%;
-  }
-  .bolton-img {
-    margin-left: 0;
-    max-width: 50px;
-  }
-  .moodleimg {
-    width: 50px;
-    margin-right: 1em;
   }
   .mixedimg {
     margin-right: 1em;

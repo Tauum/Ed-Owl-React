@@ -1,0 +1,105 @@
+.all-profile-contents{
+    // overflow-x: hidden;
+    min-width: 375px;
+    height: 50em;
+}
+.profile-frame-container{
+    padding-bottom: 5em;
+    background-color: rgb(233, 233, 233);
+
+    margin-top: 16em;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
+    box-shadow: 10px 25px 90px rgb(0, 0, 0);
+
+    img{
+        
+
+        width: 10em;
+        height: 10em;
+        border: 5px solid rgb(233, 233, 233);
+        border-radius: 50%;
+        margin-top: -4.9em;
+        
+        transition: transform .6s; /* Animation */
+        &:hover{
+            box-shadow: 0px -3px 20px rgb(0, 0, 0);
+            font-weight: bold; //so when highlighting text changes to bold
+            transition: transform .6s; /* Animation */
+            transform: scale(1.19);
+        }
+    }
+}
+
+.badges{
+    box-shadow: 0px 0px 50px rgb(87, 87, 87);
+    margin: 2em;
+    margin-bottom: 4em;
+    min-height: 15em;
+
+    border-radius: 3em;
+    padding-bottom: 1em;
+
+    h3{
+        padding-top: 1em;
+        color: white;
+    }
+    border-radius: 3em;
+    padding-bottom: 2em;
+    background: rgb(7, 102, 197);
+    background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
+    .badge{
+        margin: 2em;
+        width: 11em;
+        height: 11em;
+        background-color: rgb(224, 224, 224);
+        border-radius: 1.5em;
+        
+        .emoj{
+            width: 8em;
+            height: 8em;
+            margin-top: 0.1em;
+        }
+        &:hover{
+            box-shadow: 0px 0px 35px rgb(19, 43, 121);
+        }
+    }
+    .badge-description{
+        width: 9.3em;
+        height: 9em;
+        margin: 0;
+        color: black;
+
+    }
+}
+
+
+.stats-summary{
+    box-shadow: 0px 0px 50px rgb(124, 124, 124);
+    background: rgb(194,136,41);
+    background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+    margin: 6em;
+    margin-bottom: 0;
+    border-radius: 3em;
+
+    h3{
+        padding-top: 1em;
+        color: white;
+        padding-bottom: 2.3em;
+    }
+    .badge{
+        margin: 1em;
+        border-radius: 1.5em;
+        
+        &:hover{
+            box-shadow: 0px 0px 35px rgb(19, 43, 121);
+        }
+    }
+    .summary{
+        max-height: 9em;
+        max-width: 9em;
+        margin: 0;
+        background: rgb(1, 126, 207);
+        background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
+    }
+}

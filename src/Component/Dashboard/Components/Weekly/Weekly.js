@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import { Carousel } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './Weekly.css';
 
 export default function Weekly() {
@@ -32,8 +32,8 @@ export default function Weekly() {
     return (
         <div className='all-weekly-content'>
             <h1>Latest Activities</h1>
-            <ul className='weekly-list'>
-                <li className='item'>
+                <Row className='weekly-list'>
+                    <Col className='item'>
                     <Link to={{ pathname: "/Quiz", state: quiz }}>
                         <button className="elementiconbutton shadow quiz">
                             <div className='circle shadow '>
@@ -43,9 +43,11 @@ export default function Weekly() {
                     </Link>
                     <h3>Quiz</h3>
                     <p>Read questions & <br/>click the correct answers</p>
-                </li>
+                 </Col>
+                
+               
 
-                <li className='item'>
+                <Col className='item'>
                     <Link to={{ pathname: "/Hangman", state: hangman }}>
                         <button className="elementiconbutton shadow hangman">
                             <div className='circle shadow '>
@@ -55,9 +57,9 @@ export default function Weekly() {
                     </Link>
                     <h3>Hangman</h3>
                     <p>Identify the word/phase <br /> by gussing the correct characters</p>
-                </li>
+                    </Col>
                 
-                <li className='item'>
+                <Col className='item'>
                     <Link to={{ pathname: "/Match", state: match }}>
                         <button className="elementiconbutton shadow match">
                             <div className='circle shadow '>
@@ -67,9 +69,9 @@ export default function Weekly() {
                     </Link>
                     <h3>Match</h3>
                     <p>Read the title & meaning<br />then match corisponding words and phrases</p>
-                </li>
+                    </Col>
 
-                <li className='item'>
+                <Col className='item'>
                     <Link to={{ pathname: "/Blog" }}>
                         <button className="elementiconbutton shadow blog">
                             <div className='circle shadow '>
@@ -80,9 +82,9 @@ export default function Weekly() {
                     </Link>
                     <h3>Blog</h3>
                     <p>Casual reading & <br/> relevant podcasts / video logs</p>
-                </li>
+                    </Col>
 {/* 
-                <li className='item'>
+                 <Col className='item'>
                     <button className="elementiconbutton shadow filltheblanks">
                         <div className='circle shadow '>
                             <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" viewBox="0 0 512 512"><title>Fill in the blanks</title><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="32" /><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="32" d="M338.29 338.29L448 448" /></svg>
@@ -90,8 +92,8 @@ export default function Weekly() {
                     </button>
                     <h3>Fill in the blanks</h3>
                     <p>Read the phrase / sentence <br /> select the correct missing words</p>
-                </li> */}
-            </ul>
+                </Col> */}
+            </Row>
         </div>
     );
 }

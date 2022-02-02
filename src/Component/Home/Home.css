@@ -1,11 +1,15 @@
 :root {
-  min-width: 410;
+  min-width: 375px;
   --PrimaryColour: #47b883;
   /* this is how properties are declared */
   --SecondaryColour: #378f66;
   --GrayPrimary: rgb(129, 125, 125);
   --GraySecondary: rgb(77, 75, 75);
   scroll-behavior: smooth;
+}
+
+.mixedimg {
+  display: none;
 }
 
 .home {

@@ -1,9 +1,7 @@
 .navbar{
     background: rgb(7, 102, 197);
     background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
-// background-color: rgb(33,37,41);
     padding:0;
-    // max-height: 90px;
 }
 
 .bolton-img{
@@ -22,14 +20,14 @@
     }
 }
 .Main-element{
-        text-decoration: none;
-        color: #ffff;
-        padding-top: 0.5em;
-        cursor: pointer;
-        padding-left: 1em;
-        &:hover{
-            color: black;
-        }
+    text-decoration: none;
+    color: #ffff;
+    padding-top: 0.5em;
+    cursor: pointer;
+    padding-left: 1em;
+    &:hover{
+        color: black;
+    }
     }
 
 .Secondary-element{
@@ -67,7 +65,6 @@
             }
         }
         
-        
         .nav-note-input{
             height: 2.9em;
             align-items: center;
@@ -91,16 +88,11 @@
                     background: rgb(194,136,41);
                 }
             }
-    
         }
     }
-    
-
 }
 
-.announcement-container{
-
-    
+.announcement-container{    
     .announcement-list{
         padding: 0.3em;
         padding-left: 1em;
@@ -108,11 +100,9 @@
     }
 }
 
-
 .Secondary-Main-element{
     color: black;
 }
-
 
 .wave {
     position: absolute;
@@ -133,82 +123,59 @@
 
     .shape-fill {
         fill: #0765c3;
-        // fill: rgb(33,37,41);
-
-
     }
-    
 }
 
-.moodleimg{
-    width: 50px;
-    margin-left: 0.8em;
+@media only screen and (max-width: 390px) {
+    .boltonMoodle{
+        max-width: 0px;
+    }
 }
 
-.mixedimg{
-    width: 140px;
+@media only screen and (min-width: 390px) {
+    .boltonMoodle{
+        max-width: 120px;
+    }
 }
 
 
-    @media only screen and (min-width: 810px) {
-        .wave{
-            .svg{
-                height: 10%;
-            }
+@media only screen and (min-width: 500px) {
+    .mixedimg{
         }
-        .moodleimg{
-            width: 50px;
-            margin-right: 1em;
+    .wave{
+        .svg{
+            height: 10%;
         }
-
-        .mixedimg{
-            width: 150px;
-        }
-
     }
+    .boltonMoodle{
+        max-width: 150px;
+    }
+}
 
-    @media only screen and (min-width: 1080px) {
-        .wave{
-            .svg{
-                height: 18%;
-            }
-        }
-        
-        .bolton-img{
-            margin-left: 0;
-            max-width: 50px;
-        }
-        .moodleimg{
-            width: 50px;
-            margin-right: 1em;
-        }
-
-        .mixedimg{
-            margin-right: 1em;
-            width: 150px;
+@media only screen and (min-width: 1080px) {
+    .wave{
+        .svg{
+            height: 18%;
         }
     }
 
-    
-    @media only screen and (min-width: 2000px) {
-        .wave{
-            .svg{
-                height: 18%;
-            }
-        }
-        
-        .bolton-img{
-            margin-left: 0;
-            max-width: 50px;
-        }
-        .moodleimg{
-            width: 50px;
-            margin-right: 1em;
-        }
+    .mixedimg{
+        margin-right: 1em;
+        width: 150px;
+    }
+}
 
-        .mixedimg{
-            margin-right: 1em;
-            width: 150px;
+
+@media only screen and (min-width: 2000px) {
+    .wave{
+        .svg{
+            height: 18%;
         }
     }
+
+    .mixedimg{
+        margin-right: 1em;
+        width: 150px;
+    }
+}
 

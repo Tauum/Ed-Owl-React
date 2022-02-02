@@ -5,8 +5,19 @@ import './AllQuizTable.css'
 
 export default function AllQuizTable({parentToChild}) {
 
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    const handleButton = (e) => {
+        console.log(w)
+    console.log(h)
+    }
+
+
     return (    
         <div>
+
+            <button onClick={handleButton}></button>
             <div className="table-container">
                 <ul className="AllQuiz-responsive-table">
                     <li className="table-header">

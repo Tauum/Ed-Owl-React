@@ -1,5 +1,6 @@
 .weekly-list {
   padding-top: 1em;
+  padding-left: 0em;
   display: inline-block;
 }
 
@@ -13,28 +14,25 @@
   /* Animation off */
   -webkit-transform: scale(1);
           transform: scale(1);
-  padding-left: 0.2em;
 }
 
 .item .elementiconbutton {
   border-radius: 2em;
   width: 14em;
   height: 14em;
-  padding-left: 1.8em;
 }
 
 .item .elementiconbutton .circle {
-  padding-left: 0.9em;
-  padding-right: 4em;
   background: #d4d4d4;
-  height: 10em;
-  width: 10em;
+  margin: 1em;
+  height: 11em;
+  width: 11em;
   border: 0.1em black dashed;
   border-radius: 6em;
 }
 
 .item .elementiconbutton .circle svg {
-  padding-top: 0.8em;
+  padding-top: 1.5em;
   width: 8em;
 }
 
@@ -76,15 +74,18 @@
 
 .item .circle {
   padding-top: 0.2em;
-  padding-left: 0.1em;
 }
 
 .item .quiz {
   background-color: #936C88;
 }
 
+.item .quiz .circle {
+  margin-right: 0;
+}
+
 .item .quiz .circle svg {
-  padding-top: 1.2em;
+  padding-top: 1.5em;
 }
 
 .item .filltheblanks {
@@ -96,7 +97,7 @@
 }
 
 .item .hangman .circle svg {
-  padding-top: 0.4em;
+  padding-top: 0.8em;
 }
 
 .item .match {
@@ -105,7 +106,7 @@
 
 .item .match .circle svg {
   padding-left: 0.75em;
-  padding-top: 0.65em;
+  padding-top: 1.2em;
 }
 
 .item svg:hover {
@@ -133,7 +134,7 @@
 }
 
 .item .blog .circle svg {
-  padding-top: 0.7em;
+  padding-top: 1.3em;
 }
 
 .item .blog .circle svg svg {
@@ -154,5 +155,11 @@
   /* Animation */
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+@media only screen and (max-width: 400px) {
+  .weekly-list p {
+    font-size: 0.8em;
+  }
 }
 /*# sourceMappingURL=Weekly.css.map */

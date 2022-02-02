@@ -50,7 +50,7 @@ function NavigationBar() {
         <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
           <Container>
           
-          <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="mixedimg"/></Navbar.Brand>
+          <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="boltonMoodle"/></Navbar.Brand>
 
             <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -60,6 +60,7 @@ function NavigationBar() {
                 <NavLink className="Main-element" to="/Home">Home</NavLink>
                 <NavLink className="Main-element" to="/Blog">Blog</NavLink>
                 <NavLink className="Main-element" to="/Dashboard">Dashboard</NavLink>
+                <NavLink className="Main-element" to="/Profile">Profile</NavLink>
                 
                 {/* <NavDropdown className="Drop-element" title="test stuff" id="basic-nav-dropdown">
                   <NavDropdown.Item> 

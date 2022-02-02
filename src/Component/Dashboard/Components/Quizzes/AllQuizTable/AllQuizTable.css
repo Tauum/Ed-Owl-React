@@ -85,6 +85,9 @@ h2 small {
 }
 
 @media all and (max-width: 300px) {
+  .AllQuiz-responsive-table{
+    font-size: 0.5em;
+  }
   .AllQuiz-responsive-table .table-header {
     display: none;
   }
