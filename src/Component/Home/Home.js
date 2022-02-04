@@ -126,7 +126,7 @@ export default function Weekly() {
                 <div className="container">
 
                     <h2>Contact Us</h2>
-                    <form action="">
+                    <form action="" className='contact-us-form'>
                         <label htmlFor="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name here" 
                         value={contactUs.name} onChange={(e) => setContactUs({ ...contactUs, name: e.target.value })} />

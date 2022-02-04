@@ -19,10 +19,13 @@ export default function Hangman(props) {
   const [show, setShow] = useState(false);
   const [submitHangman, setSubmitHangman] = useState(false);
   const [score, setScore] = useState(0);
+  const[rating, setRating] = useState(true)
+  const [submittedHangman, setSubmittedHangman]=useState(false);
 
   const [timeTaken, setTimeTaken] = useState()
   const [initialDate, setInitialDate]=useState()
   const [missingParentData, setMissingParentData] = useState();
+
 
   useEffect(() => {
     if (props.location.state){
@@ -44,10 +47,6 @@ export default function Hangman(props) {
         var initial = new Date(initialDate) 
         var difference = Math.round((currentDate - initial) / 1000);
         setTimeTaken(difference)
-
-        console.log(initial)
-        console.log(currentDate)
-        console.log(difference)
         var submitScore = 0;
 
         if (correctGuesses.length > 0 ){
@@ -77,7 +76,8 @@ export default function Hangman(props) {
                     completed : completed,
                     score: submitScore,
                     timeTaken : difference,
-                    generatedDate : currentDate
+                    generatedDate : currentDate,
+                    rating: true
                 }
             ) 
           })
@@ -86,7 +86,7 @@ export default function Hangman(props) {
         console.log("error: " + error);
         })
         .then((result)=>{
-            console.log(result)
+            setSubmittedHangman(result)
         })
         setShow(true)
         
@@ -100,10 +100,22 @@ export default function Hangman(props) {
         setHintUsed(true)
     }
 
+    const HandleRatingClicked = () =>  {
+        setRating(!rating)
+        fetch(`${window.ipAddress.ip}/SubmittedHangman/vote/${submittedHangman.id}/${rating}`,{
+          method: "PATCH"})
+      }
+
     // do something with this < potentially log it and store the data 
     const handleCopy=(e)=>{
         console.log("coppied")
     }
+
+    useEffect(() => {
+        if (submittedHangman !== false){
+          fetch(`${window.ipAddress.ip}/SubmittedHangman/vote/${submittedHangman.id}/${rating}`,{ method: "PATCH"})
+        }
+    },[rating])
 
     if (missingParentData === true){
         return (<Redirect to="/Dashboard"></Redirect>);
@@ -111,11 +123,7 @@ export default function Hangman(props) {
 
     if (executedFetch){
 
-
-         const resultPercentage = (score / hangman.value).toFixed(2) * 100;
-         
-         console.log(resultPercentage)
-
+         const resultPercentage = ((score / hangman.value) * 100).toFixed(2)
 
         // V this needs to be contained in here because it depends on the executed fetch to exist
         const displayWord = hangman.word.split('') // splits the word by letter
@@ -188,7 +196,16 @@ export default function Hangman(props) {
                             <br/>
                             <h5> It took: {timeTaken} seconds to complete! </h5>
                             <br/>
-
+                            <div className='rating-container'>
+                                <h5>Cast your vote</h5>
+                                <div onClick={HandleRatingClicked}>
+                                    { rating === true ? 
+                                    <img className="shadow emoj rating-button rating-up" src="/Image/thumb-up.svg" alt="" />
+                                    :
+                                    <img className="shadow emoj rating-button rating-down" src="/Image/thumb-down.svg" alt="" />
+                                    }
+                                </div>
+                            </div>
                             <div className="card-footer text-muted"> 
                                 You may re-attempt by returning <br/> Then re-entering the same task. 
                             </div>

@@ -93,7 +93,7 @@ export default function EditAnnouncement(props) {
 
   if (content) {
     return (
-      <div className='page'>
+      <div className='announcement-edit'>
         <br/>
         <h1>Announcement input / Edit Page</h1>
         <br/><br/><br/>

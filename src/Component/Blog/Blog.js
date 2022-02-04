@@ -32,7 +32,7 @@ export default function Blog() {
             })
         }
         else{
-            fetch ("http://localhost:8080/Post/newestOrder-hideHidden")
+            fetch(`${window.ipAddress.ip}/Post/newestOrder-hideHidden`)
             .then(res=>res.json())
             .then((result)=>{
                 setPosts(result)

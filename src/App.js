@@ -1,29 +1,30 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { HashRouter, Redirect } from "react-router-dom";
-
-//pages import here
-import NavigationBar from './Component/NavigationBar/NavigationBar';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import SignUp from './Component/SignUp/SignUp';
 import Home from "./Component/Home/Home"
+
+import DefaultNavBar from "./Component/NavigationBar/DefaultNavBar"
+import AdminNavBar from "./Component/NavigationBar/AdminNavBar"
+import UserNavBar from "./Component/NavigationBar/UserNavBar"
 
 import './App.css';
 
 function App() {
 
   const { user, isAuthenticated, isLoading } = useAuth0();
-  const [ executedFetch, setExecutedFetch]=useState(false);
-  const [ errorVal, setErrorVal]=useState(false);
+  const [executedFetch, setExecutedFetch]=useState(false);
+  const [errorVal, setErrorVal]=useState(false);
+  const [parentToChildData, setParentToChildData]=useState(false);
   
   useEffect(()=>{
     // this needs to be here because the user doesnt exist on first render
     if (user){
-      fetch (`${window.ipAddress.ip}/User/getByEmail`,{
+      fetch(`${window.ipAddress.ip}/User/getByEmail`, {
         method: "POST",  
-        headers:{'Content-Type':'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: user.email }) 
       })
       .then(res=>res.json())
@@ -32,7 +33,16 @@ function App() {
         console.log("error: " + error);
       })
       .then((result)=>{
+
+        if (result !== undefined){
+        console.log(result)
+        if (result.role === "STAFF" || result.role === "ADMIN" ){
+          setParentToChildData(!parentToChildData)
+        }
           window.BackendUser = result; // setting a global variable
+      }
+          // if (result.role === "ADMIN") { setAllowed(true) }
+          // else if (result.role === "STAFF") { setAllowed(true) }
           setExecutedFetch(true);
       })
     }
@@ -47,8 +57,7 @@ function App() {
         return (
           <div className="App">
             <HashRouter>
-              <NavigationBar/>
-              <Redirect to="/Home"></Redirect>
+            <Redirect to="/Home"></Redirect>
               <SignUp/>
             </HashRouter>
           </div>
@@ -59,23 +68,21 @@ function App() {
         return (
           <div className="App">
             <HashRouter>
-              <NavigationBar/>
+              {parentToChildData == true ? <AdminNavBar/> :   <UserNavBar /> }
               <Redirect to="/Home"></Redirect>
+
             </HashRouter>
           </div>
         );
-        // return ( <div className="App"><NavigationBar/></div> );
-        // return (<Redirect to="/Home"></Redirect>);
       }
     }
-
     //this runs if the user is not logged in
     else{
       console.log("not logged in")
       return (
       <div className="App">
         <HashRouter>
-          <NavigationBar/>
+          <DefaultNavBar/>
           <Redirect to="/Home"></Redirect>
         </HashRouter>
       </div>

@@ -11,7 +11,6 @@ export default function Note() {
         fetch(`${window.ipAddress.ip}/Note/GetAllForUser/${window.BackendUser.id}`)
         .then(response => response.json())
         .then(json => {
-            console.log(json)
             setNotes(json);
         })
 

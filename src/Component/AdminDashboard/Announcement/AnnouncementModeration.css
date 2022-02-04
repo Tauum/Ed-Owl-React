@@ -1,6 +1,9 @@
 .table-container {
   padding-left: 0;
 }
+.announcement-edit{
+  min-height: 60em;
+}
 
 .playbutton {
   height: 1em;

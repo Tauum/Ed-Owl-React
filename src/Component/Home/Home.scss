@@ -1,9 +1,5 @@
 :root{
     min-width: 375px;
-    --PrimaryColour: #47b883; /* this is how properties are declared */
-    --SecondaryColour: #378f66;
-    --GrayPrimary: rgb(129, 125, 125);
-    --GraySecondary: rgb(77, 75, 75);
     scroll-behavior: smooth;
     
 }
@@ -141,7 +137,8 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
         }
     
         input,textarea{ // <<can apply to multiple things
-            background-color: white;
+            background: rgb(1, 126, 207);
+            background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
             color: black;
             width: 100%;
             padding: .8em;
@@ -181,12 +178,11 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
             width: 50%;
             margin: auto;
             margin-top: 5em;
-            
-            // width: 70%;
             padding: 1em;
             background: rgb(194,136,41);
                 background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
             color: white;
+            font-size: 500;
             h2{
                 font-size: 1.6em;
             }
@@ -205,7 +201,12 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
     }
 }
 
-// .Contact-Right{
-//     margin-top: 2.5em;
-//     text-align: center;
-// }
+
+@media only screen and (min-width: 800px) {
+
+.contact-Section{
+    max-width: 500px;
+}
+
+
+}

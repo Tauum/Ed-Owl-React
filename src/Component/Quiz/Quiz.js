@@ -10,7 +10,7 @@ import './Quiz.css';
 export default function Quiz(props) {
 
   const [quiz, setQuiz] = useState('')
-  const [submittedQuiz, setSubmittedQuiz] = useState("")
+  const [submittedQuiz, setSubmittedQuiz] = useState(false)
   const [questionList, setQuestionList] = useState([]);
   const [executedSet, setExecutedSet] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -22,12 +22,13 @@ export default function Quiz(props) {
   const [submittedQuestions, setSubmittedQuestions] = useState([])
   const [submitQuizCondition, setSubmitQuizCondition] = useState(false)
 
+  const[rating, setRating] = useState(true)
+
   const [missingParentData, setMissingParentData] = useState();
   const [initialDate, setInitialDate]=useState()
   
   const [timeTaken, setTimeTaken] = useState()
-  const [paused, setPaused] = useState(false)
-
+  const [paused, setPaused] = useState(0)
 
   useEffect(() => {
     if (props.location.state) {
@@ -86,6 +87,7 @@ export default function Quiz(props) {
             quizTimeLimit: quiz.timeLimit,
             submittedQuestions: submittedQuestions,
             quizId: quiz.id,
+            rating: true,
 
             score: scoreTotal,
             generatedDate: currentDate,
@@ -98,11 +100,12 @@ export default function Quiz(props) {
         })
         .then((result) => {
           setShow(true)
-          setSubmittedQuiz({
-            user: window.BackendUser, quizTitle : quiz.title, quizValue: quiz.value,
-            quizTimeLimit: quiz.timeLimit, submittedQuestions: submittedQuestions,
-            score: val, submissionDate: currentDate, timeTaken: difference, quizSubject: quiz.subject,
-          })
+          setSubmittedQuiz(result)
+          // setSubmittedQuiz({
+          //   user: window.BackendUser, quizTitle : quiz.title, quizValue: quiz.value,
+          //   quizTimeLimit: quiz.timeLimit, submittedQuestions: submittedQuestions,
+          //   score: val, submissionDate: currentDate, timeTaken: difference, quizSubject: quiz.subject,
+          // })
         })
     }
   }, [scoreTotal, submitQuizCondition])
@@ -110,6 +113,16 @@ export default function Quiz(props) {
   function finalize() { // this cuts the quiz via time here
     setSubmitQuizCondition(true)
   }
+
+  const HandleRatingClicked = () =>  {
+    setRating(!rating)
+  }
+
+  useEffect(() => {
+    if (submittedQuiz !== false){
+      fetch(`${window.ipAddress.ip}/SubmittedQuiz/vote/${submittedQuiz.id}/${rating}`,{ method: "PATCH"})
+    }
+},[rating])
 
   function storeQuestion(answer) {
     var question = questionList[current]
@@ -142,7 +155,8 @@ export default function Quiz(props) {
 
   if (executedSet) {
 
-    const resultPercentage = (correctAnswers / questionList.length).toFixed(2) * 100;
+    
+    const resultPercentage = ((correctAnswers / questionList.length) * 100).toFixed(2)
     return (
       <div className='quiz-main body'>
         <br /> <br /> <br /> <br />
@@ -190,7 +204,18 @@ export default function Quiz(props) {
                 <br />
                 <h5> It took: {timeTaken} Seconds to complete! </h5>                                                                         {/* this needs doing */}
                 <br />
+                <div className='rating-container'>
+                  <h5>Cast your vote</h5>
+                  <div onClick={HandleRatingClicked}>
+                    { rating === true ? 
+                    <img className="shadow emoj rating-button rating-up" src="/Image/thumb-up.svg" alt="" />
+                    :
+                    <img className="shadow emoj rating-button rating-down" src="/Image/thumb-down.svg" alt="" />
+                    }
+                  </div>
+                </div>
                 <div className="card-footer text-muted">
+                  Vote by clicking once for like and twice for dislike
                   You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view your results by clicking review
                 </div>
                 <br />

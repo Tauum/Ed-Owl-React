@@ -43,10 +43,10 @@ export default function QuizReview(props) {
           <div className='review-question-list'>
             {submittedQuiz.submittedQuestions.map((submittedQuestion, index) => (
               <div key={index}>
+Question {index + 1}
                 <li className="review-question-entries" >
                     <div>
-                      <div className="" data-label="question">Question {index + 1} -
-                        Worth: {submittedQuestion.questionValue}  </div>
+                      <div className="" data-label="question"> Worth {submittedQuestion.questionValue} </div>
                       <div className="" data-label="question">{submittedQuestion.question}</div>
                     </div>
                     

@@ -2,6 +2,7 @@
   height: 100%;
   all: none;
   color: white;
+  min-height: 60em;
 }
 
 .quiz-review-main .quiz-review-container {
@@ -19,6 +20,7 @@
 }
 
 .quiz-review-main .quiz-review-container h1 {
+  margin: 1em;
   padding-top: 2em;
 }
 
@@ -31,8 +33,8 @@
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
   background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
   margin-bottom: 4em;
   padding: 1em;
   border-radius: 2em;
@@ -56,18 +58,45 @@
 }
 
 @media only screen and (min-width: 770px) {
-  .quiz-review-main .quiz-review-container {
-    margin-left: 10em;
-    margin-right: 10em;
+  .quiz-review-container {
+    margin-left: 15em;
+    margin-right: 15em;
   }
-  .quiz-review-main .quiz-review-container .review-question-entries {
+  .quiz-review-container .review-question-list {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+  .review-question-entries {
     margin-left: 20em;
     margin-right: 20em;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .quiz-review-main .quiz-review-container {
+  .quiz-review-container {
+    margin-left: 15em;
+    margin-right: 15em;
+  }
+  .quiz-review-container .review-question-list {
+    margin-left: 15em;
+    margin-right: 15em;
+  }
+  .review-question-entries {
+    margin-left: 20em;
+    margin-right: 20em;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .quiz-review-container {
+    margin-left: 15em;
+    margin-right: 15em;
+  }
+  .quiz-review-container .review-question-list {
+    margin-left: 25em;
+    margin-right: 25em;
+  }
+  .review-question-entries {
     margin-left: 20em;
     margin-right: 20em;
   }

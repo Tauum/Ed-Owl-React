@@ -18,9 +18,12 @@ export default function Match(props) {
     const [explainations, setExplainations] = useState();
     const [titles, setTitles] = useState();
     const [correctVal, setCorrectVal] = useState();
+    const [submittedMatch, setSubmittedMatch] = useState(false);
 
     const [timeTaken, setTimeTaken] = useState()
     const [initialDate, setInitialDate]=useState()
+
+    const[rating, setRating] = useState(true)
 
     const [show, setShow] = useState(false);
 
@@ -63,7 +66,6 @@ export default function Match(props) {
 
 
     const handleSubmitClicked = () => {
-        console.log("submit clicked")
         var currentDate = new Date()
         var initial = new Date(initialDate) 
         var difference = Math.round((currentDate - initial) / 1000);
@@ -97,7 +99,8 @@ export default function Match(props) {
                     correct: correct,
                     score : score,
                     timeTaken : difference,
-                    generatedDate : currentDate
+                    generatedDate : currentDate,
+                    rating: true
                 }
             ) 
           })
@@ -106,7 +109,7 @@ export default function Match(props) {
         console.log("error: " + error);
         })
         .then((result)=>{
-            console.log(result)
+            setSubmittedMatch(result)
         })
         setShow(true)
     }
@@ -128,18 +131,22 @@ export default function Match(props) {
         setExplainations(newExplainations);
     }
 
-    const printDetails = () => {
-        console.log(match)
-        console.log(explainations)
-        console.log(titles)
-    };
+    const HandleRatingClicked = () =>  {
+        setRating(!rating)
+      }
+
+      useEffect(() => {
+        if (submittedMatch !== false){
+          fetch(`${window.ipAddress.ip}/SubmittedMatch/vote/${submittedMatch.id}/${rating}`,{ method: "PATCH"})
+        }
+    },[rating])
 
       if (missingParentData === true) {
         return (<Redirect to="/Dashboard"></Redirect>);
       }
 
     if (executedSet) {
-        const resultPercentage = (correctVal / match.definitions.length).toFixed(2) * 100;
+        const resultPercentage = ((correctVal / match.definitions.length) * 100).toFixed(2)
         return (
             <div className='all-match-container body'>
                 <br /> <br /> <br /> <br /> <br />
@@ -199,7 +206,6 @@ export default function Match(props) {
                         </Col>
                     </Row>
                     <Button onClick={handleSubmitClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Submit</Button>
-                    <button onClick={() => { printDetails() }}>Print stuff</button>
                 </div>
 
 
@@ -222,6 +228,16 @@ export default function Match(props) {
                             <br />
                             <h5> It took: {timeTaken} to complete! </h5>                                                                         {/* this needs doing */}
                             <br />
+                            <div className='rating-container'>
+                                <h5>Cast your vote</h5>
+                                <div onClick={HandleRatingClicked}>
+                                    { rating === true ? 
+                                    <img className="shadow emoj rating-button rating-up" src="/Image/thumb-up.svg" alt="" />
+                                    :
+                                    <img className="shadow emoj rating-button rating-down" src="/Image/thumb-down.svg" alt="" />
+                                    }
+                                </div>
+                            </div>
                             <div className="card-footer text-muted">
                                 You may re-attempt by returning <br/> Then re-entering the same task.
                             </div>

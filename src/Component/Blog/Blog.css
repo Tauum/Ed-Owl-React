@@ -3,8 +3,9 @@ h1 {
 }
 
 .blog-container {
+  min-height: 60em;
   color: white;
-  padding-bottom: 10em;
+  padding-bottom: 15em;
   overflow: hidden;
 }
 

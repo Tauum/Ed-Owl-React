@@ -2,6 +2,7 @@
     height: 100%;
     all: none;
     color: white;
+    min-height: 60em;
 
     .quiz-review-container{
         margin-top: 10em;
@@ -18,6 +19,7 @@
 
         
         h1{
+            margin: 1em;
             padding-top: 2em;
         }
 
@@ -29,8 +31,8 @@
             .review-question-entries{
                 background: rgb(194,136,41);
                 background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
-                margin-left: 5em;
-                margin-right: 5em;
+                margin-left: 3em;
+                margin-right: 3em;
                 margin-bottom: 4em;
                 padding: 1em;
                 border-radius: 2em;
@@ -49,27 +51,53 @@
 }
 // V why isnt this applying?
 @media only screen and (min-width: 770px) {
-    .quiz-review-main {
-        .quiz-review-container{
-            margin-left: 10em;
-            margin-right: 10em;
-            .review-question-entries{
-                margin-left: 20em;
-                margin-right: 20em;
-            }
+   
+    .quiz-review-container{
+        margin-left: 15em;
+        margin-right: 15em;
+
+        .review-question-list{
+            margin-left: 5em;
+            margin-right: 5em;
         }
     }
+        .review-question-entries{
+            margin-left: 20em;
+            margin-right: 20em;
+        }
 
 }
 
 @media only screen and (min-width: 1000px) {
-    .quiz-review-main {
-        .quiz-review-container{
+    .quiz-review-container{
+        margin-left: 15em;
+        margin-right: 15em;
+
+        .review-question-list{
+            margin-left: 15em;
+            margin-right: 15em;
+        }
+    }
+        .review-question-entries{
             margin-left: 20em;
             margin-right: 20em;
         }
-    }
+}
 
+@media only screen and (min-width: 1500px) {
+    .quiz-review-container{
+        margin-left: 15em;
+        margin-right: 15em;
+
+        .review-question-list{
+            margin-left: 25em;
+            margin-right: 25em;
+        }
+    }
+        .review-question-entries{
+            margin-left: 20em;
+            margin-right: 20em;
+        }
 }
 
 

@@ -6,12 +6,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(1, 126, 207);
+background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
   /* background: rgb(166,141,173); */
 /* background: linear-gradient(0deg, rgba(166,141,173,1) 0%, rgba(115,104,202,1) 100%); */
-
-
-background: rgb(1, 126, 207);
-background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
 background-repeat: no-repeat;
 }
 

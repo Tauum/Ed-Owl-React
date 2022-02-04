@@ -17,7 +17,8 @@ export default function AllQuizTable({parentToChild}) {
     return (    
         <div>
 
-            <button onClick={handleButton}></button>
+            {/* <button onClick={handleButton}></button> */}
+            
             <div className="table-container">
                 <ul className="AllQuiz-responsive-table">
                     <li className="table-header">

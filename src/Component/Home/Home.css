@@ -1,10 +1,5 @@
 :root {
   min-width: 375px;
-  --PrimaryColour: #47b883;
-  /* this is how properties are declared */
-  --SecondaryColour: #378f66;
-  --GrayPrimary: rgb(129, 125, 125);
-  --GraySecondary: rgb(77, 75, 75);
   scroll-behavior: smooth;
 }
 
@@ -167,7 +162,9 @@
 }
 
 .home .contact-Section input, .home .contact-Section textarea {
-  background-color: white;
+  background: #017ecf;
+  background: -webkit-gradient(linear, left bottom, left top, from(#017ecf), to(#0193cf));
+  background: linear-gradient(0deg, #017ecf 0%, #0193cf 100%);
   color: black;
   width: 100%;
   padding: .8em;
@@ -221,6 +218,7 @@
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
   background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
   color: white;
+  font-size: 500;
   -webkit-transition: -webkit-transform .6s;
   transition: -webkit-transform .6s;
   transition: transform .6s;
@@ -246,5 +244,11 @@
   /* Animation */
   -webkit-transform: scale(1.19);
           transform: scale(1.19);
+}
+
+@media only screen and (min-width: 800px) {
+  .contact-Section {
+    max-width: 500px;
+  }
 }
 /*# sourceMappingURL=Home.css.map */

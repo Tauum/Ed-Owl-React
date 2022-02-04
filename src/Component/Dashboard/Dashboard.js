@@ -22,7 +22,7 @@ return (
     <Quizzes className="quizzes" id="games"/>
     <Hangmans className="hangmans"/>
     <Matches className="matches"/>
-    <BlankFills className="blankfills"/>
+    {/* <BlankFills className="blankfills"/> */}
     <br/><br/><br/>
 
 

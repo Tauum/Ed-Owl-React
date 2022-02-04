@@ -11,7 +11,7 @@ const domain= process.env.REACT_APP_AUTH0_DOMAIN; // this is needed for auth0 be
 const clientId= process.env.REACT_APP_AUTH0_CLIENT_ID; // this is needed for auth0 below
 
 // window.ipAddress = { ip: "http://192.168.2.128:8080" }; //  global variable because isp keeps changing ip address
-window.ipAddress = { ip: "http://0.0.0.0:8080" }; //  global variable because isp keeps changing ip address
+window.ipAddress = { ip: "http://localhost:8080" }; //  global variable because isp keeps changing ip address
 
 const queryClient = new QueryClient() // this is needed for react-query below
 
