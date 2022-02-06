@@ -1,26 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 import './AllQuizTable.css'
 
 export default function AllQuizTable({parentToChild}) {
 
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-
-    const handleButton = (e) => {
-        console.log(w)
-    console.log(h)
-    }
-
-
     return (    
-        <div>
-
-            {/* <button onClick={handleButton}></button> */}
-            
+        <div>            
             <div className="table-container">
-                <ul className="AllQuiz-responsive-table">
+                <ul className="AllQuiz-responsive-table responsive-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Subject</div>

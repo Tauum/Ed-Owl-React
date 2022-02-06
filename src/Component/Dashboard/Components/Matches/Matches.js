@@ -3,11 +3,10 @@ import { Button, Accordion, Card } from 'react-bootstrap';
 import AllMatchTable from "./AllMatchTable/AllMatchTable";
 import AllMatchAttemptedTable from './AllMatchAttemptedTable/AllMatchAttemptedTable';
 
-export default function Matches() {
+export default function Matches({parentToChild}) {
 
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
-
     const [parentToChildData2, setParentToChildData2] = useState([])
     const [loadAttempted, setloadAttempted] = useState(false)
 
@@ -21,17 +20,22 @@ export default function Matches() {
         }
         // v CHANGE THIS REQUEST TO STUFF THAT HAS BEEN ATTEMPTED SOMEHOW
         if (loadAttempted){
-            fetch(`${window.ipAddress.ip}/SubmittedMatch/getForUser/${window.BackendUser.id}`)
-            .then(response => response.json())
-            .then(json => {
-                setParentToChildData2(json);
-                console.log(json)
-            })
+            if (parentToChild){
+                fetch(`${window.ipAddress.ip}/SubmittedMatch/getForUser/${parentToChild}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
+            else{
+                fetch(`${window.ipAddress.ip}/SubmittedMatch/getForUser/${window.BackendUser.id}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
         }
     }, [LoadAll, loadAttempted])
-
-    
-
     return (
         <div>
             <h1> Match </h1>

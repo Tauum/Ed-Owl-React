@@ -22,7 +22,7 @@
 
 .quiz-container {
   margin: 1em;
-  padding-top: 4em;
+  padding-top: 2em;
   color: white;
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
@@ -33,18 +33,20 @@
 }
 
 .question {
-  padding: 1em;
+  padding: 2em;
+  padding-bottom: 0;
 }
 
 .answer {
-  font-size: 16px;
+  font-size: 7px;
   display: inline-block;
   padding: 0.5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .answer .answer-text {
@@ -53,12 +55,19 @@
 }
 
 ul {
+  list-style: none;
   padding-left: 0;
-  padding: 2em;
+  padding: 1.5em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ul li {
+  font-size: 10px;
 }
 
 .button-quiz {
-  margin-top: 2em;
+  margin-top: 1em;
   background: #0765c3;
   background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
   background: linear-gradient(0deg, #0765c3 0%, #004890 100%);

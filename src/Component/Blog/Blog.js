@@ -70,7 +70,6 @@ return (
 
         <div className="search"> 
             <form action="">
-                <label htmlFor="searchF"> <h2> Refine: </h2> </label>
                 <input type="text" value={searchTitle} onChange={(e)=>setSearchTitle(e.target.value)} name="search"/>
 
                 <input type="submit" className="Send-Message-CTA shadow" value="Search" onClick={handleClick}/>

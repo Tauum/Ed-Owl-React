@@ -23,8 +23,8 @@
 
 .match-main-container {
   margin: 1em;
-  margin-bottom: 3em;
-  padding-top: 4em;
+  margin-bottom: 2em;
+  padding-top: 2em;
   color: white;
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
@@ -46,14 +46,40 @@
 .match-main-container .titles-list {
   padding-left: 0.4em;
   padding-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .match-main-container .explainations-list {
   padding-left: 0;
   padding-right: 0.4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .all-match-element {
+  -ms-flex-item-align: middle;
+      align-self: middle;
+  -webkit-box-align: middle;
+      -ms-flex-align: middle;
+          align-items: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 80px;
   min-width: 153px;
   background: #0765c3;
@@ -63,6 +89,11 @@
   margin-bottom: 1em;
   padding: 0.5em;
   border-radius: 1em;
+}
+
+.all-match-element p {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .emoj {
@@ -110,6 +141,10 @@
   .ul {
     min-width: 294px;
     max-width: 235px;
+  }
+  .all-match-element {
+    min-height: 80px;
+    min-width: 200px;
   }
 }
 

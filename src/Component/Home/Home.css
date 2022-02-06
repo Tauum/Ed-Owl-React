@@ -162,10 +162,10 @@
 }
 
 .home .contact-Section input, .home .contact-Section textarea {
-  background: #017ecf;
-  background: -webkit-gradient(linear, left bottom, left top, from(#017ecf), to(#0193cf));
-  background: linear-gradient(0deg, #017ecf 0%, #0193cf 100%);
-  color: black;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  color: white;
   width: 100%;
   padding: .8em;
   margin-bottom: 1em;
@@ -177,7 +177,7 @@
 }
 
 .home .contact-Section input[type="submit"] {
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 5em;
@@ -210,7 +210,7 @@
 .home .contact-Section .contact-details {
   text-align: center;
   border-radius: 4em;
-  width: 50%;
+  width: 80%;
   margin: auto;
   margin-top: 5em;
   padding: 1em;
@@ -234,6 +234,7 @@
 
 .home .contact-Section .contact-details p {
   font-size: 0.9em;
+  margin-bottom: 0;
 }
 
 .home .contact-Section .contact-details:hover {
@@ -244,6 +245,11 @@
   /* Animation */
   -webkit-transform: scale(1.19);
           transform: scale(1.19);
+}
+
+.home .contact-Section .contact-details .map {
+  margin: 1em;
+  border-radius: 1.5em;
 }
 
 @media only screen and (min-width: 800px) {

@@ -1,9 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, Redirect } from 'react-router-dom'
-import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
+import React from "react";
 import { useEffect, useState } from 'react';
-import { Button, Modal, ProgressBar } from 'react-bootstrap';
-import Countdown from "react-countdown";
 
 import "./QuizReview.css"
 
@@ -16,7 +14,6 @@ export default function QuizReview(props) {
 
   useEffect(() => {
     if (props.location.state) {
-      console.log(props.location.state)
       setSubmittedQuiz(props.location.state)
       setExecutedSet(true)
     }

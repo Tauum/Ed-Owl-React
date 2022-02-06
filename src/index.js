@@ -12,6 +12,7 @@ const clientId= process.env.REACT_APP_AUTH0_CLIENT_ID; // this is needed for aut
 
 // window.ipAddress = { ip: "http://192.168.2.128:8080" }; //  global variable because isp keeps changing ip address
 window.ipAddress = { ip: "http://localhost:8080" }; //  global variable because isp keeps changing ip address
+//window.ipAddress = { ip: "/api/" }; //  THIS IS FOR PRODUCTION
 
 const queryClient = new QueryClient() // this is needed for react-query below
 

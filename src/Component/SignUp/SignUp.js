@@ -1,7 +1,4 @@
 import * as ObjectVerify from '../../Function/ObjectVerify';
-
-import { HashRouter, Redirect } from "react-router-dom";
-
 import { Modal, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
@@ -29,16 +26,12 @@ function SignUp() {
         const email = user.email
 
         var submitUser={ name, email, yob }
+        var role;
 
         if (ObjectVerify.ObjectProperties(submitUser) && termsandconditions === true){
 
-            if (student)
-            {
-                var role = "STUDENT"
-            }
-            else{
-                var role = "UNDEFINED"
-            }
+            if (student)  {  role = "STUDENT" }
+            else {  role = "UNDEFINED" }
 
             submitUser={ name, email, yob,role, termsandconditions, studyacceptence }
             
@@ -59,11 +52,12 @@ function SignUp() {
             // handleClose()
             // }
             console.log("Sign-up Complete") 
-             handleClose()
-             window.location.reload(false);
 
+            handleClose()
+            // window.location.reload(false);
         }
         else{ console.log("Sign-up Missing fields")}
+        
     }
     
         return (

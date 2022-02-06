@@ -13,6 +13,8 @@ import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import Hangman from '../Hangman/Hangman';
 import BlankFill from '../BlankFill/BlankFill';
 import Match from '../Match/Match';
+import Profile from '../Profile/Profile';
+import Dashboard from "../Dashboard/Dashboard"
 
 import Logout from '../../Function/Logout';
 
@@ -23,18 +25,6 @@ import EditBlog from '../AdminDashboard/Blogs/EditBlog';
 import EditAnnouncement from '../AdminDashboard/Announcement/EditAnnouncement';
 
 import QuizReview from "../Quiz/QuizReview";
-
-import tester2 from "../Test-stuff/tester2"
-import StateEffect from "../Test-stuff/StateEffect";
-import Etc from "../Test-stuff/Etc/Etc";
-import Dashboard from "../Dashboard/Dashboard";
-import Profile from "../Profile/Profile";
-import RequestTest from '../Test-stuff/RequestTest';
-import Planets from '../Test-stuff/React-query/Planets';
-import fullpage from '../Test-stuff/fullpage';
-import Parent from '../Test-stuff/ParentChild/Parent';
-import timer from '../Test-stuff/timer';
-
 import './NavigationBar.css';
 
 export default function DefaultNavBar() {
@@ -60,40 +50,6 @@ return (
             <NavLink className="Main-element" to="/Profile">Profile</NavLink>
 
             <NavDropdown className="Drop-element" title="test stuff" id="basic-nav-dropdown">
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/StateEffect">StateEffect</NavLink>  
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/Dashboard">Dashboard</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/Etc">Etc</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/Parent">Parent-Child-Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/RequestTest">Request Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/Planets">React Query Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/timer">timer Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/BlankFill">BlankFill Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/fullpage">BlankFill Test</NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/tester2">tester2</NavLink>
-              </NavDropdown.Item>
-
-              <NavDropdown.Item> 
-                <NavLink className="Drop-element" to="/Match">Match</NavLink>
-              </NavDropdown.Item>
             </NavDropdown>
    
             <NavDropdown className="Drop-element" title="Quick Notes" id="basic-nav-dropdown" >
@@ -135,18 +91,8 @@ return (
       <Route path="/EditMatch" component={EditMatch}/>
       <Route path="/EditBlog" component={EditBlog}/>
       <Route path="/EditAnnouncement" component={EditAnnouncement}/>
-      
-   
+  
       <Route path="/QuizReview" component={QuizReview}/>
-   
-      <Route path="/Etc" component={Etc}/>
-      <Route path="/StateEffect" component={StateEffect}/>
-      <Route path="/Parent" component={Parent}/>
-      <Route path="/RequestTest" component={RequestTest}/>
-      <Route path="/Planets" component={Planets}/>
-      <Route path="/timer" component={timer}/>
-      <Route path="/fullpage" component={fullpage}/>
-      <Route path="/tester2" component={tester2}/>
    
     </HashRouter>
    </div>

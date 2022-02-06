@@ -39,6 +39,10 @@
           transform: scale(1.19);
 }
 
+.profile-frame-container h2 {
+  font-size: 30px;
+}
+
 .badges {
   -webkit-box-shadow: 0px 0px 50px #575757;
           box-shadow: 0px 0px 50px #575757;
@@ -91,20 +95,32 @@
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
   background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
-  margin: 6em;
-  margin-bottom: 0;
   border-radius: 3em;
+  padding-bottom: 1em;
+}
+
+.stats-summary .statistics-carousel {
+  border-radius: 1em;
+  height: 24em;
+}
+
+.stats-summary .statistics-carousel a {
+  width: 60px;
 }
 
 .stats-summary h3 {
-  padding-top: 1em;
   color: white;
-  padding-bottom: 2.3em;
+  text-align: center;
 }
 
 .stats-summary .badge {
-  margin: 1em;
+  padding: 0;
   border-radius: 1.5em;
+  width: 16em;
+  height: 16em;
+  margin: 0;
+  margin-top: 2.5em;
+  background-color: #e0e0e0;
 }
 
 .stats-summary .badge:hover {
@@ -112,13 +128,13 @@
           box-shadow: 0px 0px 35px #132b79;
 }
 
-.stats-summary .summary {
-  max-height: 9em;
-  max-width: 9em;
-  margin: 0;
+.stats-summary .badge .emoj {
   background: #017ecf;
   background: -webkit-gradient(linear, left bottom, left top, from(#017ecf), to(#0193cf));
   background: linear-gradient(0deg, #017ecf 0%, #0193cf 100%);
+  width: 11em;
+  height: 11em;
+  margin: 2.5em;
 }
 
 @media only screen and (min-width: 700px) {

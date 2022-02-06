@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import { useEffect, useState } from 'react';
 import { Button, Modal, ProgressBar, Row, Col } from 'react-bootstrap';
-import Countdown from "react-countdown";
 import { Link, Redirect } from 'react-router-dom'
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -47,11 +46,10 @@ export default function Match(props) {
     function arrayShuffle(array) {
         // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
         let currentIndex = array.length, randomIndex;
-        while (currentIndex != 0) {
+        while (currentIndex !== 0) {
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-            [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
+            [array[currentIndex], array[randomIndex]] = [ array[randomIndex], array[currentIndex]];
         }
         return array;
     }
@@ -85,7 +83,6 @@ export default function Match(props) {
         }
         setCorrectVal(correct)
 
-        var currentDate = new Date()
         fetch (`${window.ipAddress.ip}/SubmittedMatch/add`,{
             method: "POST",  
             headers:{'Content-Type':'application/json'},
@@ -205,7 +202,7 @@ export default function Match(props) {
                             </DragDropContext>
                         </Col>
                     </Row>
-                    <Button onClick={handleSubmitClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Submit</Button>
+                    <Button onClick={handleSubmitClicked} type="buton" className="btn btn-warning submit-match" id="submitbutton">Submit</Button>
                 </div>
 
 
@@ -216,7 +213,7 @@ export default function Match(props) {
                                 <h4 className="card-title"> Your result is {resultPercentage} %  ( {correctVal} of {match.definitions.length} ) </h4>
                             </div>
                             <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
-                            
+                            <h5> It took: {timeTaken} Seconds to complete! </h5>       
 
                             { resultPercentage >= 0 && resultPercentage <= 16 ? <img className="shadow emoj" src="/Image/0-16.svg" alt="" /> : <div></div>  }
                             { resultPercentage >= 17 && resultPercentage <= 33 ? <div><img className="shadow emoj" src="/Image/17-33.svg" alt="" /></div> : <div></div>  }
@@ -225,9 +222,6 @@ export default function Match(props) {
                             { resultPercentage >= 67 && resultPercentage <= 83 ? <div><img className="shadow emoj" src="/Image/67-83.svg" alt="" /></div> : <div></div>  }
                             { resultPercentage >= 84 && resultPercentage <= 100 ? <div><img className="shadow emoj" src="/Image/84-100.svg" alt="" /></div> : <div></div>  }
 
-                            <br />
-                            <h5> It took: {timeTaken} to complete! </h5>                                                                         {/* this needs doing */}
-                            <br />
                             <div className='rating-container'>
                                 <h5>Cast your vote</h5>
                                 <div onClick={HandleRatingClicked}>
@@ -239,6 +233,7 @@ export default function Match(props) {
                                 </div>
                             </div>
                             <div className="card-footer text-muted">
+                            By default vote is like, click the button to dislike<br/>
                                 You may re-attempt by returning <br/> Then re-entering the same task.
                             </div>
                             <br />

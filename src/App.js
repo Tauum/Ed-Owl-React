@@ -4,7 +4,6 @@ import { HashRouter, Redirect } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import SignUp from './Component/SignUp/SignUp';
-import Home from "./Component/Home/Home"
 
 import DefaultNavBar from "./Component/NavigationBar/DefaultNavBar"
 import AdminNavBar from "./Component/NavigationBar/AdminNavBar"
@@ -41,8 +40,6 @@ function App() {
         }
           window.BackendUser = result; // setting a global variable
       }
-          // if (result.role === "ADMIN") { setAllowed(true) }
-          // else if (result.role === "STAFF") { setAllowed(true) }
           setExecutedFetch(true);
       })
     }
@@ -68,7 +65,7 @@ function App() {
         return (
           <div className="App">
             <HashRouter>
-              {parentToChildData == true ? <AdminNavBar/> :   <UserNavBar /> }
+              {parentToChildData === true ? <AdminNavBar/> :   <UserNavBar /> }
               <Redirect to="/Home"></Redirect>
 
             </HashRouter>

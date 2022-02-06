@@ -137,9 +137,9 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
         }
     
         input,textarea{ // <<can apply to multiple things
-            background: rgb(1, 126, 207);
-            background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
-            color: black;
+            background: rgb(194,136,41);
+            background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+            color: white;
             width: 100%;
             padding: .8em;
             margin-bottom: 1em;
@@ -150,7 +150,7 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
         } 
     
         input[type="submit"] { // can also select things like this
-            color: black;
+            color: white;
             font-weight: bold;
             font-size: 1.1em;
             margin-bottom: 5em;
@@ -175,7 +175,7 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
         .contact-details{
             text-align: center;
             border-radius: 4em;
-            width: 50%;
+            width: 80%;
             margin: auto;
             margin-top: 5em;
             padding: 1em;
@@ -188,6 +188,7 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
             }
             p{
                 font-size: 0.9em;
+                margin-bottom: 0;
             }
         
             transition: transform .6s; /* Animation off */
@@ -196,6 +197,11 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
             &:hover{
                 transition: transform .6s; /* Animation */
                 transform: scale(1.19);
+            }
+
+            .map{
+                margin: 1em;
+                border-radius: 1.5em;
             }
         }
     }
@@ -206,6 +212,7 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
 
 .contact-Section{
     max-width: 500px;
+
 }
 
 

@@ -158,15 +158,12 @@ export default function Hangman(props) {
 
                 <div className='hangman-main-content'>
                     <h1> {hangman.title}  </h1>  <br/> 
-                    <p> Find the hidden word by entering letters</p>  <br/>
                     <h2> Lives: {lives} </h2> <br/>
                     
                     <div className="hint"> 
                         <Button onClick={handleHintClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Hint</Button>
                         <p id="hintp"> {hangman.hint} </p>
                     </div>
-
-                    <br/>
                     <h2>{displayWord}</h2>
 
                     <div className='buttons'>
@@ -185,7 +182,8 @@ export default function Hangman(props) {
                         </div>
 
                             <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
-
+                            <h5> It took: {timeTaken} Seconds to complete! </h5>         
+                                         
                             { resultPercentage >= 0 && resultPercentage <= 16 ? <img className="shadow emoj" src="/Image/0-16.svg" alt="" /> : <div></div>  }
                             { resultPercentage >= 17 && resultPercentage <= 33 ? <div><img className="shadow emoj" src="/Image/17-33.svg" alt="" /></div> : <div></div>  }
                             { resultPercentage >= 34 && resultPercentage <= 50 ? <div><img className="shadow emoj" src="/Image/34-50.svg" alt="" /></div> : <div></div>  }
@@ -193,9 +191,6 @@ export default function Hangman(props) {
                             { resultPercentage >= 67 && resultPercentage <= 83 ? <div><img className="shadow emoj" src="/Image/67-83.svg" alt="" /></div> : <div></div>  }
                             { resultPercentage >= 84 && resultPercentage <= 100 ? <div><img className="shadow emoj" src="/Image/84-100.svg" alt="" /></div> : <div></div>  }
 
-                            <br/>
-                            <h5> It took: {timeTaken} seconds to complete! </h5>
-                            <br/>
                             <div className='rating-container'>
                                 <h5>Cast your vote</h5>
                                 <div onClick={HandleRatingClicked}>
@@ -207,6 +202,7 @@ export default function Hangman(props) {
                                 </div>
                             </div>
                             <div className="card-footer text-muted"> 
+                                By default vote is like, click the button to dislike<br/>
                                 You may re-attempt by returning <br/> Then re-entering the same task. 
                             </div>
 

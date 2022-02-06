@@ -46,8 +46,10 @@
 
 .announcement{
     ul{
+        list-style: none;
         margin-bottom: 0;
         li{
+            font-size: 0.8em;
             padding-top: 0.5em;
         }
     }

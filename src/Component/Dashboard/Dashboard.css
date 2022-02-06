@@ -1,4 +1,6 @@
 .page {
+  width: 100%;
+  overflow: hidden;
   color: white;
   padding-bottom: 20em;
 }

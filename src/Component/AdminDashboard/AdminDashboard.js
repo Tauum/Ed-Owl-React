@@ -50,9 +50,9 @@ export default function AdminDashboard() {
             <br /><br /><br /><br /><br /><br />
             <QuizModeration className="quizzes" />
             <HangmanModeration className="hangmans" />
-            <BlogModeration className="blogs" />
             <MatchModeration className="matches"/>
             <BlankFillModeration className="blankFills" />
+            <BlogModeration className="blogs" />
             <UserModeration className="users" />
             <AnnouncementModeration className="announcement" />
             <ContactUsModeration className="contactUs" />

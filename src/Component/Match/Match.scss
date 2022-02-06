@@ -18,8 +18,8 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
 
 .match-main-container{
     margin: 1em;
-    margin-bottom: 3em;
-    padding-top: 4em;
+    margin-bottom: 2em;
+    padding-top: 2em;
     color: white;
     background: rgb(194,136,41);
     background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
@@ -37,14 +37,24 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         // make this take up as much height split between elements evenly as possible
         padding-left: 0.4em;
         padding-right: 0;
+        display: flex;
+        flex-direction: column;
     }
     .explainations-list{
         padding-left: 0;
         padding-right: 0.4em;
+        display: flex;
+        flex-direction: column;
     }
 }
 
+
 .all-match-element{
+    align-self: middle;
+    align-items: middle;
+    display: flex;
+    flex-direction: column;
+
     min-height: 80px;
     min-width: 153px;
     background: rgb(7,101,195);
@@ -53,6 +63,11 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     margin-bottom: 1em;
     padding: 0.5em;
     border-radius: 1em;
+    
+    p{
+        text-align: center;
+        margin-bottom: 0;
+    }
 }
 
 .emoj{
@@ -87,6 +102,10 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     .ul{
         min-width: 294px;
         max-width: 235px;
+    }
+    .all-match-element{
+        min-height: 80px;
+        min-width: 200px;
     }
     
   }

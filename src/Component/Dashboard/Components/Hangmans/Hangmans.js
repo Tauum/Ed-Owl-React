@@ -3,7 +3,7 @@ import { Button, Accordion, Card } from 'react-bootstrap';
 import AllHangmansTable from "./AllHangmansTable/AllHangmansTable"
 import AllHangmansAttemptedTable from "./AllHangmaAttemptedTable/AllHangmaAttemptedTable"
 
-export default function Hangmans() {
+export default function Hangmans({parentToChild}) {
 
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
@@ -21,12 +21,20 @@ export default function Hangmans() {
             }
         // v CHANGE THIS REQUEST TO STUFF THAT HAS BEEN ATTEMPTED SOMEHOW
         if (loadAttempted){
-            fetch(`${window.ipAddress.ip}/SubmittedHangman/getForUser/${window.BackendUser.id}`)
-            .then(response => response.json())
-            .then(json => {
-                setParentToChildData2(json);
-                console.log(json)
-            })
+            if (parentToChild){
+                fetch(`${window.ipAddress.ip}/SubmittedHangman/getForUser/${parentToChild}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
+            else{
+                fetch(`${window.ipAddress.ip}/SubmittedHangman/getForUser/${window.BackendUser.id}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
         }
     }, [LoadAll, loadAttempted])
 

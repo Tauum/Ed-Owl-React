@@ -1,9 +1,7 @@
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom'
-import Login from '../../Function/Login';
+import React, { useState } from 'react';
 
 export default function Weekly() {
 
@@ -144,11 +142,14 @@ export default function Weekly() {
 
                     <div className="card shadow p-3 mb-5 contact-details">
                         {/* this breaks the page VVVV */}
-                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.1216446934704!2d-2.4374426839615553!3d53.573445565377064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba7add9a0139b%3A0x26e04dfac5ed4688!2sUniversity%20of%20Bolton!5e0!3m2!1sen!2suk!4v1629653875219!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> */}
                         <p>01204 903178</p>
                         <p>Y4-01 , Institute of Management <br /> University of Bolton, <br /> A676 Deane Rd,<br /> Bolton BL3 5AB</p>
+
+                        <iframe allowFullScreen="" loading="lazy" className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2369.1216446934704!2d-2.4374426839615553!3d53.573445565377064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba7add9a0139b%3A0x26e04dfac5ed4688!2sUniversity%20of%20Bolton!5e0!3m2!1sen!2suk!4v1629653875219!5m2!1sen!2suk"></iframe>
+
                     </div>
 
+                  
                 </div>
             </section>
 

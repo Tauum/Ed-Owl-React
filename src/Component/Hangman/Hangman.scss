@@ -19,7 +19,18 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         background: rgb(8,103,198);
         background: linear-gradient(0deg, rgba(8,103,198,1) 0%, rgba(7,101,195,1) 100%);
         border-radius: 2em;
-        padding-bottom: 3em;
+        padding-bottom: 1em;
+    }
+
+    h1{
+        padding-top: 1em;
+        margin:0;
+    }
+    p{
+        margin:0;
+    }
+    h2{
+        margin:0;
     }
 
     
@@ -32,14 +43,10 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         }
     }
 
-    .buttonhint{
-        margin-right: 1.1em;
-    }
-
     .buttons{
-        margin: 4em;
+        margin: 1.3em;
         .letterbutton{
-            margin: .3em;
+            margin: .45em;
         }
     }
 
@@ -67,3 +74,12 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
       transform: rotate(180deg);
     }
   }
+
+  
+  @media only screen and (min-width: 700px) {
+    .hangman-main-content{
+        max-width: 490px;
+    }
+
+        
+}

@@ -83,8 +83,10 @@ h1{
     }
 
     input,textarea{ // <<can apply to multiple things
-        background-color: white;
-        color: black;
+        
+        background: rgb(194,136,41);
+        background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+        color: white;
         padding: .8em;
         margin-right: 1em;
         margin-bottom: 1em;
@@ -92,17 +94,9 @@ h1{
         border: 5px outset rgb(175, 175, 175);
         box-sizing: border-box;
     } 
-    .dropdown{
-            background-color: white;
-            padding: .8em;
-            margin-bottom: 1em;
-            border-radius: 1em;
-            border: 5px outset rgb(175, 175, 175);
-            box-sizing: border-box;
-    }
 
     input[type="submit"] { // can also select things like this
-        color: black;
+        color: white;
         font-weight: bold;
         font-size: 1.1em;
         padding: .8em 2em;

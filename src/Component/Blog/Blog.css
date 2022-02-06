@@ -89,8 +89,10 @@ h1 {
 }
 
 .search input, .search textarea {
-  background-color: white;
-  color: black;
+  background: #c28829;
+  background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+  background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+  color: white;
   padding: .8em;
   margin-right: 1em;
   margin-bottom: 1em;
@@ -100,18 +102,8 @@ h1 {
           box-sizing: border-box;
 }
 
-.search .dropdown {
-  background-color: white;
-  padding: .8em;
-  margin-bottom: 1em;
-  border-radius: 1em;
-  border: 5px outset #afafaf;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .search input[type="submit"] {
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 1.1em;
   padding: .8em 2em;

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
+
 import AllQuizTable from "./AllQuizTable/AllQuizTable";
 import AllQuizAttemptedTable from "./AllQuizAttemptedTable/AllQuizAttemptedTable";
 
-export default function Quizzes() {
-
+export default function Quizzes({parentToChild}) {
+    
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
-
     const [parentToChildData2, setParentToChildData2] = useState([])
     const [loadAttempted, setloadAttempted] = useState(false)
 
@@ -21,16 +21,22 @@ export default function Quizzes() {
         }
         // v CHANGE THIS REQUEST TO STUFF THAT HAS BEEN ATTEMPTED SOMEHOW
         if (loadAttempted){
-            fetch(`${window.ipAddress.ip}/SubmittedQuiz/getForUser/${window.BackendUser.id}`)
-            .then(response => response.json())
-            .then(json => {
-                setParentToChildData2(json);
-                console.log(json)
-            })
+            if (parentToChild){
+                fetch(`${window.ipAddress.ip}/SubmittedQuiz/getForUser/${parentToChild}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
+            else{
+                fetch(`${window.ipAddress.ip}/SubmittedQuiz/getForUser/${window.BackendUser.id}`)
+                .then(response => response.json())
+                .then(json => {
+                    setParentToChildData2(json);
+                })
+            }
         }
     }, [LoadAll, loadAttempted])
-
-    
 
     return (
         <div>
@@ -44,15 +50,12 @@ export default function Quizzes() {
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
-
                             <Card.Body>
                                 These are all Quiz tasks which you may attempt. You can do this by clicking the play button.
                                 <br /><br />
                                 {parentToChildData.length > 0 &&
                                     <AllQuizTable parentToChild={parentToChildData} />
                                 }
-
-
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
@@ -66,7 +69,6 @@ export default function Quizzes() {
                             </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
-
                             <Card.Body>
                                 These are Quiz tasks you have attempted. You can review the results by clicking the play button.
                                 <br /><br />
@@ -74,7 +76,6 @@ export default function Quizzes() {
                                     <AllQuizAttemptedTable parentToChild={parentToChildData2} />
                                 }
                             </Card.Body>
-
                         </Accordion.Collapse>
                     </Card>
                 </Accordion>

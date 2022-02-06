@@ -29,23 +29,32 @@
   background: -webkit-gradient(linear, left bottom, left top, from(#0867c6), to(#0765c3));
   background: linear-gradient(0deg, #0867c6 0%, #0765c3 100%);
   border-radius: 2em;
-  padding-bottom: 3em;
+  padding-bottom: 1em;
+}
+
+.hangman-container h1 {
+  padding-top: 1em;
+  margin: 0;
+}
+
+.hangman-container p {
+  margin: 0;
+}
+
+.hangman-container h2 {
+  margin: 0;
 }
 
 .hangman-container .hint p {
   display: none;
 }
 
-.hangman-container .buttonhint {
-  margin-right: 1.1em;
-}
-
 .hangman-container .buttons {
-  margin: 4em;
+  margin: 1.3em;
 }
 
 .hangman-container .buttons .letterbutton {
-  margin: .3em;
+  margin: .45em;
 }
 
 .emoj {
@@ -84,5 +93,11 @@
 .rating-container .rating-down {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 700px) {
+  .hangman-main-content {
+    max-width: 490px;
+  }
 }
 /*# sourceMappingURL=Hangman.css.map */

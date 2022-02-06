@@ -1,43 +1,42 @@
-import React, {useState, useEffect} from 'react';
-import { Button } from 'react-bootstrap';
+import React from 'react';
 import Weekly from './Components/Weekly/Weekly';
 import Quizzes from './Components/Quizzes/Quizzes';
 import Hangmans from './Components/Hangmans/Hangmans'
 import Matches from "./Components/Matches/Matches"
-
-import BlankFills from './Components/BlankFills/BlankFills'
-
-
-import TaskPerformance from './Components/TaskPerformance/TaskPerformance'
-import Leaderboard from './Components/Leaderboard/Leaderboard'
-
+import Users from './Components/Users/Users';
 
 import './Dashboard.css';
+import { useEffect, useState } from 'react';
 
-export default function Dashboard() {
+export default function Dashboard(props) {
 
-return (    
-  <div className='page'>
-    <Weekly className="weekly" id="weekly"/>
-    <Quizzes className="quizzes" id="games"/>
-    <Hangmans className="hangmans"/>
-    <Matches className="matches"/>
-    {/* <BlankFills className="blankfills"/> */}
-    <br/><br/><br/>
+  const [executed, setExecuted] = useState(false);
+  const [parentToChildData, setParentToChildData] = useState();
 
+  useEffect(() => {
+    if (props.location.state){ setParentToChildData(props.location.state); }
+    setExecuted(true);
+  }) 
 
- {/* V DO THIS SHIT ON OTHER PAGES */}
-
-    {/* <br/><br/><br/><br/><br/>
-    <TaskPerformance className="taskperformance" id="performance"/>
-    <br/><br/><br/><br/><br/>
-    <br/><br/>
-    <Leaderboard className="leaderboard" id="leaderboard"/> 
-    <br/><br/><br/><br/><br/><br/><br/><br/>  */}
-
-
-  </div>
-  );
-
-
+  if (executed){
+    return (    
+      <div className='page'>
+        <Weekly className="weekly"/>
+        <Quizzes className="quizzes" parentToChild={parentToChildData}/>
+        <Hangmans className="hangmans" parentToChild={parentToChildData}/>
+        <Matches className="matches" parentToChild={parentToChildData}/>
+        <Users className="users"/>
+        {/* <BlankFills className="blankfills"/> */}
+        <br/><br/><br/>
+      </div>
+    );
+  }
+  else{
+    return (    
+      <div className='page'>
+        <br/><br/><br/>
+    
+      </div>
+    );
+  }
 }

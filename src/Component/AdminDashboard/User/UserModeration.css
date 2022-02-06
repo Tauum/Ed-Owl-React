@@ -12,7 +12,7 @@
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 26px;
   margin: 20px 0;
   text-align: center;
 }
@@ -21,11 +21,11 @@ h2 small {
   font-size: 0.5em;
 }
 
-.AllQuiz-responsive-table {
+.user-moderation-table {
   padding: 2px;
 }
 
-.AllQuiz-responsive-table li {
+.user-moderation-table li {
   border-radius: 3px;
   padding: 20px 20px;
   display: -webkit-box;
@@ -36,7 +36,7 @@ h2 small {
           justify-content: space-between;
 }
 
-.AllQuiz-responsive-table .table-header {
+.user-moderation-table .table-header {
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
   background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
@@ -45,53 +45,54 @@ h2 small {
   letter-spacing: 0.03em;
 }
 
-.AllQuiz-responsive-table .table-row {
+.user-moderation-table .table-row {
   background-color: #ffffff;
   -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 
-.AllQuiz-responsive-table .col-1 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-
-.AllQuiz-responsive-table .col-2 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-
-.AllQuiz-responsive-table .col-3 {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
-}
-
-.AllQuiz-responsive-table .col-4 {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
-}
-
-.AllQuiz-responsive-table .col-5 {
+.user-moderation-table .col-1 {
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
 }
-.AllQuiz-responsive-table .col-6 {
-  -ms-flex-preferred-size: 15%;
-      flex-basis: 15%;
+
+.user-moderation-table .col-2 {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
 }
-.AllQuiz-responsive-table .col-7 {
+
+.user-moderation-table .col-3 {
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
+}
+
+.user-moderation-table .col-4 {
+  -ms-flex-preferred-size: 7%;
+      flex-basis: 7%;
+}
+
+.user-moderation-table .col-5 {
+  -ms-flex-preferred-size: 7%;
+      flex-basis: 7%;
+}
+.user-moderation-table .col-6 {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+.user-moderation-table .col-7 {
+  -ms-flex-preferred-size: 7%;
+      flex-basis: 7%;
+}
+.user-moderation-table .col-8 {
+  -ms-flex-preferred-size: 7%;
+      flex-basis: 7%;
 }
 
 @media all and (max-width: 300px) {
-  .AllQuiz-responsive-table{
-    font-size: 0.5em;
-  }
-  .AllQuiz-responsive-table .table-header {
+  .user-moderation-table .table-header {
     display: none;
   }
-  .AllQuiz-responsive-table .col {
+  .user-moderation-table .col {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }

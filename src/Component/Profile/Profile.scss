@@ -3,6 +3,7 @@
     min-width: 375px;
     height: 50em;
 }
+
 .profile-frame-container{
     padding-bottom: 5em;
     background-color: rgb(233, 233, 233);
@@ -13,8 +14,6 @@
     box-shadow: 10px 25px 90px rgb(0, 0, 0);
 
     img{
-        
-
         width: 10em;
         height: 10em;
         border: 5px solid rgb(233, 233, 233);
@@ -28,6 +27,10 @@
             transition: transform .6s; /* Animation */
             transform: scale(1.19);
         }
+    }
+
+    h2{
+        font-size: 30px;
     }
 }
 
@@ -44,10 +47,12 @@
         padding-top: 1em;
         color: white;
     }
+
     border-radius: 3em;
     padding-bottom: 2em;
     background: rgb(7, 102, 197);
     background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
+
     .badge{
         margin: 2em;
         width: 11em;
@@ -60,6 +65,7 @@
             height: 8em;
             margin-top: 0.1em;
         }
+
         &:hover{
             box-shadow: 0px 0px 35px rgb(19, 43, 121);
         }
@@ -69,39 +75,53 @@
         height: 9em;
         margin: 0;
         color: black;
-
     }
 }
+
 
 
 .stats-summary{
     box-shadow: 0px 0px 50px rgb(124, 124, 124);
     background: rgb(194,136,41);
     background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
-    margin: 6em;
-    margin-bottom: 0;
     border-radius: 3em;
+    padding-bottom: 1em;
+
+    .statistics-carousel{
+        border-radius: 1em;
+        height: 24em;
+        a{
+            width: 60px;
+        }
+    }
 
     h3{
-        padding-top: 1em;
         color: white;
-        padding-bottom: 2.3em;
+        text-align: center;
     }
+
     .badge{
-        margin: 1em;
+        padding: 0;
         border-radius: 1.5em;
+        width: 16em;
+        height: 16em;
+        margin: 0;
+        margin-top: 2.5em;
+        background-color: rgb(224, 224, 224);
+
         
         &:hover{
             box-shadow: 0px 0px 35px rgb(19, 43, 121);
         }
+        .emoj{
+            background: rgb(1, 126, 207);
+            background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
+            width: 11em;
+            height: 11em;
+            margin: 2.5em;
+        }
     }
-    .summary{
-        max-height: 9em;
-        max-width: 9em;
-        margin: 0;
-        background: rgb(1, 126, 207);
-        background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
-    }
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -109,7 +129,6 @@
         margin-left: 10em;
         margin-right: 10em;
     }
-
 }
 
 @media only screen and (min-width: 1100px) {
@@ -117,7 +136,6 @@
         margin-left: 15em;
         margin-right: 15em;
     }
-
 }
 
 @media only screen and (min-width: 1600px) {
@@ -132,6 +150,7 @@
     .stat-elements{
         display: flex;
     }
+    
     .stat-element{
         margin-left: 3em;
         margin-right: 3em;

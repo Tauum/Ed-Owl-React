@@ -28,7 +28,6 @@ export default function Quiz(props) {
   const [initialDate, setInitialDate]=useState()
   
   const [timeTaken, setTimeTaken] = useState()
-  const [paused, setPaused] = useState(0)
 
   useEffect(() => {
     if (props.location.state) {
@@ -101,11 +100,6 @@ export default function Quiz(props) {
         .then((result) => {
           setShow(true)
           setSubmittedQuiz(result)
-          // setSubmittedQuiz({
-          //   user: window.BackendUser, quizTitle : quiz.title, quizValue: quiz.value,
-          //   quizTimeLimit: quiz.timeLimit, submittedQuestions: submittedQuestions,
-          //   score: val, submissionDate: currentDate, timeTaken: difference, quizSubject: quiz.subject,
-          // })
         })
     }
   }, [scoreTotal, submitQuizCondition])
@@ -162,12 +156,12 @@ export default function Quiz(props) {
         <br /> <br /> <br /> <br />
         <div className='quiz-container'>
 
-          <Countdown date={timeLimit} onComplete={finalize} onPause={finalize} controlled={false} className='timer' id="timer">
+          <Countdown date={timeLimit} onComplete={finalize} controlled={false} className='timer' id="timer">
             <Completionist />
           </Countdown>
 
           <div className='question'>
-            <h4><span>Question {current + 1}</span>/{questionList.length}</h4>
+            <h5><span>Question {current + 1}</span>/{questionList.length}</h5>
             <div className='question-text' onCopy={handleCopy}>
               <h2>{questionList[current].question}</h2>
             </div>
@@ -193,7 +187,8 @@ export default function Quiz(props) {
                   <h4 className="card-title"> Your result is {resultPercentage} %  ( {correctAnswers} of {questionList.length} ) </h4>
                 </div>
                 <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
-
+                <h5> It took: {timeTaken} Seconds to complete! </h5>         
+                
                 { resultPercentage >= 0 && resultPercentage <= 16 ? <img className="shadow emoj" src="/Image/0-16.svg" alt="" /> : <div></div>  }
                 { resultPercentage >= 17 && resultPercentage <= 33 ? <div><img className="shadow emoj" src="/Image/17-33.svg" alt="" /></div> : <div></div>  }
                 { resultPercentage >= 34 && resultPercentage <= 50 ? <div><img className="shadow emoj" src="/Image/34-50.svg" alt="" /></div> : <div></div>  }
@@ -201,9 +196,6 @@ export default function Quiz(props) {
                 { resultPercentage >= 67 && resultPercentage <= 83 ? <div><img className="shadow emoj" src="/Image/67-83.svg" alt="" /></div> : <div></div>  }
                 { resultPercentage >= 84 && resultPercentage <= 100 ? <div><img className="shadow emoj" src="/Image/84-100.svg" alt="" /></div> : <div></div>  }
 
-                <br />
-                <h5> It took: {timeTaken} Seconds to complete! </h5>                                                                         {/* this needs doing */}
-                <br />
                 <div className='rating-container'>
                   <h5>Cast your vote</h5>
                   <div onClick={HandleRatingClicked}>
@@ -215,8 +207,8 @@ export default function Quiz(props) {
                   </div>
                 </div>
                 <div className="card-footer text-muted">
-                  Vote by clicking once for like and twice for dislike
-                  You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view your results by clicking review
+                  By default vote is like, click the button to dislike<br/>
+                  You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view feedback by clicking review
                 </div>
                 <br />
                 <Link to="/Dashboard"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
