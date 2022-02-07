@@ -184,7 +184,7 @@ export default function Quiz(props) {
             <div className="card text-center shadow">
               <div className="card-header">
                 <div className="card-body">
-                  <h4 className="card-title"> Your result is {resultPercentage} %  ( {correctAnswers} of {questionList.length} ) </h4>
+                  <h4 className="card-title"> Your result is {resultPercentage} % <br/> ( {correctAnswers} of {questionList.length} ) </h4>
                 </div>
                 <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
                 <h5> It took: {timeTaken} Seconds to complete! </h5>         
@@ -207,10 +207,8 @@ export default function Quiz(props) {
                   </div>
                 </div>
                 <div className="card-footer text-muted">
-                  By default vote is like, click the button to dislike<br/>
                   You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view feedback by clicking review
                 </div>
-                <br />
                 <Link to="/Dashboard"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
 
                 <Link to={{ pathname: "/QuizReview", state: submittedQuiz }}> <Button variant="btn btn-warning otherbutton">Review</Button> </Link>

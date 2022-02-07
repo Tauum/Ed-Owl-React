@@ -1,4 +1,5 @@
 .all-match-container {
+  padding-top: 2em;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,10 +22,15 @@
   background: linear-gradient(0deg, #017ecf 0%, #0193cf 100%);
 }
 
+.submit-match {
+  margin: 1em;
+}
+
 .match-main-container {
   margin: 1em;
-  margin-bottom: 2em;
-  padding-top: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.5em;
   color: white;
   background: #c28829;
   background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
@@ -53,6 +59,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 0;
 }
 
 .match-main-container .explainations-list {
@@ -65,6 +72,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 0;
 }
 
 .all-match-element {
@@ -80,8 +88,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 80px;
-  min-width: 153px;
   background: #0765c3;
   background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
   background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
@@ -134,28 +140,35 @@
           transform: rotate(180deg);
 }
 
-@media all and (max-width: 500px) {
+.title-container {
+  max-width: 160px;
+}
+
+.explainations-container {
+  max-width: 160px;
+}
+
+.all-match-element {
+  min-height: 80px;
+  max-width: 120px;
+}
+
+@media all and (min-width: 500px) {
   .match-main-container {
-    max-width: 469px;
+    min-width: 470px;
   }
-  .ul {
-    min-width: 294px;
-    max-width: 235px;
+  .title-container {
+    max-width: 260px;
+  }
+  .explainations-container {
+    max-width: 260px;
   }
   .all-match-element {
     min-height: 80px;
-    min-width: 200px;
+    max-width: 200px;
   }
-}
-
-@media all and (min-width: 800px) {
-  .match-main-container {
-    max-width: 574px;
-    min-width: 574px;
-  }
-  .ul {
-    min-width: 294px;
-    max-width: 294px;
+  .submit-match {
+    margin: 3em;
   }
 }
 /*# sourceMappingURL=Match.css.map */

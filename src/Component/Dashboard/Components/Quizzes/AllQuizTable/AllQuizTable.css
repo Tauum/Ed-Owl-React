@@ -12,7 +12,7 @@
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 10px;
   margin: 20px 0;
   text-align: center;
 }
@@ -84,16 +84,10 @@ h2 small {
       flex-basis: 10%;
 }
 
-@media all and (max-width: 300px) {
-  .AllQuiz-responsive-table{
-    font-size: 0.5em;
-  }
+@media all and (max-width: 430px) {
+
   .AllQuiz-responsive-table .table-header {
-    display: none;
-  }
-  .AllQuiz-responsive-table .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=AllQuizTable.css.map */

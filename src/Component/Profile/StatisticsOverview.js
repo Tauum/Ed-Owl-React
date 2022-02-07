@@ -28,7 +28,7 @@ export default function StatisticsOverview ({parentToChild}) {
                     <div className='stats-element badge'>
 
                     <img className="shadow emoj summary" src="/Image/Avg-correct.svg" alt=""/>
-                        <h3>{parentToChild.avgTaskScore}%<br/> Avg score</h3>
+                        <h3>{(parentToChild.avgTaskScore).toFixed(0)}%<br/> Avg score</h3>
                     </div>
 
                     <div className='stats-element badge'>

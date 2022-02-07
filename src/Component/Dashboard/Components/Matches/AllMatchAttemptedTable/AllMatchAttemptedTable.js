@@ -11,7 +11,7 @@ export default function AllMatchAttemptedTable({parentToChild}) {
                     <li className="table-header">
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Date</div>
-                    <div className="col col-3">Time Taken</div>
+                    <div className="col col-3">Time</div>
                     <div className="col col-4">Correct</div>
 
                     <div className="col col-5">Score</div>

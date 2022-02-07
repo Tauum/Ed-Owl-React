@@ -157,8 +157,8 @@ export default function Hangman(props) {
                 <br/>    <br/>    <br/>
 
                 <div className='hangman-main-content'>
-                    <h1> {hangman.title}  </h1>  <br/> 
-                    <h2> Lives: {lives} </h2> <br/>
+                    <h1> {hangman.title}  </h1>
+                    <h2> Lives: {lives} </h2>
                     
                     <div className="hint"> 
                         <Button onClick={handleHintClicked} type="buton" className="btn btn-warning submit buttonhint" id="hintbutton">Hint</Button>
@@ -178,7 +178,7 @@ export default function Hangman(props) {
                     <div className="card text-center shadow">
                         <div className="card-header">
                         <div className="card-body">
-                            <h4 className="card-title"> Your result is {resultPercentage} %  ( {score} of {hangman.value} ) </h4>
+                            <h4 className="card-title"> Your result is {resultPercentage} % <br/> ( {score} of {hangman.value} ) </h4>
                         </div>
 
                             <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
@@ -202,8 +202,7 @@ export default function Hangman(props) {
                                 </div>
                             </div>
                             <div className="card-footer text-muted"> 
-                                By default vote is like, click the button to dislike<br/>
-                                You may re-attempt by returning <br/> Then re-entering the same task. 
+                                You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view feedback by clicking review
                             </div>
 
                             <br/>

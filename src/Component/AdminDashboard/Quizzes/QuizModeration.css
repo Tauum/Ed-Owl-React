@@ -2,6 +2,10 @@
   margin-right: 0em;
 }
 
+.moderationaccordian{
+  padding: 0;
+}
+
 .playbutton {
   height: 1em;
   background-color: #95A5A6;
@@ -12,7 +16,7 @@
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 10px;
   margin: 20px 0;
   text-align: center;
 }
@@ -91,6 +95,13 @@ h2 small {
   .quiz-moderation-table .col {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+  }
+}
+
+@media all and (max-width: 500px) {
+
+  .quiz-moderation-table .table-header {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=AllQuizTable.css.map */

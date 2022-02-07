@@ -1,5 +1,5 @@
 tips were provided: https://www.youtube.com/watch?v=w3RFk35synM&list=PL4glSN_6E9amotmiyQ6fIi_zdUnog88wi&index=30&t=796s
-HOW TO GENERATE INSTANCE
+###HOW TO GENERATE INSTANCE
 Create a new react app with: npx create-react-app <app name>
 
 Create a new Github repo at: github.com/new
@@ -11,7 +11,7 @@ Then run the commit code linked to the github repo (this will push all project f
 ``` Remote add origin <link to repo> 6 git branch -M main 7 ```
 ```git push -u origin main```
 
-INSTALL FROM BARE VM
+###INSTALL FROM BARE VM
 Install a new instance of Ubuntu 20.04 64bit
 
 Login as root
@@ -49,7 +49,7 @@ Get the link from Github of the repo to clone eg:``` git clone https://github.co
 ```npm install```
 ```npm run build```
 
-#DEPLOY REACT APPLICATION
+###DEPLOY REACT APPLICATION
 
 Copy the built repository to ```/var/www/html ``` eg:  ```cp -r build/* /var/www/html ```
 
@@ -59,7 +59,7 @@ Type in a new: A type record and pointing to: <machine ip address>
 type in a new www type record and pointing to: <machine ip address>
 now you can test the website domain
 
-#HTTPS SETUP
+###HTTPS SETUP
 Trying to go to https://<domain> will fial because ssl requirements are not met
 install certbot https://certbot.eff.org/ with ```sudo apt install certbot python3-certbot-nginx```
 Then install a certificate with certbot --nginx -d <domain> -d www.<domain>
@@ -71,7 +71,7 @@ https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal https://eff-certbot
 
 ```sudo certbot renew --dry-run 1. min. hour. day. week. month,```
 this might work havent tested it: ammend ```vi /etc/crontab add 0 0 0 0 4,8,12 root certbot renew --dry-run ```
-AUTH0 CONFIGURATION
+###AUTH0 CONFIGURATION
 set stuff to new version matching domain
 
 set domain in app .env ```edowl.eu.auth0.com```
@@ -84,7 +84,7 @@ Allowed Logout URLs``` https://edowl.online/#/Home```
 Allowed Web Origins``` https://edowl.online ```
 Allowed Origins (CORS) ```https://edowl.online```
 
-SPRINGBOOT BUILD & DEPLOY
+###SPRINGBOOT BUILD & DEPLOY
 open mavern menu
 
 press package this loads everything into the target folder. In here it gets put into the .jar move .jar to server
@@ -134,7 +134,7 @@ restart ```sudo systemctl restart ufw```
 
 enable service on restart ```sudo systemctl enable ufw```
 
-APP & SPRINGBOOT LINK
+###APP & SPRINGBOOT LINK
 THIS IS KINDA MESSY BUT IT WAS SUGGESTED, WORKS AND DOESNT NEED TO INPUT HTTPS INTO REACT AND SPRINGBOOT SEPERATELY
 
 go to nginx configuration inside ```/etc/nginx/sites-available```
@@ -156,7 +156,10 @@ insert this:
 1.4 redo-cert bot (maybe un-needed but just in case) ```certbot --nginx -d Edowl.online -d www.Edowl.online ```
 1.5 load java ```java -jar -Djava.net.preferIPv4Stack=true EdOwl-Springboot.jar```
 
-QUICK REFRESH / UPDATE GUIDE
+
+
+
+###QUICK REFRESH / UPDATE GUIDE
 on development in react folder terminal do
 
 ```git add . ```

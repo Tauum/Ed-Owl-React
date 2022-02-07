@@ -33,8 +33,12 @@
 }
 
 .hangman-container h1 {
-  padding-top: 1em;
-  margin: 0;
+  margin: 0.5em;
+  padding-top: 0;
+  overflow-wrap: break-word;
+  -webkit-hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
 }
 
 .hangman-container p {
@@ -45,8 +49,14 @@
   margin: 0;
 }
 
+.hangman-container .hint {
+  min-height: 70px;
+}
+
 .hangman-container .hint p {
   display: none;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .hangman-container .buttons {

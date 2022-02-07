@@ -75,10 +75,6 @@ h2 small {
   -ms-flex-preferred-size: 7%;
       flex-basis: 7%;
 }
-.user-moderation-table .col-6 {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
-}
 .user-moderation-table .col-7 {
   -ms-flex-preferred-size: 7%;
       flex-basis: 7%;
@@ -88,13 +84,10 @@ h2 small {
       flex-basis: 7%;
 }
 
-@media all and (max-width: 300px) {
+@media all and (max-width: 500px) {
   .user-moderation-table .table-header {
-    display: none;
-  }
-  .user-moderation-table .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    font-size: 9px;
   }
 }
+
 /*# sourceMappingURL=AllQuizTable.css.map */

@@ -81,13 +81,11 @@ h2 small {
     }
 
 
-@media all and (max-width: 300px) {
+@media all and (max-width: 500px) {
   .Match-moderation-table .table-header {
-    display: none;
-  }
-  .Match-moderation-table .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    font-size: 10px;
   }
 }
+
+
 /*# sourceMappingURL=AllMatchTable.css.map */

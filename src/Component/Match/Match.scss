@@ -1,4 +1,5 @@
 .all-match-container{
+    padding-top: 2em;
     color: white;
     display: flex;
     justify-content: center;
@@ -16,10 +17,15 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
 
 }
 
+.submit-match{
+    margin:1em;
+}
+
 .match-main-container{
     margin: 1em;
-    margin-bottom: 2em;
-    padding-top: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.5em;
     color: white;
     background: rgb(194,136,41);
     background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
@@ -39,12 +45,14 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         padding-right: 0;
         display: flex;
         flex-direction: column;
+        margin-bottom: 0;
     }
     .explainations-list{
         padding-left: 0;
         padding-right: 0.4em;
         display: flex;
         flex-direction: column;
+        margin-bottom: 0;
     }
 }
 
@@ -55,8 +63,6 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     display: flex;
     flex-direction: column;
 
-    min-height: 80px;
-    min-width: 153px;
     background: rgb(7,101,195);
     background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
     margin-top: 1em;
@@ -94,30 +100,35 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     }
   }
 
-@media all and (max-width: 500px) {
-
-    .match-main-container{
-        max-width: 469px;
+    .title-container{
+        max-width: 160px;
     }
-    .ul{
-        min-width: 294px;
-        max-width: 235px;
+    .explainations-container{
+        max-width: 160px;
     }
     .all-match-element{
         min-height: 80px;
-        min-width: 200px;
+        max-width: 120px;
     }
     
-  }
 
-  @media all and (min-width: 800px) {
+  @media all and (min-width: 500px) {
 
     .match-main-container{
-        max-width: 574px;
-        min-width: 574px;
+        min-width: 470px
     }
-    .ul{
-        min-width: 294px;
-        max-width: 294px;
+    .title-container{
+        max-width: 260px;
+    }
+    .explainations-container{
+        max-width: 260px;
+    }
+    .all-match-element{
+        min-height: 80px;
+        max-width: 200px;
+    }
+
+    .submit-match{
+        margin:3em;
     }
   }

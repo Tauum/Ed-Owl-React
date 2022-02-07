@@ -146,7 +146,6 @@ export default function Match(props) {
         const resultPercentage = ((correctVal / match.definitions.length) * 100).toFixed(2)
         return (
             <div className='all-match-container body'>
-                <br /> <br /> <br /> <br /> <br />
                 <div className="App">
                     <Row className='match-main-container'>
                         <Col className='title-container'>
@@ -210,7 +209,7 @@ export default function Match(props) {
                     <div className="card text-center shadow">
                         <div className="card-header">
                             <div className="card-body">
-                                <h4 className="card-title"> Your result is {resultPercentage} %  ( {correctVal} of {match.definitions.length} ) </h4>
+                                <h4 className="card-title"> Your result is {resultPercentage} % <br/> ( {correctVal} of {match.definitions.length} ) </h4>
                             </div>
                             <ProgressBar className='progress-bar-success' animated now={resultPercentage} />
                             <h5> It took: {timeTaken} Seconds to complete! </h5>       

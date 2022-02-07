@@ -2,11 +2,18 @@
     background: rgb(7, 102, 197);
     background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
     padding:0;
+    width: 100%;
+}
+.container{
+    padding: 0;
 }
 
 .bolton-img{
     margin-left: 0;
     max-width: 150px;
+}
+.navbar-toggler{
+   margin-right: 0.5em;
 }
 
 .edowl-title{
@@ -15,6 +22,7 @@
     color: white;
     font-weight: 500;
     font-style: bold;
+    margin: 0;
     &:hover{
         color: black;
     }
@@ -109,7 +117,6 @@
 .wave {
     position: absolute;
     top: 20;
-    left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
@@ -129,6 +136,7 @@
 }
 
 @media only screen and (max-width: 390px) {
+
     .boltonMoodle{
         max-width: 0px;
     }
@@ -142,8 +150,6 @@
 
 
 @media only screen and (min-width: 500px) {
-    .mixedimg{
-        }
     .wave{
         .svg{
             height: 10%;

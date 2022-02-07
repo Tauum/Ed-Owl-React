@@ -13,8 +13,8 @@ export default function AllQuizTable({parentToChild}) {
                     <div className="col col-1">Title</div>
                     <div className="col col-2">Subject</div>
                     <div className="col col-3">Date</div>
-                    <div className="col col-4">Time Limit</div>
-                    <div className="col col-5">Score available</div>
+                    <div className="col col-4">Time</div>
+                    <div className="col col-5">Worth</div>
                     <div className="col col-6">Start</div>
                     </li>
                     {parentToChild.map((quiz, index)=>( 

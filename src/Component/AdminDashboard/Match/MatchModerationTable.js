@@ -9,7 +9,7 @@ export default function QuizModerationTable({parentToChild}) {
                 <ul className="responsive-table Match-moderation-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
-                    <div className="col col-2">Subject</div>
+                    <div className="col col-2">Sub</div>
                     <div className="col col-3">Date</div>
                     <div className="col col-4">Value</div>
                     <div className="col col-5">Hidden</div>

@@ -14,11 +14,10 @@ export default function UserModerationTable({parentToChild}) {
                     <div className="col col-1">Name</div>
                     <div className="col col-2">Email</div>
                     <div className="col col-3">Role</div>
-                    <div className="col col-4">T & C</div>
+                    <div className="col col-4">T&C</div>
                     <div className="col col-5">Study</div>
-                    <div className="col col-6">Modules</div>
-                    <div className="col col-7">Dashboard</div>
-                    <div className="col col-8">Profile</div>
+                    <div className="col col-7">Dash</div>
+                    <div className="col col-8">Pro</div>
                     </li>
                     {parentToChild.map((user,index)=>( 
                         <li className="table-Row" key={index}>
@@ -27,7 +26,6 @@ export default function UserModerationTable({parentToChild}) {
                             <div className="col col-3" data-label="Role">{user.role}</div>
                             <div className="col col-4" data-label="Termsandconditons">{user.termsandconditions  + " "}</div>
                             <div className="col col-5" data-label="Study">{user.studyacceptence  + " "}</div>
-                            <div className="col col-6" data-label="Modules">{user.hidden + " "}</div>
 
                             <div className="col col-7" data-label="Dashboard">
                             <Link to={ { pathname:"/Dashboard", state: user.id }}>

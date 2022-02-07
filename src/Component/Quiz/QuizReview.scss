@@ -5,9 +5,9 @@
     min-height: 60em;
 
     .quiz-review-container{
-        margin-top: 10em;
-        margin-left: 3em;
-        margin-right: 3em;
+        margin-top: 6em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
         background: rgb(7,101,195);
         background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
         margin-bottom: 2em;
@@ -24,15 +24,15 @@
         }
 
         .review-question-list{
-
+            list-style: none;
             padding-bottom: 3em;
             margin-bottom: 5em;
 
             .review-question-entries{
                 background: rgb(194,136,41);
                 background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
-                margin-left: 3em;
-                margin-right: 3em;
+                margin-left: 2.5em;
+                margin-right: 2.5em;
                 margin-bottom: 4em;
                 padding: 1em;
                 border-radius: 2em;
@@ -49,12 +49,31 @@
     }
 
 }
+
 // V why isnt this applying?
-@media only screen and (min-width: 770px) {
-   
+@media only screen and (min-width: 500px) {
+    .quiz-review-main {
     .quiz-review-container{
-        margin-left: 15em;
-        margin-right: 15em;
+        margin-left: 4.5em;
+        margin-right: 4.5em;
+
+        .review-question-list{
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+    }
+        .review-question-entries{
+            margin-left: 20em;
+            margin-right: 20em;
+        }
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .quiz-review-main {
+    .quiz-review-container{
+        margin-left: 5em;
+        margin-right: 5em;
 
         .review-question-list{
             margin-left: 5em;
@@ -65,41 +84,45 @@
             margin-left: 20em;
             margin-right: 20em;
         }
-
+    }
 }
 
 @media only screen and (min-width: 1000px) {
-    .quiz-review-container{
-        margin-left: 15em;
-        margin-right: 15em;
-
-        .review-question-list{
-            margin-left: 15em;
-            margin-right: 15em;
+    .quiz-review-main {
+        .quiz-review-container{
+            margin-left: 8em;
+            margin-right: 8em;
+    
+            .review-question-list{
+                margin-left: 8em;
+                margin-right: 8em;
+            }
+        }
+            .review-question-entries{
+                margin-left: 20em;
+                margin-right: 20em;
+            }
         }
     }
-        .review-question-entries{
-            margin-left: 20em;
-            margin-right: 20em;
-        }
-}
 
-@media only screen and (min-width: 1500px) {
-    .quiz-review-container{
-        margin-left: 15em;
-        margin-right: 15em;
-
-        .review-question-list{
-            margin-left: 25em;
-            margin-right: 25em;
+    @media only screen and (min-width: 1300px) {
+        .quiz-review-main {
+            .quiz-review-container{
+                margin-left: 14em;
+                margin-right: 14em;
+        
+                .review-question-list{
+                    margin-left: 10em;
+                    margin-right: 10em;
+                }
+            }
+                .review-question-entries{
+                    margin-left: 20em;
+                    margin-right: 20em;
+                }
+            }
         }
-    }
-        .review-question-entries{
-            margin-left: 20em;
-            margin-right: 20em;
-        }
-}
-
+    
 
       
 

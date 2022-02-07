@@ -3,11 +3,20 @@
   background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
   background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
   padding: 0;
+  width: 100%;
+}
+
+.container {
+  padding: 0;
 }
 
 .bolton-img {
   margin-left: 0;
   max-width: 150px;
+}
+
+.navbar-toggler {
+  margin-right: 0.5em;
 }
 
 .edowl-title {
@@ -16,6 +25,7 @@
   color: white;
   font-weight: 500;
   font-style: bold;
+  margin: 0;
 }
 
 .edowl-title:hover {
@@ -120,7 +130,6 @@
 .wave {
   position: absolute;
   top: 20;
-  left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;

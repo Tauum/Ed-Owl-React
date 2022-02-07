@@ -23,8 +23,10 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     }
 
     h1{
-        padding-top: 1em;
-        margin:0;
+        margin: 0.5em;
+        padding-top: 0;
+        overflow-wrap: break-word;
+        hyphens: manual;
     }
     p{
         margin:0;
@@ -38,8 +40,12 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
 
 
     .hint{
+         min-height: 70px;
+         
         p{
             display:none;
+            text-align: center;
+            padding:0.5em
         }
     }
 

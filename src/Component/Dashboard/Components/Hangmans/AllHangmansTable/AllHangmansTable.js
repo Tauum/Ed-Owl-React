@@ -11,9 +11,9 @@ export default function AllHangmansTable({parentToChild}) {
                 <ul className="AllHangman-responsive-table">
                     <li className="table-header">
                     <div className="col col-1">Title</div>
-                    <div className="col col-2">Subject</div>
+                    <div className="col col-2">Sub</div>
                     <div className="col col-3">Date</div>
-                    <div className="col col-4">Score available</div>
+                    <div className="col col-4">Worth</div>
                     <div className="col col-5">Start</div>
                     </li>
 

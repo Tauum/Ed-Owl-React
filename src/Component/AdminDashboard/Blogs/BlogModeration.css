@@ -72,16 +72,13 @@ h2 small {
       flex-basis: 10%;
 }
 
-@media all and (max-width: 300px) {
+@media all and (max-width: 500px) {
   .blog-moderation-table .table-header {
-    display: none;
+    font-size: 10px;
   }
-  .blog-moderation-table li {
-    display: block;
-  }
-  .blog-moderation-table .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-  }
+  /* h2 small {
+    font-size: 0.4em;
+  } */
+
 }
 /*# sourceMappingURL=AllHangmansTable.css.map */

@@ -25,7 +25,7 @@ export default function QuizModeration() {
         <div>
             <div className='accordian-container'>
                 <Accordion className="accordian shadow" onClick= {() => {setLoadUncompleted(true)}}> 
-                    <Card className='card'>
+                    <Card className='card moderationaccordian'>
                         <Card.Header className='header'>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
                             Quizzes

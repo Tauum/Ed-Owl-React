@@ -165,7 +165,7 @@ function Profile(props) {
                                                         <div>
                                                             <p className="badge-line"> {badge.task}</p>
                                                             <p className="badge-line"> Avg score: {(badge.avgPercentage).toFixed(1)}%</p>
-                                                            <p className="badge-line"> Avg time: {badge.avgTime.toFixed(0)}</p>
+                                                            <p className="badge-line"> Avg time: {(badge.avgTime).toFixed(0)}</p>
                                                             <p className="badge-line"> Games played: {badge.amount}</p>
                                                         </div>
 

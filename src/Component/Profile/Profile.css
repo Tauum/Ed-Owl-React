@@ -1,6 +1,5 @@
 .all-profile-contents {
-  min-width: 375px;
-  height: 50em;
+  overflow: hidden;
 }
 
 .profile-frame-container {
