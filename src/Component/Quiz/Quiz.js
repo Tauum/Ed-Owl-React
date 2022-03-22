@@ -31,6 +31,7 @@ export default function Quiz(props) {
 
   useEffect(() => {
     if (props.location.state) {
+      window.scrollTo(0, 0)
       setQuiz(props.location.state)
       setQuestionList(props.location.state.questions)
       var startDate = Date()
@@ -40,6 +41,7 @@ export default function Quiz(props) {
     }
     else {
       setMissingParentData(true)
+      window.scrollTo(0, 0)
     }
   }, [])
 
@@ -206,9 +208,13 @@ export default function Quiz(props) {
                     }
                   </div>
                 </div>
-                <div className="card-footer text-muted">
-                  You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view feedback by clicking review
-                </div>
+
+                {quiz.content !== null ? 
+                                    <div className="card-footer text-muted"> 
+                                        <div>{quiz.content}</div> 
+                                    </div>
+                                : <div></div>}
+
                 <Link to="/Dashboard"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
 
                 <Link to={{ pathname: "/QuizReview", state: submittedQuiz }}> <Button variant="btn btn-warning otherbutton">Review</Button> </Link>

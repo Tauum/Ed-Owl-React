@@ -8,6 +8,7 @@ export default function Matches({parentToChild}) {
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
     const [parentToChildData2, setParentToChildData2] = useState([])
+    const [parentToChildData3, setParentToChildData3] = useState([])
     const [loadAttempted, setloadAttempted] = useState(false)
 
     useEffect(() => {
@@ -32,10 +33,13 @@ export default function Matches({parentToChild}) {
                 .then(response => response.json())
                 .then(json => {
                     setParentToChildData2(json);
+                    let distinctResults = [...new Set(json.map(item => item.matchTitle))];
+                    setParentToChildData3(distinctResults)
                 })
             }
         }
     }, [LoadAll, loadAttempted])
+
     return (
         <div>
             <h1> Match </h1>
@@ -50,10 +54,10 @@ export default function Matches({parentToChild}) {
                         <Accordion.Collapse eventKey="0">
 
                             <Card.Body>
-                                These are all Match tasks which you may attempt. You can do this by clicking the play button.
+                                These are all Match tasks which you may attempt.
                                 <br /><br />
                                 {parentToChildData.length > 0 &&
-                                    <AllMatchTable parentToChild={parentToChildData} />
+                                    <AllMatchTable parentToChild={parentToChildData} parentToChild2={parentToChildData2} distinct={parentToChildData3} />
                                 }
 
 
@@ -72,10 +76,10 @@ export default function Matches({parentToChild}) {
                         <Accordion.Collapse eventKey="0">
 
                             <Card.Body>
-                                These are Match tasks you have attempted. You can review the results by clicking the play button.
+                                These are Match tasks you have attempted.
                                 <br /><br />
                                 {parentToChildData2.length > 0 &&
-                                    <AllMatchAttemptedTable parentToChild={parentToChildData2} />
+                                    <AllMatchAttemptedTable parentToChild={parentToChildData2} distinct={parentToChildData3}/>
                                 }
                             </Card.Body>
 

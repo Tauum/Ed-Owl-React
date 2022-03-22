@@ -48,6 +48,7 @@ h1{
     display: inline-block;
     padding-bottom: 8em;
 
+
     .card{
         margin-top: 3em;
         width: 400px;
@@ -135,6 +136,13 @@ h1{
     }
 }
 
+@media only screen and (max-width: 450px) {
+    .list{
+        .card{
+            width: 300px;
+        }
+    }
+}
 
 @media only screen and (min-width: 810px) {
 

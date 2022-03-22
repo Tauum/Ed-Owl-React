@@ -3,9 +3,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import { Button, Modal, ProgressBar, Row, Col } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom'
-
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
 import './Match.css';
 
 export default function Match(props) {
@@ -231,10 +229,11 @@ export default function Match(props) {
                                     }
                                 </div>
                             </div>
-                            <div className="card-footer text-muted">
-                            By default vote is like, click the button to dislike<br/>
-                                You may re-attempt by returning <br/> Then re-entering the same task.
-                            </div>
+                            {match.content !== null ? 
+                                    <div className="card-footer text-muted"> 
+                                        <div>{match.content}</div> 
+                                    </div>
+                                : <div></div>}
                             <br />
                             <Link to="/Dashboard"><Button variant="btn btn-dark otherbutton">Return</Button></Link>
 

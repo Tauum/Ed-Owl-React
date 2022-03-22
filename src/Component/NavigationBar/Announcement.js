@@ -21,25 +21,34 @@ export default function Announcement() {
     }, [annoucements])
 
     if (fetchExecuted){
-    return (
-        <div className="announcement-container">
-            <ul className="announcement-list">
-            {annoucements.map((announcement, index)=>(
-                <li key={index} className="announcement-element">{announcement.generatedDate} -<br/> {announcement.content}</li>
-            ))}
-            </ul>
-        </div>
-        );
+        if (annoucements.length > 0){
+            return (
+                <div className="announcement-container">
+                    <ul className="announcement-list">
+                    {annoucements.map((announcement, index)=>(
+                        <li key={index} className="announcement-element">{announcement.generatedDate} -<br/> {announcement.content}</li>
+                    ))}
+                    </ul>
+                </div>
+                );
+            }
+        
+        else{
+            return(
+                <div className="announcement-container">
+                    <ul className="announcement-list">
+                        <div>
+                            <p  className="announcement-list announcement-element" >There are currently no new updates!</p>
+                        </div>  
+                    </ul>
+                </div>
+            );
+        }
     }
     else{
         return (
             <div className="announcement-container">
-           <ul className="announcement-list">
-                <div>
-                    <p  className="announcement-list announcement-element" >There are currently no new updates!</p>
-                </div>  
-            </ul>
-       </div>
+            </div>
         )
     }
 }

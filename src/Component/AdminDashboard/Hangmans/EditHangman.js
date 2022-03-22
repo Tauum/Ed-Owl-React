@@ -5,10 +5,10 @@ import { Redirect } from 'react-router-dom'
 
 export default function EditHangman(props) {
 
-  const [hangman, setHangman] = useState({ id: 999, title: "", word: "", hint: "", value: 0, subject: "", hidden: true });
+  const [hangman, setHangman] = useState({ id: 999, title: "", word: "", hint: "", value: 0, subject: "", content: "", hidden: true });
   const [missingParentData, setMissingParentData] = useState(false);
   const [completed, setCompleted] = useState(false);
-
+ 
   useEffect(() => {
     if (props.location.state) {
       setHangman(props.location.state)
@@ -35,6 +35,7 @@ export default function EditHangman(props) {
                 word: hangman.word.toUpperCase(),
                 hint: hangman.hint,
                 value: hangman.value,
+                content: hangman.content,
                 subject: hangman.subject,
                 hidden: hangman.hidden,
                 generatedDate: todayDate
@@ -58,6 +59,7 @@ export default function EditHangman(props) {
                 word: hangman.word.toUpperCase(),
                 hint: hangman.hint,
                 value: hangman.value,
+                content: hangman.content,
                 subject: hangman.subject,
                 hidden: hangman.hidden,
                 generatedDate: todayDate
@@ -123,6 +125,10 @@ export default function EditHangman(props) {
         <label htmlFor="Subject">Subject</label>
         <br />
         <input type="text" id="Subject" name="Subject" value={hangman.subject} onChange={(e) => setHangman({ ...hangman, subject: e.target.value })} />
+        <br />
+        <label htmlFor="Content">Content</label>
+        <br />
+        <input type="text" id="Content" name="Content" value={hangman.content} onChange={(e) => setHangman({ ...hangman, content: e.target.value })} />
         <br />
         <label htmlFor="Hint">Hint</label>
         <br />

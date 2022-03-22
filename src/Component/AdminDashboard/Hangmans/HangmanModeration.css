@@ -1,5 +1,5 @@
 .table-container {
-  padding-left: 0;
+  padding: 0;
 }
 
 .playbutton {
@@ -18,7 +18,7 @@ h2 small {
 }
 
 .hangman-moderation-table {
-  padding-left: 0;
+  padding: 0;
 }
 
 .hangman-moderation-table li {
@@ -58,8 +58,8 @@ h2 small {
 }
 
 .hangman-moderation-table .col-3 {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
 }
 
 .hangman-moderation-table .col-4 {

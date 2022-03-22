@@ -16,9 +16,11 @@ export default function QuizReview(props) {
     if (props.location.state) {
       setSubmittedQuiz(props.location.state)
       setExecutedSet(true)
+      window.scrollTo(0, 0)
     }
     else {
       setMissingParentData(true)
+      window.scrollTo(0, 0)
     }
   }, [])
 

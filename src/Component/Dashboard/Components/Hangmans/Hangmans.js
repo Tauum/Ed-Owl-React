@@ -7,8 +7,8 @@ export default function Hangmans({parentToChild}) {
 
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
-
     const [parentToChildData2, setParentToChildData2] = useState([])
+    const [parentToChildData3, setParentToChildData3] = useState([])
     const [loadAttempted, setloadAttempted] = useState(false)
 
     useEffect(() => {
@@ -33,6 +33,8 @@ export default function Hangmans({parentToChild}) {
                 .then(response => response.json())
                 .then(json => {
                     setParentToChildData2(json);
+                    let distinctResults = [...new Set(json.map(item => item.hangmanTitle))];
+                    setParentToChildData3(distinctResults)
                 })
             }
         }
@@ -77,7 +79,7 @@ export default function Hangmans({parentToChild}) {
                         <Card.Body>
                             These are Hangman tasks which you have attempted.
                                 {parentToChildData2.length > 0 &&
-                                    <AllHangmansAttemptedTable parentToChild={parentToChildData2} />
+                                    <AllHangmansAttemptedTable parentToChild={parentToChildData2} distinct={parentToChildData3}/>
                                 }
                         </Card.Body>
 

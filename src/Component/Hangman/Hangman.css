@@ -60,7 +60,7 @@
 }
 
 .hangman-container .buttons {
-  margin: 1.3em;
+  margin: 0.8em;
 }
 
 .hangman-container .buttons .letterbutton {
@@ -103,6 +103,15 @@
 .rating-container .rating-down {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 400px) {
+  .hangman-container .buttons {
+    margin: 0.2em;
+  }
+  .hangman-container .buttons .letterbutton {
+    margin: .45em;
+  }
 }
 
 @media only screen and (min-width: 700px) {

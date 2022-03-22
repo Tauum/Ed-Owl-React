@@ -251,9 +251,29 @@
   border-radius: 1.5em;
 }
 
-@media only screen and (min-width: 800px) {
-  .contact-Section {
-    max-width: 500px;
+@media only screen and (min-width: 600px) {
+  .home .features-section .list {
+    margin: auto;
+    display: inline-block;
+    padding-top: 1em;
+    padding-left: 8%;
+  }
+  .home .features-section .list li {
+    color: white;
+    width: 85%;
+    border-radius: 2em;
+    padding: 1em;
+    background: #c28829;
+    background: -webkit-gradient(linear, left bottom, left top, from(#c28829), to(#fcb134));
+    background: linear-gradient(0deg, #c28829 0%, #fcb134 100%);
+    list-style-type: none;
+    margin-bottom: 0.7em;
+  }
+  .home .features-section .list li h2 {
+    font-size: 2em;
+  }
+  .home .features-section .list li p {
+    font-size: 1.5em;
   }
 }
 /*# sourceMappingURL=Home.css.map */

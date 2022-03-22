@@ -206,13 +206,48 @@ background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%
     }
 }
 
+@media only screen and (min-width: 600px) {
+    .home{
+    .features-section{
+        .list{
+            margin: auto;
+            display: inline-block;
+            padding-top: 1em;
+            padding-left: 8%;
+            li{
+                color:white;
+                width: 85%;
+                border-radius: 2em;
+                padding: 1em;
+                background: rgb(194,136,41);
+                background: linear-gradient(0deg, rgba(194,136,41,1) 0%, rgba(252,177,52,1) 100%);
+                list-style-type: none;
+                margin-bottom: 0.7em;
 
-@media only screen and (min-width: 800px) {
+                h2{
+                    font-size: 2em;
+                }
+                p{
+                    font-size: 1.5em;
+                }
+            
+            }
+    }
+}}}
 
-.contact-Section{
-    max-width: 500px;
+// @media only screen and (min-width: 800px) {
 
-}
+// .contact-Section{
+//     max-width: 500px;
+
+// }
+
+// .features-section{
+//     .list{
+//         h2{
+//             font-size: 2em;
+//         }
+//     }
+// }
 
 
-}

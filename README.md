@@ -42,7 +42,7 @@ The web server will now be running if you go to the <machine ip address> 7.1 It 
 
 ```apt install git```
 
-CLONE GITHUB REPO
+###CLONE GITHUB REPO
 ```cd /home```
 Get the link from Github of the repo to clone eg:``` git clone https://github.com/Tauum/EdOwlReact.git```
 ```cd /<project name>```
@@ -53,7 +53,7 @@ Get the link from Github of the repo to clone eg:``` git clone https://github.co
 
 Copy the built repository to ```/var/www/html ``` eg:  ```cp -r build/* /var/www/html ```
 
-#DOMAIN SETUP / CONFIGURATION
+###DOMAIN SETUP / CONFIGURATION
 Go to platform hosting domain (it may take up to 48 hours to fully set after completion)
 Type in a new: A type record and pointing to: <machine ip address>
 type in a new www type record and pointing to: <machine ip address>
@@ -95,7 +95,7 @@ verify version java -version
 
 then the app can be run (after db configuration) by using ```java -jar Edowl-Springboot.jar```https://superuser.com/questions/453298/how-to-force-java-to-use-ipv4-instead-ipv6
 
-MySQL INSTALL AND CONFIGURATION
+###MySQL INSTALL AND CONFIGURATION
 https://linuxconfig.org/install-mysql-on-ubuntu-20-04-lts-linux
 
 install ```apt install mysql-server```
@@ -134,6 +134,7 @@ restart ```sudo systemctl restart ufw```
 
 enable service on restart ```sudo systemctl enable ufw```
 
+                                                         
 ###APP & SPRINGBOOT LINK
 THIS IS KINDA MESSY BUT IT WAS SUGGESTED, WORKS AND DOESNT NEED TO INPUT HTTPS INTO REACT AND SPRINGBOOT SEPERATELY
 
@@ -156,8 +157,31 @@ insert this:
 1.4 redo-cert bot (maybe un-needed but just in case) ```certbot --nginx -d Edowl.online -d www.Edowl.online ```
 1.5 load java ```java -jar -Djava.net.preferIPv4Stack=true EdOwl-Springboot.jar```
 
+                                                         
+                                                         
+                                                         
+####SYSTEMD CONFIGURATION TO RUN SPRINGBOOT AS A SYSTEM SERVICE https://computingforgeeks.com/how-to-run-java-jar-application-with-systemd-on-linux/
+1. create systemd file ```sudo vim /etc/systemd/system/EdOwl-Springboot.service```
+2. configure file 
+```
+[Unit]
+Description=EdowlSpringboot
 
+[Service]
+WorkingDirectory=/home
+ExecStart=/usr/bin/java -Xms128m -Xmx256m -jar -Djava.net.preferIPv4Stack=true EdOwl-Springboot.jar
+Type=simple
+Restart=on-failure
+RestartSec=10
 
+[Install]
+WantedBy=multi-user.target
+```
+3. restart systemD daemon ```sudo systemctl daemon-reload```                                                  
+4. start service ```sudo systemctl start EdOwl-Springboot```
+4.2 enable at system startup  ```sudo systemctl enable EdOwl-Springboot```     
+4.3 restart service ```sudo systemctl restart EdOwl-Springboot```                                                       
+5. check its status ```$ systemctl status EdOwl-Springboot```                                                         
 
 ###QUICK REFRESH / UPDATE GUIDE
 on development in react folder terminal do
@@ -192,6 +216,19 @@ load java ```java -jar -Djava.net.preferIPv4Stack=true EdOwl-Springboot.jar```
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 ####
 
 Getting Started with Create React App

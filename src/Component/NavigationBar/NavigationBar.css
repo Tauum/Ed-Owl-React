@@ -156,7 +156,9 @@
 
 @media only screen and (min-width: 390px) {
   .boltonMoodle {
-    max-width: 120px;
+    max-width: 40px;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }
 
@@ -165,7 +167,7 @@
     height: 10%;
   }
   .boltonMoodle {
-    max-width: 150px;
+    max-width: 40px;
   }
 }
 
@@ -175,7 +177,7 @@
   }
   .mixedimg {
     margin-right: 1em;
-    width: 150px;
+    width: 40px;
   }
 }
 
@@ -185,7 +187,7 @@
   }
   .mixedimg {
     margin-right: 1em;
-    width: 150px;
+    width: 40px;
   }
 }
 /*# sourceMappingURL=NavigationBar.css.map */

@@ -9,6 +9,7 @@ export default function Quizzes({parentToChild}) {
     const [LoadAll, setLoadAll] = useState(false)
     const [parentToChildData, setParentToChildData] = useState([])
     const [parentToChildData2, setParentToChildData2] = useState([])
+    const [parentToChildData3, setParentToChildData3] = useState([])
     const [loadAttempted, setloadAttempted] = useState(false)
 
     useEffect(() => {
@@ -33,6 +34,11 @@ export default function Quizzes({parentToChild}) {
                 .then(response => response.json())
                 .then(json => {
                     setParentToChildData2(json);
+
+                    let distinctResults = [...new Set(json.map(item => item.quizTitle))];
+
+                    setParentToChildData3(distinctResults)
+
                 })
             }
         }
@@ -73,7 +79,7 @@ export default function Quizzes({parentToChild}) {
                                 These are Quiz tasks you have attempted. You can review the results by clicking the play button.
                                 <br /><br />
                                 {parentToChildData2.length > 0 &&
-                                    <AllQuizAttemptedTable parentToChild={parentToChildData2} />
+                                    <AllQuizAttemptedTable parentToChild={parentToChildData2} distinct={parentToChildData3}/>
                                 }
                             </Card.Body>
                         </Accordion.Collapse>

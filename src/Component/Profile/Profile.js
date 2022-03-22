@@ -20,6 +20,7 @@ function Profile(props) {
         var sMStats;
 
         if (props.location.state) {
+            window.scrollTo(0, 0)
             const getServerUser = await fetch(`${window.ipAddress.ip}/User/getByEmail`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: props.location.state }) })
             if (getServerUser.ok) {
                  serverUserJson = await getServerUser.json();
@@ -28,6 +29,7 @@ function Profile(props) {
             else { console.log("error") }
         }
         else {
+            window.scrollTo(0, 0)
             const getServerUser = await fetch(`${window.ipAddress.ip}/User/getByEmail`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: user.email }) })
             if (getServerUser.ok) { 
                 serverUserJson = await getServerUser.json();
@@ -97,32 +99,32 @@ function Profile(props) {
                         <Row>
                             <Col><h2>{serverUser.name}</h2></Col>
                             <Col>
-                                Rank ({parentToChildData.rank})
+                                {/* Rank ({parentToChildData.rank}) */}
                             </Col>
                         </Row>
 
                         <Row>
-                            <Col><p> Role: {serverUser.role}</p></Col>
+                            {/* <Col><p> Role: {serverUser.role}</p></Col> */}
                             <Col> </Col>
                         </Row>
 
                         <Row>
                             <Col>
                                 <Col>
-                                    <p> Modules</p>
+                                    {/* <p> Modules</p> */}
                                 </Col>
 
                                 <Col>
-                                    <p> (coming soon)  {/*  {serverUser.modules} */}</p>
+                                    {/* <p> (coming soon)   {serverUser.modules}</p> */}
                                 </Col>
                             </Col>
 
                             <Col>
                                 <Col>
-                                    <p>Tags</p>
+                                    {/* <p>Tags</p> */}
                                 </Col>
                                 <Col>
-                                    <p> (coming soon)  {/*  {serverUser.tags} tag1*/}</p>
+                                    {/* <p> (coming soon)   {serverUser.tags} tag1</p> */}
                                 </Col>
                             </Col>
                         </Row>

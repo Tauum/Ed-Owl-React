@@ -29,7 +29,6 @@ export default function Hangman(props) {
 
   useEffect(() => {
     if (props.location.state){
-
         setHangman(props.location.state)
         setExecutedFetch(true)
         var startDate = Date()
@@ -54,10 +53,11 @@ export default function Hangman(props) {
             //incorrect aka (5 - lives) = 5%  (25% total)
             var incorrectModifier = (hangman.value / 10) * (5 - lives);  // incorrect
 
-            if (hintUsed){ var hintModifier = (hangman.value / 10); } // hint
-            else{ var hintModifier = 0; } 
-        
-            submitScore = (hangman.value - (incorrectModifier + hintModifier));
+            // if (hintUsed){ var hintModifier = (hangman.value / 10); } // hint
+            // else{ var hintModifier = 0; } 
+            // submitScore = (hangman.value - (incorrectModifier + hintModifier));
+
+            submitScore = (hangman.value - incorrectModifier);
         }   
 
         setScore(submitScore)
@@ -201,9 +201,11 @@ export default function Hangman(props) {
                                     }
                                 </div>
                             </div>
-                            <div className="card-footer text-muted"> 
-                                You may re-attempt by returning <br/> Then re-entering the same task. <br/> Alternatively you can view feedback by clicking review
-                            </div>
+                                {hangman.content !== null ? 
+                                    <div className="card-footer text-muted"> 
+                                        <div>{hangman.content}</div> 
+                                    </div>
+                                : <div></div>}
 
                             <br/>
                             <Link to="/Dashboard"><Button variant="btn btn-dark">Return</Button></Link>

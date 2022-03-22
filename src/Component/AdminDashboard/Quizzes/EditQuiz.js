@@ -6,7 +6,7 @@ const INITIAL_QUESTION_STATE = { question: "", value: 0, explaination: "",  answ
 
 export default function EditQuiz(props) {
 
-  const [quiz, setQuiz] = useState({ title: "", subject:"", timeLimit: 0, value: 0, hidden: true, questions: [] });
+  const [quiz, setQuiz] = useState({ title: "", subject:"",content:"", timeLimit: 0, value: 0, hidden: true, questions: [] });
   const [question, setQuestion] = useState(INITIAL_QUESTION_STATE);
   const [show, setShow] = useState(false);
   const [newQuestion, setNewQuestion] = useState(false);
@@ -17,7 +17,6 @@ export default function EditQuiz(props) {
 
   useEffect(() => {
     if (props.location.state) {
-      console.log(props.location.state)
       setQuiz(props.location.state)
     }
     else{
@@ -38,6 +37,7 @@ export default function EditQuiz(props) {
             title: quiz.title,
             timeLimit: quiz.timeLimit,
             subject:quiz.subject,
+            content: quiz.content,
             value: quiz.value,
             hidden: quiz.hidden,
             questions: quiz.questions,
@@ -62,6 +62,7 @@ export default function EditQuiz(props) {
             timeLimit: quiz.timeLimit,
             value: quiz.value,
             subject: quiz.subject,
+            content: quiz.content,
             hidden: quiz.hidden,
             questions: quiz.questions,
             generatedDate: todayDate
@@ -191,6 +192,11 @@ export default function EditQuiz(props) {
             <br />
             <input type="text" id="subject" name="title" required="required"
             value={quiz.subject} onChange={(e) => setQuiz({ ...quiz, subject: e.target.value })}/>
+            <br />
+            <label htmlFor="Content">Content</label>
+            <br />
+            <input type="text" id="content" name="title" required="required"
+            value={quiz.content} onChange={(e) => setQuiz({ ...quiz, content: e.target.value })}/>
             <br />
             <label htmlFor="Time-limit">Time limit (seconds)</label>
             <br />

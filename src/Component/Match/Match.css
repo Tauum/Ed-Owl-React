@@ -76,18 +76,7 @@
 }
 
 .all-match-element {
-  -ms-flex-item-align: middle;
-      align-self: middle;
-  -webkit-box-align: middle;
-      -ms-flex-align: middle;
-          align-items: middle;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  min-height: 50px;
   background: #0765c3;
   background: -webkit-gradient(linear, left bottom, left top, from(#0765c3), to(#004890));
   background: linear-gradient(0deg, #0765c3 0%, #004890 100%);
@@ -98,7 +87,6 @@
 }
 
 .all-match-element p {
-  text-align: center;
   margin-bottom: 0;
 }
 
@@ -153,19 +141,37 @@
   max-width: 120px;
 }
 
+@media all and (max-height: 670px) {
+  .all-match-element {
+    min-height: 50px;
+  }
+  .all-match-element p {
+    font-size: 0.7em;
+  }
+}
+
+@media all and (max-height: 700px) {
+  .all-match-element {
+    min-height: 50px;
+  }
+  .all-match-element p {
+    font-size: 0.8em;
+  }
+}
+
 @media all and (min-width: 500px) {
   .match-main-container {
     min-width: 470px;
   }
   .title-container {
-    max-width: 260px;
+    max-width: 300px;
   }
   .explainations-container {
-    max-width: 260px;
+    max-width: 300px;
   }
   .all-match-element {
     min-height: 80px;
-    max-width: 200px;
+    max-width: 250px;
   }
   .submit-match {
     margin: 3em;

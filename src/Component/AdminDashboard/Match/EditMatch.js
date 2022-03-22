@@ -6,7 +6,7 @@ const INITIAL_DEFINITION_STATE = { title: "", value: 0, explaination: ""};
 
 export default function EditMatch(props) {
 
-  const [match, setMatch] = useState({ title: "", match:"", value: 0, hidden: true, definitions: [] });
+  const [match, setMatch] = useState({ title: "", match:"", content:"", value: 0, hidden: true, definitions: [] });
   const [definition, setDefinition] = useState(INITIAL_DEFINITION_STATE);
   const [show, setShow] = useState(false);
   const [newDefinition, setNewDefinition] = useState(false);
@@ -36,6 +36,7 @@ export default function EditMatch(props) {
           {
             title: match.title,
             subject: match.subject,
+            content: match.content,
             value: match.value,
             hidden: match.hidden,
             definitions: match.definitions,
@@ -60,6 +61,7 @@ export default function EditMatch(props) {
             subject: match.subject,
             timeLimit: match.timeLimit,
             value: match.value,
+            content: match.content,
             hidden: match.hidden,
             definitions: match.definitions,
             generatedDate: todayDate
@@ -173,6 +175,11 @@ export default function EditMatch(props) {
           <br />
           <input type="text" id="subject" name="subject" required="required"
           value={match.subject} onChange={(e) => setMatch({ ...match, subject: e.target.value })}/>
+          <br />
+          <label htmlFor="Content">Content</label>
+          <br />
+          <input type="text" id="content" name="content" required="required"
+          value={match.content} onChange={(e) => setMatch({ ...match, content: e.target.value })}/>
           <br />
           <label htmlFor="Value">Value (Set to all question value combined)</label>
           <br />

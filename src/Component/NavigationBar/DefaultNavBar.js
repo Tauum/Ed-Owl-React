@@ -18,7 +18,8 @@ export default function DefaultNavBar() {
             <HashRouter>
                 <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
                     <Container>
-                    <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="boltonMoodle"/></Navbar.Brand>
+                    {/* <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img className="bolton-img" src="/Image/mixed.png" alt="Bolton Moodle" className="boltonMoodle"/></Navbar.Brand> */}
+                    <Navbar.Brand href="https://moodle.bolton.ac.uk/my/" className="edowl"><img src="/Image/moodle.png" alt="Bolton Moodle" className="bolton-img boltonMoodle" href="https://moodle.bolton.ac.uk/my/"/></Navbar.Brand>
                     <Navbar.Brand href="#Home" className="edowl-title">Ed Owl</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

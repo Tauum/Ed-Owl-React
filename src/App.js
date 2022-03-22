@@ -66,7 +66,7 @@ function App() {
           <div className="App">
             <HashRouter>
               {parentToChildData === true ? <AdminNavBar/> :   <UserNavBar /> }
-              <Redirect to="/Home"></Redirect>
+              <Redirect to="/Dashboard"></Redirect>
 
             </HashRouter>
           </div>

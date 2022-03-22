@@ -50,7 +50,7 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     }
 
     .buttons{
-        margin: 1.3em;
+        margin: 0.8em;
         .letterbutton{
             margin: .45em;
         }
@@ -80,6 +80,17 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
       transform: rotate(180deg);
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    .hangman-container{
+        .buttons{
+            margin: 0.2em;
+            .letterbutton{
+                margin: .45em;
+            }
+        }
+    }
+}
 
   
   @media only screen and (min-width: 700px) {

@@ -44,7 +44,7 @@ export default function Weekly() {
                         <h1>ED <span /> OWL<br />The HE digital learning companion app</h1>
                     </div>
                     <div className="description">
-                        <p>Take university studies online. Ed Owl could be your next stop for games, learning, updates and more for your course! </p>
+                        <p>Make your learning journey more interactive by using this game based learning app to engage with module specific formative tasks. Ed Owl also enables you to check your learning progress and access supporting reading materials such as blogs, podcasts and more for your module! </p>
                     </div>
                     <br />
                     <a href="" className="btn btn-red shadow">Video</a>
@@ -57,9 +57,9 @@ export default function Weekly() {
 
             <section className="features-section">
 
-                <div className="heading"><h1>Why you should use ED OWL?</h1></div>
+                <div className="heading"><h1>ED OWL Features</h1></div>
 
-                <div className="description"> <p>Here at Bolton University, we use online module intergration for selected modules. Check with your tutors about access.</p> </div>
+                <div className="description"> <p>This app is designed to make blended learning fun and engaging using games and additional built in features. <br/> Currently supported features are displayed below</p> </div>
 
                 <div className="list">
                     <ul>
@@ -67,7 +67,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/games-and-learning.svg" alt="games and learning" />
                                 <h2 className="card-title">Games, learning and HE</h2>
-                                <p className="card-text">Browse or Partake in subject specific tasks on your own time.</p>
+                                <p className="card-text">Browse or Partake in subject specific tasks at your own time. <br/> Available from within your dashboard area</p>
                             </div>
                         </li>
 
@@ -75,7 +75,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/varied-formats.svg" alt="notifications" />
                                 <h2 className="card-title">Varied formats</h2>
-                                <p className="card-text">Blogs, video logs, podcasts and up to date information curated by tutors</p>
+                                <p className="card-text">Blogs, Vlogs, Podcasts and cotemporary articles curated by tutors. <br/> Available from your blog area.</p>
                             </div>
                         </li>
 
@@ -83,7 +83,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/calendar-outline.svg" alt="Milestones" />
                                 <h2 className="card-title">Frequent updates</h2>
-                                <p className="card-text">You will discover new content weekly or monthly, being topically relevant to your current studies.</p>
+                                <p className="card-text">You will discover new content weekly or monthly, being topically relevant to your current studies. <br/> Available from your dashboard area.</p>
 
                             </div>
                         </li>
@@ -92,7 +92,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/notes.svg" alt="Milestones" />
                                 <h2 className="card-title">Quick notes</h2>
-                                <p className="card-text">View, add and delete quick notes in-platform as future reminders</p>
+                                <p className="card-text">View, add and delete quick notes in-platform as future reminders. <br/> Available from within the top navigation-bar.</p>
 
                             </div>
                         </li>
@@ -101,7 +101,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/progression-tracking.svg" alt="Milestones" />
                                 <h2 className="card-title">Progression tracking</h2>
-                                <p className="card-text">Partake in tasks, review your scores and analyse your previous attempts.</p>
+                                <p className="card-text">Partake in tasks, review your scores and analyse your previous attempts. <br/> Available from from your dashboard and profile area.</p>
 
                             </div>
                         </li>
@@ -110,7 +110,7 @@ export default function Weekly() {
                             <div className="card-body">
                                 <img className="card-img-top features-image" src="Image/hat.svg" alt="notifications" />
                                 <h2 className="card-title">Getting started</h2>
-                                <p className="card-text">Open your account in seconds by clicking login / sign up in the drop down menu and complete the sign-up form.</p>
+                                <p className="card-text">Open your account in seconds by clicking login / sign up within the top navigation-bar and complete the sign-up form.</p>
 
                             </div>
                         </li>

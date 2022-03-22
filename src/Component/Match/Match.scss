@@ -58,11 +58,7 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
 
 
 .all-match-element{
-    align-self: middle;
-    align-items: middle;
-    display: flex;
-    flex-direction: column;
-
+    min-height: 50px;
     background: rgb(7,101,195);
     background: linear-gradient(0deg, rgba(7,101,195,1) 0%, rgba(0,72,144,1) 100%);
     margin-top: 1em;
@@ -71,7 +67,6 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
     border-radius: 1em;
     
     p{
-        text-align: center;
         margin-bottom: 0;
     }
 }
@@ -110,7 +105,26 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         min-height: 80px;
         max-width: 120px;
     }
-    
+
+@media all and (max-height: 670px) {
+
+    .all-match-element{
+        min-height: 50px;
+        p{
+            font-size: 0.7em;
+        }
+    }
+    }
+
+  @media all and (max-height: 700px) {
+
+    .all-match-element{
+        min-height: 50px;
+        p{
+            font-size: 0.8em;
+        }
+    }
+  }
 
   @media all and (min-width: 500px) {
 
@@ -118,14 +132,14 @@ background: linear-gradient(0deg, rgba(1,126,207,1) 0%, rgba(1,147,207,1) 100%);
         min-width: 470px
     }
     .title-container{
-        max-width: 260px;
+        max-width: 300px;
     }
     .explainations-container{
-        max-width: 260px;
+        max-width: 300px;
     }
     .all-match-element{
         min-height: 80px;
-        max-width: 200px;
+        max-width: 250px;
     }
 
     .submit-match{

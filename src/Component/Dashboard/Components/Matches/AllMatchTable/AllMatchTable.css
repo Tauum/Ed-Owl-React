@@ -2,6 +2,11 @@
   margin-right: 0em;
 }
 
+
+.desc{
+  font-size: 0.8em;
+}
+
 .playbutton {
   height: 1em;
   background-color: #95A5A6;
@@ -81,5 +86,9 @@ h2 small {
   .AllMatch-responsive-table .table-header {
     font-size: 10px;
   }
+}
+
+@media all and (max-width: 400px) {
+ 
 }
 /*# sourceMappingURL=AllMatchTable.css.map */
